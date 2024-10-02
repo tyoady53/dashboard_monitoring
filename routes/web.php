@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('app');
+// });
+
 Route::get('/', function () {
-    return view('app');
-});
+    return \Inertia\Inertia::render('Auth/Login');
+})->middleware('guest');
