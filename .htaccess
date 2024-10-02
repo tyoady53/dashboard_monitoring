@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/dashboard_monitoring/public/build
+RewriteBase /
+RewriteRule ^(.*)?$ /dashboard_monitoring/public/build/$1 [L,R=301]
+</IfModule>
