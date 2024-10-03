@@ -22280,7 +22280,7 @@ __webpack_require__.r(__webpack_exports__);
       this.timeCount = 0;
       console.log('Loaded : ' + Date.now());
       var UrlOrigin = window.location.origin;
-      axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(UrlOrigin + "/api/dahsboard/get_data").then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_4__["default"].get(UrlOrigin + "/api/dashboard/get_data").then(function (response) {
         _this2.table_data = response.data.data;
       })["catch"](function (error) {
         return Swal.fire({

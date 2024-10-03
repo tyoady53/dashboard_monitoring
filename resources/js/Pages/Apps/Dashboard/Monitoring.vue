@@ -679,7 +679,7 @@ export default {
             console.log('Loaded : '+Date.now());
             var UrlOrigin = window.location.origin;
             axios
-                .get(UrlOrigin + `/api/dahsboard/get_data`)
+                .get(UrlOrigin + `/api/dashboard/get_data`)
                 .then((response) => {
                     this.table_data = response.data.data;
                 })
