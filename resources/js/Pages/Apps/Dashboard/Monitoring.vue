@@ -5,26 +5,15 @@
     <main class="c-main">
         <div class="container-fluid">
             <div class="fade-in">
+                <div class="text-center">
+                    <h4>Dashboard Monitoring {{ table_data.cust_name }}</h4>
+                </div>
                 <div class="card border-0 rounded-3 shadow-border-top-purple mt-4">
-                    <div class="card-header">
-                        <div class="row">
-                            <div class="col-6">
-                                <span class="font-weight-bold">
-                                    {{ table_data.cust_name }}
-                                </span>
-                            </div>
-                            <div class="col-6 text-end">
-                                <div class="row">
-                                    <div class="col-6"></div>
-                                    <div class="col-3">Data Length :</div>
-                                    <div class="col-3"><input class="form-control" v-model="dataLength" type="number"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="card-body">
-                        Last Update : {{ formatCompat(last_update) }} <br>
-                        Time : {{ time }}
+                        <div class="text-center">
+                            Last Update : {{ formatCompat(last_update) }} <br>
+                            Time : {{ time }}
+                        </div>
                         <template v-if="table_data">
                             <div class="row">
                                 <div class="col-2">
@@ -467,116 +456,38 @@
                                 </div>
                             </div>
                         </template>
-                        <!-- <h6>This Page generate random data every minute</h6> -->
-                        <!-- Generated Data :
-                        {{ table_data }} -->
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- The Modal Edit Data -->
-        <div class="modal" id="inputModal" ref="inputModal">
+        <!-- The Modal Refresh Rate -->
+        <div class="modal" id="intervalModal" ref="intervalModal">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <!-- Modal Header -->
                     <div class="modal-header">
-                        <h4 class="modal-title">Add Data Monitoring</h4>
+                        <h4 class="modal-title">Set Refresh Interval</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <form @submit.prevent="submit">
+                        <!-- <form @submit.prevent="submitInterval"> -->
                             <div class="mb-3">
-                                <label class="fw-bold">Regno</label>
-                                <input class="form-control" v-model="form.regno" type="text">
-                            </div>
-                            <div class="mb-3">
-                                <label class="fw-bold">Type</label>
-                                <select v-model="form.type"  class="form-select">
-                                    <option value="cito">CITO</option>
-                                    <option value="noncito">NON CITO</option>
-                                </select>
-                            </div>
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="mb-3">
-                                        <label class="fw-bold">Speciment Collection</label>
-                                        <select v-model="form.sc" class="form-select">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="mb-3">
-                                        <label class="fw-bold">Process Sample</label>
-                                        <select v-model="form.ps" class="form-select">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="mb-3">
-                                        <label class="fw-bold">Result</label>
-                                        <select v-model="form.rs" class="form-select">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="mb-3">
-                                        <label class="fw-bold">Varification</label>
-                                        <select v-model="form.vr" class="form-select">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="mb-3">
-                                        <label class="fw-bold">Authorization</label>
-                                        <select v-model="form.au" class="form-select">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="mb-3">
-                                        <label class="fw-bold">Kritis</label>
-                                        <select v-model="form.kr" class="form-select">
-                                            <option value="1">1</option>
-                                            <option value="0">0</option>
-                                        </select>
-                                    </div>
-                                </div>
+                                <label class="fw-bold">Refresh Interval</label>
+                                <input class="form-control" v-model="refreshRate" type="number" min="1">
                             </div>
                             <div class="modal-footer">
-                                <button class="btn btn-primary shadow-sm rounded-sm" type="submit">Save</button>
+                                <button class="btn btn-primary shadow-sm rounded-sm" type="button" @click="changeInterval" data-bs-dismiss="modal">Save</button>
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                             </div>
-                        </form>
+                        <!-- </form> -->
                     </div>
                     <!-- Modal footer -->
                 </div>
             </div>
         </div>
-        <!-- End of Modal Edit Data -->
+        <!-- End of Modal Refresh Rate -->
 
     </main>
 </template>
@@ -665,6 +576,8 @@ export default {
             if((Math.floor(Date.now() / 1000) % 60) == 0) {
                 // this.get_monitoring_data();
                 this.timeCount += 1;
+                console.log('Time Count : '+this.timeCount);
+                console.log('Refresh Interval : '+this.refreshRate);
             }
 
             if(this.timeCount == this.refreshRate) {
@@ -674,9 +587,9 @@ export default {
         },
 
         get_monitoring_data() {
+            console.log('Loaded : '+Date.now());
             this.last_update = Date.now();
             this.timeCount = 0;
-            console.log('Loaded : '+Date.now());
             var UrlOrigin = window.location.origin;
             axios
                 .get(UrlOrigin + `/api/dashboard/get_data`)
@@ -692,6 +605,10 @@ export default {
                 })
             );
         },
+
+        changeInterval() {
+            console.log('Change Refresh Interval to : '+this.refreshRate);
+        }
     },
 
     beforeDestroy() {

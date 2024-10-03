@@ -4,12 +4,12 @@
     </Head>
     <div class="col-md-6">
         <div class="fade-in">
-            <div class="text-center mb-4">
+            <!-- <div class="text-center mb-4">
                 <a href="" class="text-dark text-decoration-none">
                     <img src="/images/Wynacom.png" width="70">
                     <h3 class="mt-2 font-weight-bold">Wynacom Information System</h3>
                 </a>
-            </div>
+            </div> -->
             <div class="card-group">
                 <div class="card border-top-purple border-0 shadow-sm rounded-3">
                     <div class="card-body">

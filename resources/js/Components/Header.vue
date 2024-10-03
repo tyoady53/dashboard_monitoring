@@ -1,5 +1,6 @@
 <template>
     <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
+        <img src="/wynahealth.png" class="p-1" width="200"> <h4 class="ml-2 my-auto font-weight-bold">Dashboard</h4>
       <ul class="c-header-nav ml-auto mr-4">
 
         <li class="c-header-nav-item dropdown">
@@ -10,13 +11,12 @@
             </div>
           </a>
           <div class="dropdown-menu dropdown-menu-right pt-0 mb-0 pb-0">
-            <!-- <button v-if="hasAnyPermission(['backup.create'])" class="dropdown-item" @click="backup_database">
-              <i class="fa fa-database"></i>
-              Export Database
-            </button> -->
             <Link :href="`/apps/users/${$page.props.auth.user.id}`" class="dropdown-item" role="button">
                 <i class="fa fa-user-circle"></i>
                 My Profile
+            </Link>
+            <Link href="#" data-bs-toggle="modal" data-bs-target="#intervalModal" class="dropdown-item" role="button">
+                <i class="fa fa-clock"></i> Refresh Interval
             </Link>
             <Link href="/logout" method="POST" as="button" class="dropdown-item" role="button" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
