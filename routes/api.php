@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::prefix('dahsboard')->group(function (){
+Route::prefix('dashboard')->group(function (){
     Route::get('/get_data', [MonitoringController::class, 'get_data']);
     Route::get('/random_data', [MonitoringController::class, 'create']);
     Route::post('/store', [MonitoringController::class, 'store']);
