@@ -54,6 +54,23 @@
   --dark: #636f83;
 }
 
+
+.tblRed{
+    background: #FF0000;
+}
+.tblYellow{
+    background: #FFFF00;
+}
+.tblGreen{
+    background: #00B050;
+}
+.tblBlue{
+    background: #00B0F0;
+}
+.tblOrange{
+    background: #F4B084;
+}
+
 .c-app {
   color: #3c4b64;
   background-color: #ebedef;
@@ -13525,7 +13542,7 @@ html:not([dir="rtl"]) .list-inline {
   flex-shrink: 0;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  min-width: 0;
+  width: 100%;
   padding-top: 2rem;
 }
 

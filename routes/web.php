@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MonitoringController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return \Inertia\Inertia::render('Auth/Login');
 })->middleware('guest');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/home', [MonitoringController::class, 'index'])->name('apps.index');
+});

@@ -13,10 +13,10 @@
 
           <!-- end content -->
 
-          <footer class="c-footer">
-            <div>&copy; {{ new Date().getFullYear() }} - PT. WYNACOM UNITAMA SEJAHTERA</div>
-          </footer>
         </div>
+        <footer class="c-footer">
+        <div>&copy; {{ new Date().getFullYear() }} - PT. WYNACOM UNITAMA SEJAHTERA</div>
+        </footer>
       </div>
     </div>
   </template>

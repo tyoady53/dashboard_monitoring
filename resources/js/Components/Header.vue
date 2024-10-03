@@ -10,10 +10,10 @@
             </div>
           </a>
           <div class="dropdown-menu dropdown-menu-right pt-0 mb-0 pb-0">
-            <button v-if="hasAnyPermission(['backup.create'])" class="dropdown-item" @click="backup_database">
+            <!-- <button v-if="hasAnyPermission(['backup.create'])" class="dropdown-item" @click="backup_database">
               <i class="fa fa-database"></i>
               Export Database
-            </button>
+            </button> -->
             <Link :href="`/apps/users/${$page.props.auth.user.id}`" class="dropdown-item" role="button">
                 <i class="fa fa-user-circle"></i>
                 My Profile
