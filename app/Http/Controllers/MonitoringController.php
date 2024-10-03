@@ -116,7 +116,7 @@ class MonitoringController extends Controller
         $arr_type = ['cito', 'noncito'];
 
         foreach($array as $index=>$loop) {
-            if($loop->cust_name == 'Mataram') {
+            if($loop->cust_name) {
 
                 // Speciment Collection
                 $spe_col = null;
@@ -256,7 +256,7 @@ class MonitoringController extends Controller
             }
 
             // dd($data_);
-            $data['cust_name'] = 'Mataram';
+            $data['cust_name'] = $loop->cust_name;
             $data['cust_branch'] = '1';
         }
         // $data['monitoring'] = $data_;
