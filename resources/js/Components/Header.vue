@@ -1,6 +1,8 @@
 <template>
     <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
-        <img src="/wynahealth.png" class="p-1" width="200"> <h4 class="ml-2 my-auto font-weight-bold">Dashboard</h4>
+        <Link href="/" role="button">
+            <img src="/wynahealth.png" class="p-1" width="200">
+        </Link>
       <ul class="c-header-nav ml-auto mr-4">
 
         <li class="c-header-nav-item dropdown">
@@ -11,13 +13,24 @@
             </div>
           </a>
           <div class="dropdown-menu dropdown-menu-right pt-0 mb-0 pb-0">
-            <Link :href="`/apps/users/${$page.props.auth.user.id}`" class="dropdown-item" role="button">
+            <Link :href="`/user/${$page.props.auth.user.id}`" class="dropdown-item" role="button">
                 <i class="fa fa-user-circle"></i>
                 My Profile
             </Link>
-            <Link href="#" data-bs-toggle="modal" data-bs-target="#intervalModal" class="dropdown-item" role="button">
+            <Link v-if="$page.props.auth.user.id == 1" href="/user" class="dropdown-item" role="button">
+                <i class="fa fa-user"></i>
+                Users
+            </Link>
+            <Link v-if="$page.props.auth.user.id == 1" href="/customer" class="dropdown-item" role="button">
+                <i class="fa fa-plus"></i>
+                Customer/Branch
+            </Link>
+            <Link href="#" data-bs-toggle="modal" data-bs-target="#intervalModal" class="dropdown-item" role="button" v-if="routeName == '/home'">
                 <i class="fa fa-clock"></i> Refresh Interval
             </Link>
+            <!-- <Link href="#" data-bs-toggle="modal" data-bs-target="#intervalModal" class="dropdown-item" role="button">
+                <i class="fa fa-clock"></i> Full Screen
+            </Link> -->
             <Link href="/logout" method="POST" as="button" class="dropdown-item" role="button" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
@@ -54,70 +67,38 @@
       },
 
       data: () => ({
-        // response_data : '',
-        user_id : ''
+        route : '',
+        user_id : '',
+        routeName : '',
+        fullScreen : true,
       }),
 
-      methods: {
+      watch:{
+        // '$route': 'currentRoute'
+        '$route'() {
+            this.currentRoute(); // Call method to update current route
+        },
+      },
 
-        backup_database() {
-            var UrlOrigin = window.location.origin;
-            var response_data = '';
-            axios.get(UrlOrigin+'/apps/export_database').then(response => {
-              response_data = response.data;
-              console.log(response_data)
-              if(response_data.success == 'false') {
-                Swal.fire({
-                toast: true,
-                position: 'top-end',
-                title: 'FAILED!',
-                text: response_data.message,
-                icon: 'error',
-                showConfirmButton: false,
-                timer: 2000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                  toast.addEventListener('mouseenter', Swal.stopTimer)
-                  toast.addEventListener('mouseleave', Swal.resumeTimer)
-                  }
-                });
-              } else {
-                if(response_data.message == 'Success'){
-                  Swal.fire({
-                  toast: true,
-                  position: 'top-end',
-                  title: 'Success!',
-                  text: 'Backup database SUCCESS.',
-                  icon: 'success',
-                  showConfirmButton: false,
-                  timer: 2000,
-                  timerProgressBar: true,
-                  didOpen: (toast) => {
-                    toast.addEventListener('mouseenter', Swal.stopTimer)
-                    toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                  });
-                } else {
-                  Swal.fire({
-                  toast: true,
-                  position: 'top-end',
-                  title: 'INFO!',
-                  text: response_data.message,
-                  icon: 'info',
-                  showConfirmButton: false,
-                  timer: 2000,
-                  timerProgressBar: true,
-                  didOpen: (toast) => {
-                    toast.addEventListener('mouseenter', Swal.stopTimer)
-                    toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                  });
-                }
-              }
-            }).catch(error => {
-              console.log(error.response)
+      mounted() {
+        // // Initialize the current route when the component is mounted
+        // this.currentRoute();
+
+        // Listen to Inertia events
+        this.setupInertiaListeners();
+      },
+
+      methods: {
+        currentRoute() {
+            this.routeName = window.location.pathname;
+            console.log(window.location.pathname)
+        },
+
+        setupInertiaListeners() {
+            Inertia.on('navigate', (event) => {
+                // This will run every time Inertia navigates to a new page
+                this.currentRoute();
             });
-            location.reload();
         },
       }
     }

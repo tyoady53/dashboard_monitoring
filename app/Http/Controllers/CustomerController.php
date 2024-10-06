@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\CustomerBranch;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class CustomerController extends Controller
 {
@@ -12,7 +15,14 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        if(Auth::user()->id != 1) {
+            return Inertia::render('Forbidden403', []);
+        }
+
+        $customers = Customer::with('branch')->orderBy('customer_name')->get();
+        return Inertia::render('Apps/Customer/Index', [
+            'customers'     => $customers
+        ]);
     }
 
     /**
@@ -28,7 +38,43 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id = 1;
+        $customer = Customer::latest()->first();
+        if($customer) {
+            $id = $customer->id + 1;
+        }
+
+        Customer::create([
+            'id'            => $id,
+            'customer_id'   => strtoupper($request->customer_id),
+            'customer_name' => strtoupper($request->customer_name),
+            'is_show'       => '1',
+        ]);
+
+        return redirect()->route('apps.customer.index');
+        // strtoupper("Hello WORLD!")
+        dd($request,$customer,$id);
+    }
+
+    public function store_branch(Request $request) {
+        $id = 1;
+        $branch = CustomerBranch::latest()->first();
+        if($branch) {
+            $id = $branch->id + 1;
+        }
+
+        // outlet_id : '',
+        //     branch_name : '',
+        CustomerBranch::create([
+            'id'            => $id,
+            'customer_id'   => strtoupper($request->customer_id),
+            'outlet_id'     => strtoupper($request->outlet_id),
+            'branch_name'   => strtoupper($request->branch_name),
+            'is_show'       => '1',
+        ]);
+
+        return redirect()->route('apps.customer.index');
+        dd($request);
     }
 
     /**
@@ -61,5 +107,15 @@ class CustomerController extends Controller
     public function destroy(Customer $customer)
     {
         //
+    }
+
+    public function get_branch($cust_id) {
+        $branches = CustomerBranch::where('customer_id',$cust_id)->get();
+        // dd($branches,$cust_id);
+        return response()->json([
+            'status'    => true,
+            'message'   => 'Monitoring Data',
+            'data'      => $branches
+        ]);
     }
 }

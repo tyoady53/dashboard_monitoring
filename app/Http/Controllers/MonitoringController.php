@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dashboard;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -56,7 +57,7 @@ class MonitoringController extends Controller
                 Dashboard::create([
                     "id"            => $i + 1,
                     "dttm"          => $request->data[$i]['dttm'],
-                    "cust_name"     => $request->data[$i]['cust_name'],
+                    "cust_name"     => strtoupper($request->data[$i]['cust_name']),
                     "cust_branch"   => $request->data[$i]['cust_branch'],
                     "regno"         => $request->data[$i]['regno'],
                     "type"          => $request->data[$i]['type'],
@@ -106,9 +107,11 @@ class MonitoringController extends Controller
         //
     }
 
-    public function get_data()
+    public function get_data($email)
     {
-        $array = Dashboard::get();
+        $user = User::with('has_company')->where('email',$email)->first();
+        // dd($email,$user->has_company->customer_id);
+        $array = Dashboard::where('cust_name',$user->has_company->customer_id)->get();
         $data = array();
         $idx_cito = 0;
         $idx_non = 0;

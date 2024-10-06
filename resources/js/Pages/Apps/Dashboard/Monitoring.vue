@@ -505,6 +505,8 @@ import { Head, } from '@inertiajs/inertia-vue3';
 
 import axios from 'axios';
 
+import Swal from 'sweetalert2';
+
 export default {
 
     //layout
@@ -518,6 +520,7 @@ export default {
     props: {
         lastRegno : Number,
         newRegno : Number,
+        auth: Object
     },
 
     data: () => ({
@@ -544,7 +547,8 @@ export default {
         this.time = Intl.DateTimeFormat(navigator.language, {
             hour: 'numeric',
             minute: 'numeric',
-            second: 'numeric'
+            second: 'numeric',
+            hourCycle: 'h23'  // 24-hour format
         }).format()
         }, 1000)
     },
@@ -592,7 +596,7 @@ export default {
             this.timeCount = 0;
             var UrlOrigin = window.location.origin;
             axios
-                .get(UrlOrigin + `/api/dashboard/get_data`)
+                .get(UrlOrigin + `/api/dashboard/get_data/${this.auth.user.email}`)
                 .then((response) => {
                     this.table_data = response.data.data;
                 })
@@ -628,41 +632,8 @@ export default {
 	    	kr : ""
         });
 
-        const submit = () => {
-            Inertia.post(
-                "/apps/master/monitoring/store",
-                {
-                    regno: form.regno,
-                    type: form.type,
-                    sc: form.sc,
-                    ps: form.ps,
-                    rs: form.rs,
-                    vr: form.vr,
-                    au: form.au,
-                    kr: form.kr,
-                },
-                {
-                    onSuccess: () => {
-                        Swal.fire({
-                            title: "Success!",
-                            text: "Ticket saved successfully.",
-                            icon: "success",
-                            showConfirmButton: false,
-                            timer: 2000,
-                        });
-                        loading.value = false;
-                    },
-                    onError: (error) => {
-                        loading.value = false;
-                        props.errors = error;
-                    },
-                }
-            );
-        }
-
         return {
             form,
-            submit,
         }
     }
 }
