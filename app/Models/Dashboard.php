@@ -10,4 +10,9 @@ class Dashboard extends Model
     use HasFactory;
     protected $guarded = [
     ];
+    // No primary key and no auto-incrementing
+    public $incrementing = false;
+
+    // If your table has no primary key at all, you can leave this as null
+    protected $primaryKey = null;
 }

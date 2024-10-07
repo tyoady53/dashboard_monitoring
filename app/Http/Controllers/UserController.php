@@ -59,7 +59,7 @@ class UserController extends Controller
         // dd($request,$id);
 
         User::create([
-            'id'            => $id,
+            // 'id'            => $id,
             'name'          => strtoupper($request->name),
             'email'         => $request->email,
             'password'      => bcrypt($request->password),

@@ -52,13 +52,23 @@ class MonitoringController extends Controller
     public function store(Request $request)
     {
         if(count($request->data) > 0) {
-            Dashboard::truncate();
+            $cust_name = '';
+            $cust_branch = '';
+
+            // Dashboard::truncate();
             for($i=0; $i < count($request->data); $i ++) {
+                $cust_name_old = $cust_name; $cust_branch_old = $cust_branch;
+                $cust_name = strtoupper($request->data[0]['cust_name']);
+                $cust_branch = $request->data[0]['cust_branch'];
+                if($cust_name_old != $cust_name && $cust_branch_old != $cust_branch) {
+                    Dashboard::where('cust_name',$cust_name)->where('cust_branch',$cust_branch)->delete();
+                    // $last =
+                }
                 Dashboard::create([
-                    "id"            => $i + 1,
+                    // "id"            => $i + 1,
                     "dttm"          => $request->data[$i]['dttm'],
-                    "cust_name"     => strtoupper($request->data[$i]['cust_name']),
-                    "cust_branch"   => $request->data[$i]['cust_branch'],
+                    "cust_name"     => $cust_name,
+                    "cust_branch"   => $cust_branch,
                     "regno"         => $request->data[$i]['regno'],
                     "type"          => $request->data[$i]['type'],
                     "sc"            => $request->data[$i]['sc'],
@@ -110,17 +120,19 @@ class MonitoringController extends Controller
     public function get_data($email)
     {
         $user = User::with('has_company')->where('email',$email)->first();
-        // dd($email,$user->has_company->customer_id);
-        $array = Dashboard::where('cust_name',$user->has_company->customer_id)->get();
+        // dd($email,$user->has_company->customer_id,$user->customer_branch);
+        $array = Dashboard::where('cust_name',$user->has_company->customer_id)->where('cust_branch',$user->customer_branch)->get();
         $data = array();
         $idx_cito = 0;
         $idx_non = 0;
         $idx_kritis = 0;
         $arr_type = ['cito', 'noncito'];
 
+        $data['cust_name'] = $array[0]->cust_name;
+        $data['cust_branch'] = '1';
+
         foreach($array as $index=>$loop) {
             if($loop->cust_name) {
-
                 // Speciment Collection
                 $spe_col = null;
                 $spe_col = ['regno' => str_pad($loop['regno'],4,"0",STR_PAD_LEFT), 'type' => $loop['sc']];
@@ -255,12 +267,7 @@ class MonitoringController extends Controller
                     $data['kr'][$idx_kritis] = $kritis;
                     $idx_kritis += 1;
                 }
-
             }
-
-            // dd($data_);
-            $data['cust_name'] = $loop->cust_name;
-            $data['cust_branch'] = '1';
         }
         // $data['monitoring'] = $data_;
 

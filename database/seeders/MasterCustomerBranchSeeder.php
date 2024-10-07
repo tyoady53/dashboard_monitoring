@@ -18,7 +18,7 @@ class MasterCustomerBranchSeeder extends Seeder
     {
         //
         CustomerBranch::create([
-            'id' => '1',
+            // 'id' => '1',
             'outlet_id'     => '0001',
             'customer_id'   => '1',
             'branch_name'   => 'Wynacom',

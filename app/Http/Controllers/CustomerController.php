@@ -45,15 +45,13 @@ class CustomerController extends Controller
         }
 
         Customer::create([
-            'id'            => $id,
+            // 'id'            => $id,
             'customer_id'   => strtoupper($request->customer_id),
             'customer_name' => strtoupper($request->customer_name),
             'is_show'       => '1',
         ]);
 
         return redirect()->route('apps.customer.index');
-        // strtoupper("Hello WORLD!")
-        dd($request,$customer,$id);
     }
 
     public function store_branch(Request $request) {
@@ -66,7 +64,7 @@ class CustomerController extends Controller
         // outlet_id : '',
         //     branch_name : '',
         CustomerBranch::create([
-            'id'            => $id,
+            // 'id'            => $id,
             'customer_id'   => strtoupper($request->customer_id),
             'outlet_id'     => strtoupper($request->outlet_id),
             'branch_name'   => strtoupper($request->branch_name),
@@ -74,7 +72,6 @@ class CustomerController extends Controller
         ]);
 
         return redirect()->route('apps.customer.index');
-        dd($request);
     }
 
     /**

@@ -17,7 +17,7 @@ class MasterCustomerSeeder extends Seeder
     public function run()
     {
         Customer::create([
-            'id' => '1',
+            // 'id' => '1',
             'customer_id'   => 'WYN',
             'customer_name' => 'Wynacom',
             'is_show'       => '1'

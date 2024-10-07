@@ -13,6 +13,6 @@ class Customer extends Model
 
     public function branch()
     {
-        return $this->hasMany(CustomerBranch::class , 'customer_id','id');
+        return $this->hasMany(CustomerBranch::class , 'customer_id');
     }
 }

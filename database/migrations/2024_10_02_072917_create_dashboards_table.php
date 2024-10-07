@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('dashboards', function (Blueprint $table) {
-            $table->bigInteger('id')->primary();
+            // $table->bigInteger('id')->primary();
             $table->timestamp('dttm');
             $table->string('cust_name',50);
             $table->string('cust_branch',50);
