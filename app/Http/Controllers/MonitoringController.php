@@ -119,8 +119,7 @@ class MonitoringController extends Controller
 
     public function get_data($email)
     {
-        $user = User::with('has_company')->where('email',$email)->first();
-        // dd($email,$user->has_company->customer_id,$user->customer_branch);
+        $user = User::with('has_company','has_branch')->where('email',$email)->first();
         $array = Dashboard::where('cust_name',$user->has_company->customer_id)->where('cust_branch',$user->customer_branch)->get();
         $data = array();
         $idx_cito = 0;
@@ -128,8 +127,10 @@ class MonitoringController extends Controller
         $idx_kritis = 0;
         $arr_type = ['cito', 'noncito'];
 
-        $data['cust_name'] = $array[0]->cust_name;
-        $data['cust_branch'] = '1';
+        $data['cust_name'] = $user->has_company->customer_name;
+        $data['cust_branch'] = $user->has_branch->branch_name;
+
+        // dd($data['cust_branch']);
 
         foreach($array as $index=>$loop) {
             if($loop->cust_name) {

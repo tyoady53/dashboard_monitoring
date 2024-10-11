@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="fade-in">
                 <div class="text-center">
-                    <h4>Dashboard Monitoring {{ table_data.cust_name }}</h4>
+                    <h4>Dashboard Monitoring {{ table_data.cust_branch }}</h4>
                 </div>
                 <div class="card border-0 rounded-3 shadow-border-top-purple mt-4">
                     <div class="card-body">

@@ -11,7 +11,7 @@ class Customer extends Model
     protected $guarded = [
     ];
 
-    public function branch()
+    public function has_branch()
     {
         return $this->hasMany(CustomerBranch::class , 'customer_id');
     }
