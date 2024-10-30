@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Dashboard extends Model
 {
     use HasFactory;
+    protected $table = 'dash_monitoring_regnos';
     protected $guarded = [
     ];
     // No primary key and no auto-incrementing

@@ -16,6 +16,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(MasterCustomerSeeder::class);
         $this->call(MasterCustomerBranchSeeder::class);
+        $this->call(RolesTableSeeder::class);
+        $this->call(PermissionsTableSeeder::class);
         $this->call(UserTableSeeder::class);
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

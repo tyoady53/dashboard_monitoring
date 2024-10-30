@@ -15,6 +15,7 @@ class MonitoringController extends Controller
      */
     public function index()
     {
+        // dd(auth()->user()->getAllPermissions());
         return Inertia::render('Apps/Dashboard/Monitoring');
     }
 

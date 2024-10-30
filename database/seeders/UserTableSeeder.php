@@ -26,5 +26,17 @@ class UserTableSeeder extends Seeder
             'customer_id'       => '1',
             'customer_branch'   => '1',
         ]);
+
+        //get all permissions
+        $permissions = Permission::all();
+
+        //get role admin
+        $role = Role::find(1);
+
+        //assign permission to role
+        $role->syncPermissions($permissions);
+
+        //assign role to user
+        $user->assignRole($role);
     }
 }

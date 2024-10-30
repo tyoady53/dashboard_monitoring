@@ -19,7 +19,10 @@ class CustomerController extends Controller
             return Inertia::render('Forbidden403', []);
         }
 
-        $customers = Customer::with('branch')->orderBy('customer_name')->get();
+        $customers = Customer::with('has_branch')->orderBy('customer_name')->get();
+        // if(!count($customers)) {
+        //     $customers = [];
+        // }
         return Inertia::render('Apps/Customer/Index', [
             'customers'     => $customers
         ]);

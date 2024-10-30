@@ -85,7 +85,6 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::where('id',$id)->first();
-        // dd($user);
         return Inertia::render('Apps/User/Edit', [
             'user'     => $user
         ]);
@@ -122,5 +121,24 @@ class UserController extends Controller
         //     'message'   => 'Monitoring Data',
         //     'data'      => $branches
         // ]);
+    }
+
+    public function get_permissions()
+    {
+        $array_permission = array();
+        foreach (Auth::user()->getAllPermissions() as $key => $permission) {
+            array_push($array_permission, $permission->name);
+        }
+
+        if(count($array_permission)) {
+            $return['status']   = 200;
+            $return['data']     = $array_permission;
+        } else {
+            $return['status']   = 500;
+        }
+
+        return response()->json(
+            $return
+        );
     }
 }

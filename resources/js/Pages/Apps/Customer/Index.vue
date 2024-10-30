@@ -30,7 +30,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="(branch, idx) in customer.branch" :key="index">
+                                    <tr v-for="(branch, idx) in customer.has_branch" :key="index">
                                         <td class="text-end" >{{ index+1 }}</td>
                                         <td>{{ branch.outlet_id }}</td>
                                         <td>{{ branch.branch_name }}</td>

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dashboards', function (Blueprint $table) {
+        Schema::create('dash_monitoring_regnos', function (Blueprint $table) {
             // $table->bigInteger('id')->primary();
             $table->timestamp('dttm');
             $table->string('cust_name',50);
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dashboards');
+        Schema::dropIfExists('dash_monitoring_regnos');
     }
 };
