@@ -4,7 +4,6 @@
             <img src="/wynahealth.png" class="p-1" width="200">
         </Link>
       <ul class="c-header-nav ml-auto mr-4">
-
         <li class="c-header-nav-item dropdown">
           <a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button"
             aria-haspopup="true" aria-expanded="false">
@@ -13,7 +12,7 @@
             </div>
           </a>
           <div class="dropdown-menu dropdown-menu-right pt-0 mb-0 pb-0">
-            <Link :href="`/user/${$page.props.auth.user.id}`" class="dropdown-item" role="button">
+            <Link :href="`/user/my_profile`" class="dropdown-item" role="button">
                 <i class="fa fa-user-circle"></i>
                 My Profile
             </Link>
@@ -76,7 +75,6 @@
         </li>
       </ul>
     </header>
-    <!-- {{ permissions }} -->
   </template>
   <script>
 

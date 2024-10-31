@@ -15,6 +15,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
+
         if(Auth::user()->id != 1) {
             return Inertia::render('Forbidden403', []);
         }

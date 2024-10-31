@@ -36,7 +36,7 @@
                                                 </span>
                                             </td>
                                             <td class="text-center">
-                                                <Link :href="`/apps/roles/${role.id}/edit`" v-if="permissions.includes('roles.edit')" class="btn btn-success btn-sm me-2"><i class="fa fa-pencil-alt me-1"></i> EDIT</Link>
+                                                <Link :href="`/role/${role.id}`" v-if="permissions.includes('roles.edit')" class="btn btn-success btn-sm me-2"><i class="fa fa-pencil-alt me-1"></i> EDIT</Link>
                                                 <!-- <button @click.prevent="destroy(role.id)" v-if="hasAnyPermission(['roles.delete'])" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> DELETE</button> -->
                                         </td>
                                     </tr>

@@ -110,7 +110,7 @@
 
             const submit = () => {
 
-                Inertia.put(`/apps/roles/${props.role.id}`, {
+                Inertia.post(`/role/update/${props.role.id}`, {
                     name: form.name,
                     permissions: form.permissions,
                 }, {

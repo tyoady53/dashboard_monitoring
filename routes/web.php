@@ -33,6 +33,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/create', [UserController::class, 'create'])->name('apps.user.create');
         // Route::get('/edit', [UserController::class, 'edit'])->name('apps.user.edit');
         Route::get('/get_permissions', [UserController::class, 'get_permissions'])->name('apps.user.get_permissions');
+        Route::get('/my_profile', [UserController::class, 'my_profile'])->name('apps.user.my_profile');
         Route::get('/{id}', [UserController::class, 'edit'])->name('apps.user.edit');
         Route::post('/', [UserController::class, 'store'])->name('apps.user.store');
         Route::post('/update/{id}', [UserController::class, 'update'])->name('apps.user.update');

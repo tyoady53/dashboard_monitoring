@@ -22,23 +22,29 @@
                             <table class="table table-striped table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th scope="col" class="text-center" style="width:5opx">No</th>
-                                        <th scope="col" class="text-center" style="width:25%"> User Name </th>
-                                        <th scope="col" class="text-center" style="width:25%"> Email </th>
-                                        <th scope="col" class="text-center" style="width:20%">Customer</th>
-                                        <th scope="col" class="text-center" style="width:20%">Branch</th>
+                                        <th scope="col" class="text-center" style="width:3%">No</th>
+                                        <th scope="col" class="text-center" style="width:22 %"> User Name </th>
+                                        <th scope="col" class="text-center" style="width:20%"> Email </th>
+                                        <th scope="col" class="text-center" style="width:15%">Customer</th>
+                                        <th scope="col" class="text-center" style="width:15%">Branch</th>
+                                        <th scope="col" class="text-center" style="width:15%">Role</th>
                                         <th scope="col" class="text-center" style="width:10%">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr v-for="(user, index) in users.data" :key="index">
-                                        <td>{{ index + 1 }}</td>
+                                        <td class="text-end">{{ index + 1 }}</td>
                                         <td>{{ user.name }}</td>
                                         <td>{{ user.email }}</td>
                                         <td>{{ user.has_company.customer_name }}</td>
                                         <td>{{ user.has_branch.branch_name }}</td>
+                                        <td>
+                                            <span v-for="(role, index) in user.roles" :key="index" class="badge badge-primary shadow border-0 ms-2 mb-2">
+                                                {{ role.name }}
+                                            </span>
+                                        </td>
                                         <td class="text-center">
-                                            <Link :href="`/apps/users/${user.id}/edit`" class="btn btn-success btn-sm me-2"><i class="fa fa-pencil-alt me-1"></i> EDIT</Link>
+                                            <Link :href="`/user/${user.id}`" class="btn btn-success btn-sm me-2"><i class="fa fa-pencil-alt me-1"></i> EDIT</Link>
                                         </td>
                                     </tr>
                                 </tbody>

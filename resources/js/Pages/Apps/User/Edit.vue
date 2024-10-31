@@ -55,7 +55,12 @@
                                     </div>
                                     <hr>
                                     <div class="mb-3">
-
+                                        <label class="fw-bold">Role</label>
+                                        <br>
+                                        <div class="form-check form-check-inline" v-for="(role, index) in roles" :key="index">
+                                            <input class="form-check-input" type="checkbox" v-model="form.roles" :value="role.name" :id="`check-${role.id}`">
+                                            <label class="form-check-label" :for="`check-${role.id}`">{{ role.name }}</label>
+                                        </div>
                                         <div class="row mt-3">
                                             <div class="col-12">
                                                 <button class="btn btn-primary shadow-sm rounded-sm" type="submit">SAVE</button>
@@ -114,6 +119,7 @@
                 name: props.user.name,
                 email: props.user.email,
                 password: '',
+                roles:[],
                 password_confirmation: '',
             });
 
@@ -123,6 +129,7 @@
                     name: form.name,
                     email: form.email,
                     password: form.password,
+                    roles: form.roles,
                     password_confirmation: form.password_confirmation,
                 }, {
                     onSuccess: () => {

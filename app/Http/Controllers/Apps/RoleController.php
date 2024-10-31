@@ -59,7 +59,7 @@ class RoleController extends Controller
 
         $role->givePermissionTo($request->permissions);
 
-        return redirect()->route('apps.roles.index');
+        return redirect()->route('apps.role.index');
     }
 
     public function edit($id)
@@ -74,18 +74,19 @@ class RoleController extends Controller
         ]);
     }
 
-    public function update(Request $request, Role $role)
+    public function update(Request $request,$id)
     {
         $this->validate($request, [
             'name'          => 'required',
             'permissions'   => 'required',
         ]);
+        $role = Role::where('id',$id)->first();
 
         $role->update(['name' => $request->name]);
 
         $role->syncPermissions($request->permissions);
 
-        return redirect()->route('apps.roles.index');
+        return redirect()->route('apps.role.index');
     }
 
     public function destroy($id)
@@ -94,6 +95,6 @@ class RoleController extends Controller
 
         $role->delete();
 
-        return redirect()->route('apps.roles.index');
+        return redirect()->route('apps.role.index');
     }
 }

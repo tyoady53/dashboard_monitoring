@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -16,13 +17,31 @@ class UserController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->id != 1) {
-            return Inertia::render('Forbidden403', []);
+        // dd(Auth::user()->roles[0]['id']);
+        if(auth()){
+            $user_id = auth()->user()->id;
+        }
+        $a = '';
+        $user = User::where('id',$user_id)->first();
+        $permissions = $user->getPermissionsViaRoles();
+        for ($j = 0; $j < $permissions->count(); $j++){
+            if(str_contains($permissions[$j]['name'], 'index')){
+                $a .= $permissions[$j]['name'].', ';
+            }
+        }
+        if(str_contains($a, 'users.index')){
+            if(Auth::user()->roles[0]['id'] == 1) {
+                $users = User::with('has_company','has_branch','roles')->orderBy('name')->paginate(25);
+            } else {
+                $users = User::with('has_company','has_branch','roles')->where('customer_id',Auth::user()->customer_id)->where('customer_branch',Auth::user()->customer_branch)->orderBy('name')->paginate(25);
+            }
+
+            return Inertia::render('Apps/User/Index', [
+                'users'     => $users
+            ]);
         }
 
-        $users = User::with('has_company','has_branch')->orderBy('name')->paginate(25);
-        return Inertia::render('Apps/User/Index', [
-            'users'     => $users
+        return Inertia::render('Forbidden403', [
         ]);
     }
 
@@ -31,9 +50,16 @@ class UserController extends Controller
      */
     public function create()
     {
-        $companies = Customer::where('is_show',1)->get();
+        if(Auth::user()->roles[0]['id'] == 1) {
+            $companies  = Customer::where('is_show',1)->get();
+            $roles      = Role::all();
+        } else {
+            $companies  = Customer::where('is_show',1)->where('id',Auth::user()->customer_id)->get();
+            $roles      = Role::where('id','>',1)->get();
+        }
         return Inertia::render('Apps/User/Create', [
-            'companies'     => $companies
+            'companies'     => $companies,
+            'roles'         => $roles,
         ]);
     }
 
@@ -67,6 +93,8 @@ class UserController extends Controller
             'customer_branch' => $request->branch,
         ]);
 
+        $user->assignRole($request->roles);
+
         return redirect()->route('apps.user.index');
         // dd($request);
     }
@@ -84,8 +112,38 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+        if(auth()){
+            $user_id = auth()->user()->id;
+        }
+        $a = '';
+        $user = User::where('id',$user_id)->first();
+        $permissions = $user->getPermissionsViaRoles();
+        for ($j = 0; $j < $permissions->count(); $j++){
+            if(str_contains($permissions[$j]['name'], 'edit')){
+                $a .= $permissions[$j]['name'].', ';
+            }
+        }
+        if(str_contains($a, 'users.edit')){
+            $user = User::where('id',$id)->first();
+            if(Auth::user()->roles[0]['id'] == 1) {
+                $roles      = Role::all();
+            } else {
+                $roles      = Role::where('id','>',1)->get();
+            }
+            return Inertia::render('Apps/User/Edit', [
+                'user'      => $user,
+                'roles'     => $roles
+            ]);
+        }
+
+        return Inertia::render('Forbidden403', [
+        ]);
+    }
+
+    public function my_profile() {
+        $id = auth()->user()->id;
         $user = User::where('id',$id)->first();
-        return Inertia::render('Apps/User/Edit', [
+        return Inertia::render('Apps/User/MyProfile', [
             'user'     => $user
         ]);
     }
@@ -95,15 +153,21 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $this->validate($request, [
-            'password'  =>  'required|confirmed',
-        ]);
+        // $this->validate($request, [
+        //     'password'  =>  'required|confirmed',
+        // ]);
 
         $user = User::where('id',$id)->first();
 
-        $user->update([
-            'password'      => bcrypt($request->password)
-        ]);
+        if($request->password) {
+            $user->update([
+                'password'      => bcrypt($request->password)
+            ]);
+        }
+
+        if($request->roles) {
+            $user->syncRoles($request->roles);
+        }
 
         return redirect()->route('apps.index');
         // dd($request,$id);

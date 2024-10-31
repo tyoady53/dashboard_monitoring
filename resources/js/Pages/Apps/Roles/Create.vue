@@ -108,7 +108,7 @@
             });
 
             const submit = () => {
-                Inertia.post('/apps/roles', {
+                Inertia.post('/role', {
                     name: form.name,
                     permissions: form.permissions,
                 }, {
