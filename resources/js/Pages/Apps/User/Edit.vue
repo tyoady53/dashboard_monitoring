@@ -53,6 +53,26 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="fw-bold">Company</label>
+                                            <select class="form-control" v-model="form.company" @change="getBranch">
+                                                <option v-for="company in companies" :value="company.id">{{ company.customer_name }}</option>
+                                            </select>
+                                            <div v-if="errors.company" class="alert alert-danger">
+                                                {{ errors.company }}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="fw-bold">Branch</label>
+                                            <select class="form-control" v-model="form.branch" @change="getBranch">
+                                                <option v-for="branch in branches" :value="branch.id">{{ branch.branch_name }}</option>
+                                            </select>
+                                            <div v-if="errors.branch" class="alert alert-danger">
+                                                {{ errors.branch }}
+                                            </div>
+                                        </div>
+                                    </div>
                                     <hr>
                                     <div class="mb-3">
                                         <label class="fw-bold">Role</label>
@@ -104,22 +124,48 @@
             errors: Object,
             roles: Array,
             user:Object,
+            companies: Array,
+            user_roles: Array,
         },
 
         data: () => ({
             branches : [],
             UrlOrigin : window.location.origin,
+            someProperty : null,
         }),
 
+        mounted() {
+            this.check_branch();
+        },
+
         methods: {
+            getBranch() {
+                console.log('get Branch');
+                axios
+                .get(this.UrlOrigin + `/api/dashboard/get_branch/` + this.form.company)
+                .then((response) => {
+                    this.branches = response.data.data;
+                })
+                .catch((error) => {
+                    console.log(error.response.data);
+                });
+            },
+
+            check_branch() {
+                if(this.branches.length == 0) {
+                    this.getBranch();
+                }
+            },
         },
 
         setup(props) {
             const form = reactive({
                 name: props.user.name,
                 email: props.user.email,
+                company : props.user.customer_id,
+                branch : props.user.customer_branch,
                 password: '',
-                roles:[],
+                roles:props.user_roles.map(obj => obj.name),
                 password_confirmation: '',
             });
 

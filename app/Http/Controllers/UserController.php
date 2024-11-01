@@ -126,13 +126,24 @@ class UserController extends Controller
         if(str_contains($a, 'users.edit')){
             $user = User::where('id',$id)->first();
             if(Auth::user()->roles[0]['id'] == 1) {
+                $companies  = Customer::where('is_show',1)->get();
                 $roles      = Role::all();
+                $user_role  = User::with('roles')->where('id',$id)->first();
             } else {
+                $companies  = Customer::where('is_show',1)->where('id',Auth::user()->customer_id)->get();
                 $roles      = Role::where('id','>',1)->get();
+                $user_role  = User::with('roles')->where('id',$id)->first();
             }
+            $user_roles = array();
+            foreach($user_role->roles as $role) {
+                array_push($user_roles,['id'=>$role->id,'name'=>$role->name]);
+            }
+            // dd($user_roles);
             return Inertia::render('Apps/User/Edit', [
                 'user'      => $user,
-                'roles'     => $roles
+                'roles'     => $roles,
+                'companies' => $companies,
+                'user_roles'=> $user_roles,
             ]);
         }
 
