@@ -79,7 +79,7 @@ class PermissionController extends Controller
             }
         }
 
-        return redirect()->route('apps.permissions.index');
+        return redirect()->route('apps.permission.index');
     }
 
     /**

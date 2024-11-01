@@ -22454,9 +22454,8 @@ __webpack_require__.r(__webpack_exports__);
     Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_3__.Head
   },
   props: {
-    lastRegno: Number,
-    newRegno: Number,
-    auth: Object
+    auth: Object,
+    permissions: Array
   },
   data: function data() {
     return {
@@ -22465,7 +22464,7 @@ __webpack_require__.r(__webpack_exports__);
       time: '',
       interval: '',
       reload: '',
-      refreshRate: 1,
+      refreshRate: 0,
       dataLength: 15,
       timeCount: 0
     };
@@ -22513,8 +22512,11 @@ __webpack_require__.r(__webpack_exports__);
         console.log('Time Count : ' + this.timeCount);
         console.log('Refresh Interval : ' + this.refreshRate);
       }
-      if (this.timeCount == this.refreshRate) {
-        this.get_monitoring_data();
+      if (this.refreshRate > 0) {
+        if (this.timeCount == this.refreshRate) {
+          console.log('Check Time');
+          this.get_monitoring_data();
+        }
       }
       // console.log(Math.floor(Date.now() / 1000) % 60);
     },
@@ -22756,7 +22758,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     deletePermission: function deletePermission(permissionId) {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__.Inertia["delete"]("/apps/permissions/".concat(permissionId)).then(function (response) {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__.Inertia["delete"]("/permission/".concat(permissionId)).then(function (response) {
         sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().fire({
           icon: 'success',
           title: 'Permission Deleted',
@@ -22764,7 +22766,7 @@ __webpack_require__.r(__webpack_exports__);
           showConfirmButton: false,
           timer: 1500 // Automatically close after 1.5 seconds
         });
-        window.location.href = '/permissions/index';
+        window.location.href = '/permission/index';
       })["catch"](function (error) {
         sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().fire({
           icon: 'error',
@@ -22792,7 +22794,7 @@ __webpack_require__.r(__webpack_exports__);
       additional_name: []
     });
     var submit = function submit() {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__.Inertia.post('/apps/permissions', {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__.Inertia.post('/permission', {
         index: form.index,
         edit: form.edit,
         "delete": form["delete"],
@@ -24655,6 +24657,7 @@ var _hoisted_1 = {
   "class": "c-main"
 };
 var _hoisted_2 = {
+  key: 0,
   "class": "container-fluid"
 };
 var _hoisted_3 = {
@@ -25006,7 +25009,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return _cache[2] || (_cache[2] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("title", null, "Dashboard - Wynacom Information System", -1 /* HOISTED */)]);
     }),
     _: 1 /* STABLE */
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", null, "Dashboard Monitoring " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.table_data.cust_branch), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Last Update : " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.formatCompat(_ctx.last_update)) + " ", 1 /* TEXT */), _cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Time : " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.time), 1 /* TEXT */)]), _ctx.table_data ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_10, [_cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", {
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_1, [$props.permissions.original.includes('dash_monitoring.regno') ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"container-fluid\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", null, "Dashboard Monitoring " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.table_data.cust_branch), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Last Update : " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.formatCompat(_ctx.last_update)) + " ", 1 /* TEXT */), _cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Time : " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.time), 1 /* TEXT */)]), _ctx.table_data ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_10, [_cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", {
     "class": "text-center"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
     colspan: "2"
@@ -25094,7 +25097,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "text-center"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "KRITIS")])], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.table_data.kr, function (data, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", _hoisted_71, [data.type == '1' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("td", _hoisted_72, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(data.regno), 1 /* TEXT */)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
-  }), 256 /* UNKEYED_FRAGMENT */))])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" The Modal Refresh Rate "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_73, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_74, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_75, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Modal Header "), _cache[12] || (_cache[12] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  }), 256 /* UNKEYED_FRAGMENT */))])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" The Modal Refresh Rate "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_73, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_74, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_75, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Modal Header "), _cache[12] || (_cache[12] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "modal-header"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
     "class": "modal-title"

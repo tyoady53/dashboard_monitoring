@@ -6,6 +6,7 @@ use App\Models\Dashboard;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class MonitoringController extends Controller
@@ -16,7 +17,11 @@ class MonitoringController extends Controller
     public function index()
     {
         // dd(auth()->user()->getAllPermissions());
-        return Inertia::render('Apps/Dashboard/Monitoring');
+        $permissions = $this->get_permissions();
+        // dd($permissions);
+        return Inertia::render('Apps/Dashboard/Monitoring', [
+            'permissions'     => $permissions
+        ]);
     }
 
     /**
@@ -278,5 +283,25 @@ class MonitoringController extends Controller
             'message'   => 'Monitoring Data',
             'data'      => $data
         ]);
+    }
+
+    public function get_permissions()
+    {
+        $array_permission = array();
+        foreach (Auth::user()->getAllPermissions() as $key => $permission) {
+            array_push($array_permission, $permission->name);
+        }
+
+        if(count($array_permission)) {
+            $return['status']   = 200;
+            $return['data']     = $array_permission;
+        } else {
+            $return['status']   = 500;
+            $array_permission = [];
+        }
+
+        return response()->json(
+            $array_permission
+        );
     }
 }

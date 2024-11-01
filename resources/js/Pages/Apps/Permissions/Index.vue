@@ -179,7 +179,7 @@
             },
 
             deletePermission(permissionId) {
-                Inertia.delete(`/apps/permissions/${permissionId}`).then(response => {
+                Inertia.delete(`/permission/${permissionId}`).then(response => {
                     Swal.fire({
                         icon: 'success',
                         title: 'Permission Deleted',
@@ -187,7 +187,7 @@
                         showConfirmButton: false,
                         timer: 1500 // Automatically close after 1.5 seconds
                     });
-                    window.location.href = '/permissions/index';
+                    window.location.href = '/permission/index';
                 }).catch(error => {
                     Swal.fire({
                         icon: 'error',
@@ -218,7 +218,7 @@
             });
 
             const submit = () => {
-            Inertia.post('/apps/permissions', {
+            Inertia.post('/permission', {
                 index: form.index,
                 edit: form.edit,
                 delete: form.delete,

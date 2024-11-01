@@ -3,7 +3,8 @@
         <title>Dashboard - Wynacom Information System</title>
     </Head>
     <main class="c-main">
-        <div class="container-fluid">
+        <div class="container-fluid" v-if="permissions.original.includes('dash_monitoring.regno')">
+        <!-- <div class="container-fluid"> -->
             <div class="fade-in">
                 <div class="text-center">
                     <h4>Dashboard Monitoring {{ table_data.cust_branch }}</h4>
@@ -518,9 +519,8 @@ export default {
     },
 
     props: {
-        lastRegno : Number,
-        newRegno : Number,
-        auth: Object
+        auth: Object,
+        permissions : Array,
     },
 
     data: () => ({
@@ -529,7 +529,7 @@ export default {
         time: '',
         interval: '',
         reload: '',
-        refreshRate: 1,
+        refreshRate: 0,
         dataLength: 15,
         timeCount: 0,
     }),
@@ -584,8 +584,11 @@ export default {
                 console.log('Refresh Interval : '+this.refreshRate);
             }
 
-            if(this.timeCount == this.refreshRate) {
-                this.get_monitoring_data();
+            if(this.refreshRate > 0) {
+                if(this.timeCount == this.refreshRate) {
+                    console.log('Check Time');
+                    this.get_monitoring_data();
+                }
             }
             // console.log(Math.floor(Date.now() / 1000) % 60);
         },
