@@ -1,6 +1,6 @@
 <template>
     <Head>
-        <title>Login Account - Wynacom Information System</title>
+        <title>Login Account - Dashboard Monitoring</title>
     </Head>
     <div class="col-md-6">
         <div class="fade-in">
