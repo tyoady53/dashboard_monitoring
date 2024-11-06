@@ -14,22 +14,31 @@
                             <div class="card-body">
                                 <form @submit.prevent="submit">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="mb-3">
                                                 <label class="fw-bold">Full Name</label>
-                                                <input class="form-control" v-model="form.name" :class="{ 'is-invalid': errors.name }" type="text" placeholder="Full Name" readonly>
+                                                <input class="form-control" v-model="form.name" :class="{ 'is-invalid': errors.name }" type="text" placeholder="Full Name">
                                             </div>
                                             <div v-if="errors.name" class="alert alert-danger">
                                             {{ errors.name }}
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="mb-3">
                                                 <label class="fw-bold">Email</label>
-                                                <input class="form-control" v-model="form.email" :class="{ 'is-invalid': errors.email }" type="email" placeholder="Email" readonly>
+                                                <input class="form-control" v-model="form.email" :class="{ 'is-invalid': errors.email }" type="email" placeholder="Email">
                                             </div>
                                             <div v-if="errors.email" class="alert alert-danger">
                                             {{ errors.email }}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label class="fw-bold">Username</label>
+                                                <input class="form-control" v-model="form.username" :class="{ 'is-invalid': errors.username }" type="text" placeholder="username">
+                                            </div>
+                                            <div v-if="errors.username" class="alert alert-danger">
+                                            {{ errors.username }}
                                             </div>
                                         </div>
                                     </div>
@@ -84,7 +93,7 @@
                                         <div class="row mt-3">
                                             <div class="col-12">
                                                 <button class="btn btn-primary shadow-sm rounded-sm" type="submit">SAVE</button>
-                                                <button class="btn btn-warning shadow-sm rouned-sm ms-3" type="reset">RESET</button>
+                                                <button class="btn btn-warning shadow-sm rounded-sm ms-3" type="reset">RESET</button>
                                             </div>
                                         </div>
                                     </div>
@@ -162,6 +171,7 @@
             const form = reactive({
                 name: props.user.name,
                 email: props.user.email,
+                username: props.user.username,
                 company : props.user.customer_id,
                 branch : props.user.customer_branch,
                 password: '',

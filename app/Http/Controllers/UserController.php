@@ -71,9 +71,10 @@ class UserController extends Controller
         $this->validate($request, [
             'name'      =>  'required',
             'email'     =>  'required|unique:users',
+            'username'  =>  'required|unique:users',
             'password'  =>  'required|confirmed',
-            'branch'  =>  'required',
-            'company'  =>  'required'
+            'branch'    =>  'required',
+            'company'   =>  'required'
         ]);
 
         $id = 1;
@@ -88,7 +89,8 @@ class UserController extends Controller
             // 'id'            => $id,
             'name'          => strtoupper($request->name),
             'email'         => $request->email,
-            'password'      => bcrypt($request->password),
+            'password'      => md5($request->password),
+            'username'      => $request->username,
             'customer_id'   => $request->company,
             'customer_branch' => $request->branch,
         ]);
@@ -164,15 +166,11 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // $this->validate($request, [
-        //     'password'  =>  'required|confirmed',
-        // ]);
-
         $user = User::where('id',$id)->first();
 
         if($request->password) {
             $user->update([
-                'password'      => bcrypt($request->password)
+                'password'      => md5($request->password)
             ]);
         }
 
