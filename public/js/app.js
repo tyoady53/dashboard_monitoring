@@ -22500,19 +22500,21 @@ __webpack_require__.r(__webpack_exports__);
       return result;
     },
     formatCompat: function formatCompat(dates) {
-      var date = new Date(dates);
-      var ms = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-      var result = (date.getDate() > 9 ? "" : "0") + date.getDate() + "-" + ms[date.getMonth()] + "-" + date.getFullYear() + "/" + (date.getHours() > 9 ? "" : "0") + date.getHours() + ":" + (date.getMinutes() > 9 ? "" : "0") + date.getMinutes();
-      return result;
+      if (dates) {
+        var date = new Date(dates);
+        var ms = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        var result = (date.getDate() > 9 ? "" : "0") + date.getDate() + "-" + ms[date.getMonth()] + "-" + date.getFullYear() + "/" + (date.getHours() > 9 ? "" : "0") + date.getHours() + ":" + (date.getMinutes() > 9 ? "" : "0") + date.getMinutes();
+        return result;
+      }
     },
     checkTime: function checkTime() {
-      if (Math.floor(Date.now() / 1000) % 60 == 0) {
-        // this.get_monitoring_data();
-        this.timeCount += 1;
-        console.log('Time Count : ' + this.timeCount);
-        console.log('Refresh Interval : ' + this.refreshRate);
-      }
       if (this.refreshRate > 0) {
+        if (Math.floor(Date.now() / 1000) % 60 == 0) {
+          // this.get_monitoring_data();
+          this.timeCount += 1;
+          console.log('Time Count : ' + this.timeCount);
+          console.log('Refresh Interval : ' + this.refreshRate);
+        }
         if (this.timeCount == this.refreshRate) {
           console.log('Check Time');
           this.get_monitoring_data();
@@ -22523,11 +22525,12 @@ __webpack_require__.r(__webpack_exports__);
     get_monitoring_data: function get_monitoring_data() {
       var _this2 = this;
       console.log('Loaded : ' + Date.now());
-      this.last_update = Date.now();
+      // this.last_update = Date.now();
       this.timeCount = 0;
       var UrlOrigin = window.location.origin;
       axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(UrlOrigin + "/api/dashboard/get_data/".concat(this.auth.user.email)).then(function (response) {
         _this2.table_data = response.data.data;
+        _this2.last_update = response.data.data.last_update;
       })["catch"](function (error) {
         return sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().fire({
           title: "Error!",
@@ -22539,6 +22542,9 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     changeInterval: function changeInterval() {
+      if (this.refreshRate > 0) {
+        this.timeCount == this.refreshRate;
+      }
       console.log('Change Refresh Interval to : ' + this.refreshRate);
     }
   },

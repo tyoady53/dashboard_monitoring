@@ -135,6 +135,11 @@ class MonitoringController extends Controller
 
         $data['cust_name'] = $user->has_company->customer_name;
         $data['cust_branch'] = $user->has_branch->branch_name;
+        if(count($array)){
+            $data['last_update'] = $array[0]->dttm;
+        } else {
+            $data['last_update'] = null;
+        }
 
         // dd($data['cust_branch']);
 

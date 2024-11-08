@@ -570,21 +570,22 @@ export default {
         },
 
         formatCompat(dates) {
-            var date = new Date(dates);
-            var ms = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",];
-            var result = (date.getDate() > 9 ? "" : "0") +date.getDate() + "-" + ms[date.getMonth()] + "-" + date.getFullYear() + "/" + (date.getHours() > 9 ? "" : "0") + date.getHours() + ":" + (date.getMinutes() > 9 ? "" : "0") + date.getMinutes();
-            return result;
+            if(dates) {
+                var date = new Date(dates);
+                var ms = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",];
+                var result = (date.getDate() > 9 ? "" : "0") +date.getDate() + "-" + ms[date.getMonth()] + "-" + date.getFullYear() + "/" + (date.getHours() > 9 ? "" : "0") + date.getHours() + ":" + (date.getMinutes() > 9 ? "" : "0") + date.getMinutes();
+                return result;
+            }
         },
 
         checkTime() {
-            if((Math.floor(Date.now() / 1000) % 60) == 0) {
-                // this.get_monitoring_data();
-                this.timeCount += 1;
-                console.log('Time Count : '+this.timeCount);
-                console.log('Refresh Interval : '+this.refreshRate);
-            }
-
             if(this.refreshRate > 0) {
+                if((Math.floor(Date.now() / 1000) % 60) == 0) {
+                    // this.get_monitoring_data();
+                    this.timeCount += 1;
+                    console.log('Time Count : '+this.timeCount);
+                    console.log('Refresh Interval : '+this.refreshRate);
+                }
                 if(this.timeCount == this.refreshRate) {
                     console.log('Check Time');
                     this.get_monitoring_data();
@@ -595,13 +596,14 @@ export default {
 
         get_monitoring_data() {
             console.log('Loaded : '+Date.now());
-            this.last_update = Date.now();
+            // this.last_update = Date.now();
             this.timeCount = 0;
             var UrlOrigin = window.location.origin;
             axios
                 .get(UrlOrigin + `/api/dashboard/get_data/${this.auth.user.email}`)
                 .then((response) => {
                     this.table_data = response.data.data;
+                    this.last_update = response.data.data.last_update;
                 })
                 .catch((error) => Swal.fire({
                     title: "Error!",
@@ -614,6 +616,9 @@ export default {
         },
 
         changeInterval() {
+            if(this.refreshRate > 0) {
+                this.timeCount == this.refreshRate
+            }
             console.log('Change Refresh Interval to : '+this.refreshRate);
         }
     },
