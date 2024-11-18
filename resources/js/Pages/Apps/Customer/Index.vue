@@ -58,11 +58,11 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label class="fw-bold">Customer ID</label>
-                            <input class="form-control" v-model="customer_id" type="text" maxlength="5" style="text-transform:uppercase">
+                            <input class="form-control" v-model="customer_id" type="text" maxlength="50">
                         </div>
                         <div class="mb-3">
                             <label class="fw-bold">Customer Name</label>
-                            <input class="form-control" v-model="customer_name" type="text" style="text-transform:uppercase">
+                            <input class="form-control" v-model="customer_name" type="text">
                         </div>
                     </div>
                     <!-- Modal footer -->

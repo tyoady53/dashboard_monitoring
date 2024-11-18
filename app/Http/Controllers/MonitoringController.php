@@ -64,7 +64,7 @@ class MonitoringController extends Controller
             // Dashboard::truncate();
             for($i=0; $i < count($request->data); $i ++) {
                 $cust_name_old = $cust_name; $cust_branch_old = $cust_branch;
-                $cust_name = strtoupper($request->data[0]['cust_name']);
+                $cust_name = $request->data[0]['cust_name'];
                 $cust_branch = $request->data[0]['cust_branch'];
                 if($cust_name_old != $cust_name && $cust_branch_old != $cust_branch) {
                     Dashboard::where('cust_name',$cust_name)->where('cust_branch',$cust_branch)->delete();
@@ -126,7 +126,7 @@ class MonitoringController extends Controller
     public function get_data($email)
     {
         $user = User::with('has_company','has_branch')->where('email',$email)->first();
-        $array = Dashboard::where('cust_name',$user->has_company->customer_id)->where('cust_branch',$user->customer_branch)->get();
+        $array = Dashboard::where('cust_name',$user->has_company->customer_id)->where('cust_branch',$user->has_branch->outlet_id)->get();
         $data = array();
         $idx_cito = 0;
         $idx_non = 0;
@@ -140,8 +140,6 @@ class MonitoringController extends Controller
         } else {
             $data['last_update'] = null;
         }
-
-        // dd($data['cust_branch']);
 
         foreach($array as $index=>$loop) {
             if($loop->cust_name) {
