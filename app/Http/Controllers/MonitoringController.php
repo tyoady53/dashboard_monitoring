@@ -35,7 +35,7 @@ class MonitoringController extends Controller
                 "dttm"          => Carbon::now()->format("Y-m-d H:i:s"),
                 "cust_name"     => request()['cust_name'],
                 "cust_branch"   => request()['cust_branch'],
-                "regno"         => str_pad($i + 1,4,"0",STR_PAD_LEFT),
+                "reg_no"         => str_pad($i + 1,4,"0",STR_PAD_LEFT),
                 "type"          => $arr_type[rand(0,1)],
                 "sc" => rand(1,4),
                 "ps" => rand(1,4),
@@ -75,7 +75,7 @@ class MonitoringController extends Controller
                     "dttm"          => $request->data[$i]['dttm'],
                     "cust_name"     => $cust_name,
                     "cust_branch"   => $cust_branch,
-                    "regno"         => $request->data[$i]['regno'],
+                    "reg_no"         => $request->data[$i]['reg_no'],
                     "type"          => $request->data[$i]['type'],
                     "sc"            => $request->data[$i]['sc'],
                     "ps"            => $request->data[$i]['ps'],
@@ -147,7 +147,7 @@ class MonitoringController extends Controller
             if($loop->cust_name) {
                 // Speciment Collection
                 $spe_col = null;
-                $spe_col = ['regno' => str_pad($loop['regno'],4,"0",STR_PAD_LEFT), 'type' => $loop['sc']];
+                $spe_col = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['sc']];
                 if($loop['type'] == 'cito') {
                     if(count($data) > 0) {
                         $data['sc'][$idx_cito]['cito'] = $spe_col;
@@ -172,7 +172,7 @@ class MonitoringController extends Controller
 
                 // Process Sample
                 $pro_sam = null;
-                $pro_sam = ['regno' => str_pad($loop['regno'],4,"0",STR_PAD_LEFT), 'type' => $loop['ps']];
+                $pro_sam = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['ps']];
                 if($loop['type'] == 'cito') {
                     if(count($data) > 0) {
                         $data['ps'][$idx_cito]['cito'] = $pro_sam;
@@ -197,7 +197,7 @@ class MonitoringController extends Controller
 
                 // Result
                 $result = null;
-                $result = ['regno' => str_pad($loop['regno'],4,"0",STR_PAD_LEFT), 'type' => $loop['rs']];
+                $result = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['rs']];
                 if($loop['type'] == 'cito') {
                     if(count($data) > 0) {
                         $data['rs'][$idx_cito]['cito'] = $result;
@@ -222,7 +222,7 @@ class MonitoringController extends Controller
 
                 // Verification
                 $verif = null;
-                $verif = ['regno' => str_pad($loop['regno'],4,"0",STR_PAD_LEFT), 'type' => $loop['vr']];
+                $verif = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['vr']];
                 if($loop['type'] == 'cito') {
                     if(count($data) > 0) {
                         $data['vr'][$idx_cito]['cito'] = $verif;
@@ -247,7 +247,7 @@ class MonitoringController extends Controller
 
                 // Authorizazion
                 $author = null;
-                $author = ['regno' => str_pad($loop['regno'],4,"0",STR_PAD_LEFT), 'type' => $loop['au']];
+                $author = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['au']];
                 if($loop['type'] == 'cito') {
                     if(count($data) > 0) {
                         $data['au'][$idx_cito]['cito'] = $author;
@@ -274,7 +274,7 @@ class MonitoringController extends Controller
 
                 // Kritis
                 $kritis = null;
-                $kritis = ['regno' => str_pad($loop['regno'],4,"0",STR_PAD_LEFT), 'type' => $loop['kr']];
+                $kritis = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['kr']];
                 if($loop['kr'] == '1') {
                     $data['kr'][$idx_kritis] = $kritis;
                     $idx_kritis += 1;

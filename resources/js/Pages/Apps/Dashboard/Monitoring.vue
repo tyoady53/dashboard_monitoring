@@ -35,28 +35,28 @@
                                                             <template v-if="show.type == '1'">
                                                                 <td style="background: #FF0000;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '2'">
                                                                 <td style="background:  #FFFF00;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '3'">
                                                                 <td style="background:  #00B050;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '4'">
                                                                 <td style="background: #00B0F0;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
@@ -90,28 +90,28 @@
                                                             <template v-if="show.type == '1'">
                                                                 <td style="background: #FF0000;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '2'">
                                                                 <td style="background:  #FFFF00;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '3'">
                                                                 <td style="background:  #00B050;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '4'">
                                                                 <td style="background: #00B0F0;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
@@ -126,28 +126,28 @@
                                                             <template v-if="show.type == '1'">
                                                                 <td style="background: #FF0000;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '2'">
                                                                 <td style="background:  #FFFF00;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '3'">
                                                                 <td style="background:  #00B050;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '4'">
                                                                 <td style="background: #00B0F0;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
@@ -181,28 +181,28 @@
                                                             <template v-if="show.type == '1'">
                                                                 <td style="background: #FF0000;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '2'">
                                                                 <td style="background:  #FFFF00;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '3'">
                                                                 <td style="background:  #00B050;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '4'">
                                                                 <td style="background: #00B0F0;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
@@ -217,28 +217,28 @@
                                                             <template v-if="show.type == '1'">
                                                                 <td style="background: #FF0000;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '2'">
                                                                 <td style="background:  #FFFF00;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '3'">
                                                                 <td style="background:  #00B050;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '4'">
                                                                 <td style="background: #00B0F0;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
@@ -272,28 +272,28 @@
                                                             <template v-if="show.type == '1'">
                                                                 <td style="background: #FF0000;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '2'">
                                                                 <td style="background:  #FFFF00;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '3'">
                                                                 <td style="background:  #00B050;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '4'">
                                                                 <td style="background: #00B0F0;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
@@ -308,28 +308,28 @@
                                                             <template v-if="show.type == '1'">
                                                                 <td style="background: #FF0000;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '2'">
                                                                 <td style="background:  #FFFF00;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '3'">
                                                                 <td style="background:  #00B050;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '4'">
                                                                 <td style="background: #00B0F0;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
@@ -363,28 +363,28 @@
                                                             <template v-if="show.type == '1'">
                                                                 <td style="background: #FF0000;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '2'">
                                                                 <td style="background:  #FFFF00;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '3'">
                                                                 <td style="background:  #00B050;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '4'">
                                                                 <td style="background: #00B0F0;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
@@ -399,28 +399,28 @@
                                                             <template v-if="show.type == '1'">
                                                                 <td style="background: #FF0000;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '2'">
                                                                 <td style="background:  #FFFF00;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '3'">
                                                                 <td style="background:  #00B050;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
                                                             <template v-if="show.type == '4'">
                                                                 <td style="background: #00B0F0;">
                                                                     <strong>
-                                                                        {{ (show ? show.regno : '') }}
+                                                                        {{ (show ? show.reg_no : '') }}
                                                                     </strong>
                                                                 </td>
                                                             </template>
@@ -447,7 +447,7 @@
                                                 <template v-if="data.type == '1'">
                                                     <td style="background: #F4B084;">
                                                         <strong>
-                                                            {{ data.regno }}
+                                                            {{ data.reg_no }}
                                                         </strong>
                                                     </td>
                                                 </template>
@@ -581,7 +581,6 @@ export default {
         checkTime() {
             if(this.refreshRate > 0) {
                 if((Math.floor(Date.now() / 1000) % 60) == 0) {
-                    // this.get_monitoring_data();
                     this.timeCount += 1;
                     console.log('Time Count : '+this.timeCount);
                     console.log('Refresh Interval : '+this.refreshRate);
@@ -596,7 +595,6 @@ export default {
 
         get_monitoring_data() {
             console.log('Loaded : '+Date.now());
-            // this.last_update = Date.now();
             this.timeCount = 0;
             var UrlOrigin = window.location.origin;
             axios
@@ -630,7 +628,7 @@ export default {
 
     setup(props) {
         const form = reactive({
-            regno : props.newRegno,
+            reg_no : props.newRegno,
             type : '',
             sc : "",
 		    ps : "",
