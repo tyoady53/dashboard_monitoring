@@ -156,7 +156,7 @@ class MonitoringController extends Controller
                 $spe_col = null;
                 if(in_array($loop['sc'], $parameters)){
                     $spe_col = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['sc']];
-                    if($loop['type'] == 'cito') {
+                    if(strtoupper($loop['type']) == 'CITO') {
                         if(count($data) > 0) {
                             $data['sc'][$idx_cito_sc]['cito'] = $spe_col;
                             if($idx_cito_sc >= $idx_non_sc) {
@@ -185,7 +185,7 @@ class MonitoringController extends Controller
                 $pro_sam = null;
                 if(in_array($loop['ps'], $parameters)){
                     $pro_sam = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['ps']];
-                    if($loop['type'] == 'cito') {
+                    if(strtoupper($loop['type']) == 'CITO') {
                         if(count($data) > 0) {
                             $data['ps'][$idx_cito_ps]['cito'] = $pro_sam;
                             if($idx_cito_ps >= $idx_non_ps) {
@@ -214,7 +214,7 @@ class MonitoringController extends Controller
                 $result = null;
                 if(in_array($loop['rs'], $parameters)){
                     $result = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['rs']];
-                    if($loop['type'] == 'cito') {
+                    if(strtoupper($loop['type']) == 'CITO') {
                         if(count($data) > 0) {
                             $data['rs'][$idx_cito_rs]['cito'] = $result;
                             if($idx_cito_rs >= $idx_non_rs) {
@@ -243,7 +243,7 @@ class MonitoringController extends Controller
                 $verif = null;
                 if(in_array($loop['vr'], $parameters)){
                     $verif = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['vr']];
-                    if($loop['type'] == 'cito') {
+                    if(strtoupper($loop['type']) == 'CITO') {
                         if(count($data) > 0) {
                             $data['vr'][$idx_cito_vr]['cito'] = $verif;
                             if($idx_cito_vr >= $idx_non_vr) {
@@ -272,7 +272,7 @@ class MonitoringController extends Controller
                 $author = null;
                 if(in_array($loop['au'], $parameters)){
                     $author = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['au']];
-                    if($loop['type'] == 'cito') {
+                    if(strtoupper($loop['type']) == 'CITO') {
                         if(count($data) > 0) {
                             $data['au'][$idx_cito_au]['cito'] = $author;
                             if($idx_cito_au >= $idx_non_au) {
