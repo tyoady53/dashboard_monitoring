@@ -125,11 +125,20 @@ class MonitoringController extends Controller
 
     public function get_data($email)
     {
+        $parameters = [1,2,3,4];
         $user = User::with('has_company','has_branch')->where('email',$email)->first();
         $array = Dashboard::where('cust_name',$user->has_company->customer_id)->where('cust_branch',$user->has_branch->outlet_id)->orderBy('reg_no')->get();
         $data = array();
-        $idx_cito = 0;
-        $idx_non = 0;
+        $idx_cito_sc = 0;
+        $idx_non_sc = 0;
+        $idx_cito_ps = 0;
+        $idx_non_ps = 0;
+        $idx_cito_rs = 0;
+        $idx_non_rs = 0;
+        $idx_cito_vr = 0;
+        $idx_non_vr = 0;
+        $idx_cito_au = 0;
+        $idx_non_au = 0;
         $idx_kritis = 0;
         $arr_type = ['cito', 'noncito'];
 
@@ -145,129 +154,147 @@ class MonitoringController extends Controller
             if($loop->cust_name) {
                 // Speciment Collection
                 $spe_col = null;
-                $spe_col = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['sc']];
-                if($loop['type'] == 'cito') {
-                    if(count($data) > 0) {
-                        $data['sc'][$idx_cito]['cito'] = $spe_col;
-                        if($idx_cito >= $idx_non) {
-                            $data['sc'][$idx_cito]['noncito'] = null;
+                if(in_array($loop['sc'], $parameters)){
+                    $spe_col = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['sc']];
+                    if($loop['type'] == 'cito') {
+                        if(count($data) > 0) {
+                            $data['sc'][$idx_cito_sc]['cito'] = $spe_col;
+                            if($idx_cito_sc >= $idx_non_sc) {
+                                $data['sc'][$idx_cito_sc]['noncito'] = null;
+                            }
+                        } else {
+                            $data['sc'][$idx_cito_sc]['cito'] = $spe_col;
+                            $data['sc'][$idx_cito_sc]['noncito'] = null;
                         }
+                        $idx_cito_sc += 1;
                     } else {
-                        $data['sc'][$idx_cito]['cito'] = $spe_col;
-                        $data['sc'][$idx_cito]['noncito'] = null;
-                    }
-                } else {
-                    if(count($data) > 0) {
-                        if($idx_cito <= $idx_non) {
-                            $data['sc'][$idx_non]['cito'] = null;
+                        if(count($data) > 0) {
+                            if($idx_cito_sc <= $idx_non_sc) {
+                                $data['sc'][$idx_non_sc]['cito'] = null;
+                            }
+                            $data['sc'][$idx_non_sc]['noncito'] = $spe_col;
+                        } else {
+                            $data['sc'][$idx_non_sc]['cito'] = null;
+                            $data['sc'][$idx_non_sc]['noncito'] = $spe_col;
                         }
-                        $data['sc'][$idx_non]['noncito'] = $spe_col;
-                    } else {
-                        $data['sc'][$idx_non]['cito'] = null;
-                        $data['sc'][$idx_non]['noncito'] = $spe_col;
+                        $idx_non_sc += 1;
                     }
                 }
 
                 // Process Sample
                 $pro_sam = null;
-                $pro_sam = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['ps']];
-                if($loop['type'] == 'cito') {
-                    if(count($data) > 0) {
-                        $data['ps'][$idx_cito]['cito'] = $pro_sam;
-                        if($idx_cito >= $idx_non) {
-                            $data['ps'][$idx_cito]['noncito'] = null;
+                if(in_array($loop['ps'], $parameters)){
+                    $pro_sam = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['ps']];
+                    if($loop['type'] == 'cito') {
+                        if(count($data) > 0) {
+                            $data['ps'][$idx_cito_ps]['cito'] = $pro_sam;
+                            if($idx_cito_ps >= $idx_non_ps) {
+                                $data['ps'][$idx_cito_ps]['noncito'] = null;
+                            }
+                        } else {
+                            $data['ps'][$idx_cito_ps]['cito'] = $pro_sam;
+                            $data['ps'][$idx_cito_ps]['noncito'] = null;
                         }
+                        $idx_cito_ps += 1;
                     } else {
-                        $data['ps'][$idx_cito]['cito'] = $pro_sam;
-                        $data['ps'][$idx_cito]['noncito'] = null;
-                    }
-                } else {
-                    if(count($data) > 0) {
-                        if($idx_cito <= $idx_non) {
-                            $data['ps'][$idx_non]['cito'] = null;
+                        if(count($data) > 0) {
+                            if($idx_cito_ps <= $idx_non_ps) {
+                                $data['ps'][$idx_non_ps]['cito'] = null;
+                            }
+                            $data['ps'][$idx_non_ps]['noncito'] = $pro_sam;
+                        } else {
+                            $data['ps'][$idx_non_ps]['cito'] = null;
+                            $data['ps'][$idx_non_ps]['noncito'] = $pro_sam;
                         }
-                        $data['ps'][$idx_non]['noncito'] = $pro_sam;
-                    } else {
-                        $data['ps'][$idx_non]['cito'] = null;
-                        $data['ps'][$idx_non]['noncito'] = $pro_sam;
+                        $idx_non_ps += 1;
                     }
                 }
 
                 // Result
                 $result = null;
-                $result = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['rs']];
-                if($loop['type'] == 'cito') {
-                    if(count($data) > 0) {
-                        $data['rs'][$idx_cito]['cito'] = $result;
-                        if($idx_cito >= $idx_non) {
-                            $data['rs'][$idx_cito]['noncito'] = null;
+                if(in_array($loop['rs'], $parameters)){
+                    $result = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['rs']];
+                    if($loop['type'] == 'cito') {
+                        if(count($data) > 0) {
+                            $data['rs'][$idx_cito_rs]['cito'] = $result;
+                            if($idx_cito_rs >= $idx_non_rs) {
+                                $data['rs'][$idx_cito_rs]['noncito'] = null;
+                            }
+                        } else {
+                            $data['rs'][$idx_cito_rs]['cito'] = $result;
+                            $data['rs'][$idx_cito_rs]['noncito'] = null;
                         }
+                        $idx_cito_rs += 1;
                     } else {
-                        $data['rs'][$idx_cito]['cito'] = $result;
-                        $data['rs'][$idx_cito]['noncito'] = null;
-                    }
-                } else {
-                    if(count($data) > 0) {
-                        if($idx_cito <= $idx_non) {
-                            $data['rs'][$idx_non]['cito'] = null;
+                        if(count($data) > 0) {
+                            if($idx_cito_rs <= $idx_non_rs) {
+                                $data['rs'][$idx_non_rs]['cito'] = null;
+                            }
+                            $data['rs'][$idx_non_rs]['noncito'] = $result;
+                        } else {
+                            $data['rs'][$idx_non_rs]['cito'] = null;
+                            $data['rs'][$idx_non_rs]['noncito'] = $result;
                         }
-                        $data['rs'][$idx_non]['noncito'] = $result;
-                    } else {
-                        $data['rs'][$idx_non]['cito'] = null;
-                        $data['rs'][$idx_non]['noncito'] = $result;
+                        $idx_non_rs += 1;
                     }
                 }
 
                 // Verification
                 $verif = null;
-                $verif = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['vr']];
-                if($loop['type'] == 'cito') {
-                    if(count($data) > 0) {
-                        $data['vr'][$idx_cito]['cito'] = $verif;
-                        if($idx_cito >= $idx_non) {
-                            $data['vr'][$idx_cito]['noncito'] = null;
+                if(in_array($loop['vr'], $parameters)){
+                    $verif = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['vr']];
+                    if($loop['type'] == 'cito') {
+                        if(count($data) > 0) {
+                            $data['vr'][$idx_cito_vr]['cito'] = $verif;
+                            if($idx_cito_vr >= $idx_non_vr) {
+                                $data['vr'][$idx_cito_vr]['noncito'] = null;
+                            }
+                        } else {
+                            $data['vr'][$idx_cito_vr]['cito'] = $verif;
+                            $data['vr'][$idx_cito_vr]['noncito'] = null;
                         }
+                        $idx_cito_vr += 1;
                     } else {
-                        $data['vr'][$idx_cito]['cito'] = $verif;
-                        $data['vr'][$idx_cito]['noncito'] = null;
-                    }
-                } else {
-                    if(count($data) > 0) {
-                        if($idx_cito <= $idx_non) {
-                            $data['vr'][$idx_non]['cito'] = null;
+                        if(count($data) > 0) {
+                            if($idx_cito_vr <= $idx_non_vr) {
+                                $data['vr'][$idx_non_vr]['cito'] = null;
+                            }
+                            $data['vr'][$idx_non_vr]['noncito'] = $verif;
+                        } else {
+                            $data['vr'][$idx_non_vr]['cito'] = null;
+                            $data['vr'][$idx_non_vr]['noncito'] = $verif;
                         }
-                        $data['vr'][$idx_non]['noncito'] = $verif;
-                    } else {
-                        $data['vr'][$idx_non]['cito'] = null;
-                        $data['vr'][$idx_non]['noncito'] = $verif;
+                        $idx_non_vr += 1;
                     }
                 }
 
                 // Authorizazion
                 $author = null;
-                $author = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['au']];
-                if($loop['type'] == 'cito') {
-                    if(count($data) > 0) {
-                        $data['au'][$idx_cito]['cito'] = $author;
-                        if($idx_cito >= $idx_non) {
-                            $data['au'][$idx_cito]['noncito'] = null;
+                if(in_array($loop['au'], $parameters)){
+                    $author = ['reg_no' => str_pad($loop['reg_no'],4,"0",STR_PAD_LEFT), 'type' => $loop['au']];
+                    if($loop['type'] == 'cito') {
+                        if(count($data) > 0) {
+                            $data['au'][$idx_cito_au]['cito'] = $author;
+                            if($idx_cito_au >= $idx_non_au) {
+                                $data['au'][$idx_cito_au]['noncito'] = null;
+                            }
+                        } else {
+                            $data['au'][$idx_cito_au]['cito'] = $author;
+                            $data['au'][$idx_cito_au]['noncito'] = null;
                         }
+                        $idx_cito_au += 1;
                     } else {
-                        $data['au'][$idx_cito]['cito'] = $author;
-                        $data['au'][$idx_cito]['noncito'] = null;
-                    }
-                    $idx_cito += 1;
-                } else {
-                    if(count($data) > 0) {
-                        if($idx_cito <= $idx_non) {
-                            $data['au'][$idx_non]['cito'] = null;
+                        if(count($data) > 0) {
+                            if($idx_cito_au <= $idx_non_au) {
+                                $data['au'][$idx_non_au]['cito'] = null;
+                            }
+                            $data['au'][$idx_non_au]['noncito'] = $author;
+                        } else {
+                            $data['au'][$idx_non_au]['cito'] = null;
+                            $data['au'][$idx_non_au]['noncito'] = $author;
                         }
-                        $data['au'][$idx_non]['noncito'] = $author;
-                    } else {
-                        $data['au'][$idx_non]['cito'] = null;
-                        $data['au'][$idx_non]['noncito'] = $author;
+                        $idx_non_au += 1;
                     }
-                    $idx_non += 1;
                 }
 
                 // Kritis
@@ -279,7 +306,6 @@ class MonitoringController extends Controller
                 }
             }
         }
-        // $data['monitoring'] = $data_;
 
         return response()->json([
             'status'    => true,
