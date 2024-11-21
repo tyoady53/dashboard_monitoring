@@ -616,7 +616,7 @@ export default {
         changeInterval() {
             Swal.fire({
                 title: 'Success!',
-                text: 'Interval changed to '+this.refreshRate+' minutes',
+                text: 'Refresh Interval changed to '+this.refreshRate+' minutes',
                 icon: 'success',
                 showConfirmButton: false,
                 timer: 2000

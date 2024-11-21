@@ -22542,7 +22542,7 @@ __webpack_require__.r(__webpack_exports__);
     changeInterval: function changeInterval() {
       sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().fire({
         title: 'Success!',
-        text: 'Interval changed to ' + this.refreshRate + ' minutes',
+        text: 'Refresh Interval changed to ' + this.refreshRate + ' minutes',
         icon: 'success',
         showConfirmButton: false,
         timer: 2000
