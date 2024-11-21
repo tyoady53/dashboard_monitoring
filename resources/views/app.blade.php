@@ -96,12 +96,34 @@
 }
 
 .loading-spinner {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #3498db;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 1s linear infinite;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Outer spinning border */
+.spinner-border {
+    position: absolute;
+    border: 8px solid #f3f3f3; /* Light gray border */
+    border-top: 8px solid #3498db; /* Blue top border */
+    border-radius: 50%; /* Circular spinner */
+    width: 100%; /* Match the container size */
+    height: 100%;
+    animation: spin 1.2s linear infinite; /* Rotates only the border */
+}
+
+/* Inner stationary content */
+.spinner-static {
+    position: absolute; /* Decouples it from the spinning animation */
+    background-image: url('/images/Wynacom.png'); /* Logo path */
+    background-size: contain; /* Scales logo appropriately */
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 60%; /* Adjust size relative to the spinner */
+    height: 60%;
 }
 
 @keyframes spin {
