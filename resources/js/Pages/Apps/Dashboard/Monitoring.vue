@@ -614,15 +614,20 @@ export default {
         },
 
         changeInterval() {
+            Swal.fire({
+                title: 'Success!',
+                text: 'Interval changed to '+this.refreshRate+' minutes',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 2000
+            })
             if(this.refreshRate > 0) {
                 this.timeCount == this.refreshRate
             }
-            console.log('Change Refresh Interval to : '+this.refreshRate);
         }
     },
 
     beforeDestroy() {
-        // Clear the interval when the component is destroyed to avoid memory leaks
         clearInterval(this.interval);
     },
 
