@@ -22537,7 +22537,6 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         // Handle error
         _this2.isLoading = false; // Stop loading after error
-
         sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().fire({
           title: "Error!",
           text: "Fetch data failed.",
@@ -25158,7 +25157,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "data-bs-dismiss": "modal"
   })], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Modal body "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_77, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <form @submit.prevent=\"submitInterval\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_78, [_cache[11] || (_cache[11] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
     "class": "fw-bold"
-  }, "Refresh Interval", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, "Refresh Interval ( In Minutes)", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     "class": "form-control",
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return _ctx.refreshRate = $event;

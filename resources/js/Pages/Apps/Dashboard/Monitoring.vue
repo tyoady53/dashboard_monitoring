@@ -493,7 +493,7 @@
                     <div class="modal-body">
                         <!-- <form @submit.prevent="submitInterval"> -->
                             <div class="mb-3">
-                                <label class="fw-bold">Refresh Interval</label>
+                                <label class="fw-bold">Refresh Interval ( In Minutes)</label>
                                 <input class="form-control" v-model="refreshRate" type="number" min="1">
                             </div>
                             <div class="modal-footer">
@@ -628,7 +628,6 @@ export default {
                 .catch((error) => {
                     // Handle error
                     this.isLoading = false; // Stop loading after error
-
                     Swal.fire({
                         title: "Error!",
                         text: "Fetch data failed.",
