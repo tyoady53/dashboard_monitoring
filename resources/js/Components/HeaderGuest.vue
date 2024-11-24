@@ -1,6 +1,6 @@
 <template>
     <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
-        <img src="/wynahealth.png" class="p-1" width="200"> <h4 class="ml-2 my-auto font-weight-bold">Dashboard</h4>
+        <img src="/wynahealth.png" class="p-1" width="200"> <h4 class="ml-2 my-auto font-weight-bold">Patient Monitoring</h4>
       <!-- <ul class="c-header-nav ml-auto mr-4">
 
         <li class="c-header-nav-item dropdown">

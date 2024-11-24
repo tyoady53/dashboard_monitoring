@@ -1,13 +1,13 @@
 <template>
     <Head>
-        <title>Dashboard - Wynacom Information System</title>
+        <title>Patient Monitoring - Wynacom Information System</title>
     </Head>
     <main class="c-main">
         <div class="container-fluid" v-if="permissions.original.includes('dash_monitoring.regno')">
         <!-- <div class="container-fluid"> -->
             <div class="fade-in">
                 <div class="text-center">
-                    <h4>Dashboard Monitoring {{ table_data.cust_branch }}</h4>
+                    <h4>Patient Monitoring {{ table_data.cust_branch }}</h4>
                 </div>
                 <div class="card border-0 rounded-3 shadow-border-top-purple mt-4">
                     <div class="card-body">

@@ -1,6 +1,6 @@
 <template>
     <Head>
-        <title>Login Account - Dashboard Monitoring</title>
+        <title>Login Account - Patient Monitoring</title>
     </Head>
     <div class="col-md-6">
         <div class="fade-in">
