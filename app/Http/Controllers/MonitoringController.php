@@ -35,7 +35,7 @@ class MonitoringController extends Controller
                 "dttm"          => Carbon::now()->format("Y-m-d H:i:s"),
                 "cust_name"     => request()['cust_name'],
                 "cust_branch"   => request()['cust_branch'],
-                "reg_no"         => str_pad($i + 1,4,"0",STR_PAD_LEFT),
+                "reg_no"        => Carbon::now()->format("ym").str_pad($i + 1,4,"0",STR_PAD_LEFT),
                 "type"          => $arr_type[rand(0,1)],
                 "sc" => rand(1,4),
                 "ps" => rand(1,4),
