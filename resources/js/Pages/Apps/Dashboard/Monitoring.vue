@@ -63,7 +63,7 @@
                                                                 <td style="
                                                                         background: #ff0000;
                                                                     ">
-                                                                    <h5>
+                                                                    <h3>
                                                                         <strong>
                                                                             {{
                                                                                 show
@@ -76,7 +76,7 @@
                                                                                     : ""
                                                                             }}
                                                                         </strong>
-                                                                    </h5>
+                                                                    </h3>
                                                                 </td>
                                                             </template>
                                                             <template v-if="
@@ -86,7 +86,7 @@
                                                                 <td style="
                                                                         background: #ffff00;
                                                                     ">
-                                                                    <h5>
+                                                                    <h3>
                                                                         <strong>
                                                                             {{
                                                                                 show
@@ -99,7 +99,7 @@
                                                                                     : ""
                                                                             }}
                                                                         </strong>
-                                                                    </h5>
+                                                                    </h3>
                                                                 </td>
                                                             </template>
                                                             <template v-if="
@@ -109,7 +109,7 @@
                                                                 <td style="
                                                                         background: #00b050;
                                                                     ">
-                                                                    <h5>
+                                                                    <h3>
                                                                         <strong>
                                                                             {{
                                                                                 show
@@ -122,7 +122,7 @@
                                                                                     : ""
                                                                             }}
                                                                         </strong>
-                                                                    </h5>
+                                                                    </h3>
                                                                 </td>
                                                             </template>
                                                             <template v-if="
@@ -132,7 +132,7 @@
                                                                 <td style="
                                                                         background: #00b0f0;
                                                                     ">
-                                                                    <h5>
+                                                                    <h3>
                                                                         <strong>
                                                                             {{
                                                                                 show
@@ -145,7 +145,7 @@
                                                                                     : ""
                                                                             }}
                                                                         </strong>
-                                                                    </h5>
+                                                                    </h3>
                                                                 </td>
                                                             </template>
                                                         </template>
@@ -189,7 +189,7 @@
                                                                     <td style="
                                                                             background: #ff0000;
                                                                         ">
-                                                                        <h5>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -202,7 +202,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h5>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                                 <template v-if="
@@ -212,7 +212,7 @@
                                                                     <td style="
                                                                             background: #ffff00;
                                                                         ">
-                                                                        <h5>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -225,7 +225,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h5>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                                 <template v-if="
@@ -235,7 +235,7 @@
                                                                     <td style="
                                                                             background: #00b050;
                                                                         ">
-                                                                        <h5>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -248,7 +248,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h5>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                                 <template v-if="
@@ -258,7 +258,7 @@
                                                                     <td style="
                                                                             background: #00b0f0;
                                                                         ">
-                                                                        <h5>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -271,7 +271,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h5>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                             </template>
@@ -288,7 +288,7 @@
                                                                     <td style="
                                                                             background: #ff0000;
                                                                         ">
-                                                                        <h5>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -301,7 +301,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h5>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                                 <template v-if="
@@ -311,7 +311,7 @@
                                                                     <td style="
                                                                             background: #ffff00;
                                                                         ">
-                                                                        <h5>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -324,7 +324,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h5>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                                 <template v-if="
@@ -334,7 +334,7 @@
                                                                     <td style="
                                                                             background: #00b050;
                                                                         ">
-                                                                        <h5>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -347,7 +347,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h5>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                                 <template v-if="
@@ -357,7 +357,7 @@
                                                                     <td style="
                                                                             background: #00b0f0;
                                                                         ">
-                                                                        <h5>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -370,7 +370,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h5>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                             </template>
@@ -413,7 +413,7 @@
                                                                     <td style="
                                                                             background: #ff0000;
                                                                         ">
-                                                                        <h5>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -426,7 +426,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h5>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                                 <template v-if="
@@ -436,7 +436,7 @@
                                                                     <td style="
                                                                             background: #ffff00;
                                                                         ">
-                                                                        <h5>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -449,7 +449,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h5>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                                 <template v-if="
@@ -459,7 +459,7 @@
                                                                     <td style="
                                                                             background: #00b050;
                                                                         ">
-                                                                        <h5>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -472,7 +472,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h5>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                                 <template v-if="
@@ -482,7 +482,7 @@
                                                                     <td style="
                                                                             background: #00b0f0;
                                                                         ">
-                                                                        <h5>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -495,7 +495,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h5>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                             </template>
@@ -512,7 +512,7 @@
                                                                     <td style="
                                                                             background: #ff0000;
                                                                         ">
-                                                                        <h5>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -525,7 +525,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h5>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                                 <template v-if="
@@ -535,7 +535,7 @@
                                                                     <td style="
                                                                             background: #ffff00;
                                                                         ">
-                                                                        <h5>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -548,7 +548,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h5>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                                 <template v-if="
@@ -558,7 +558,7 @@
                                                                     <td style="
                                                                             background: #00b050;
                                                                         ">
-                                                                        <h5>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -571,7 +571,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h5>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                                 <template v-if="
@@ -581,7 +581,7 @@
                                                                     <td style="
                                                                             background: #00b0f0;
                                                                         ">
-                                                                        <h5>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -594,7 +594,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h5>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                             </template>
@@ -639,7 +639,7 @@
                                                                     <td style="
                                                                             background: #ff0000;
                                                                         ">
-                                                                        <h4>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -652,7 +652,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h4>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                                 <template v-if="
@@ -662,7 +662,7 @@
                                                                     <td style="
                                                                             background: #ffff00;
                                                                         ">
-                                                                        <h4>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -675,7 +675,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h4>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                                 <template v-if="
@@ -685,7 +685,7 @@
                                                                     <td style="
                                                                             background: #00b050;
                                                                         ">
-                                                                        <h4>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -698,7 +698,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h4>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                                 <template v-if="
@@ -708,7 +708,7 @@
                                                                     <td style="
                                                                             background: #00b0f0;
                                                                         ">
-                                                                        <h4>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -721,7 +721,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h4>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                             </template>
@@ -738,7 +738,7 @@
                                                                     <td style="
                                                                             background: #ff0000;
                                                                         ">
-                                                                        <h4>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -751,7 +751,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h4>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                                 <template v-if="
@@ -761,7 +761,7 @@
                                                                     <td style="
                                                                             background: #ffff00;
                                                                         ">
-                                                                        <h4>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -774,7 +774,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h4>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                                 <template v-if="
@@ -784,7 +784,7 @@
                                                                     <td style="
                                                                             background: #00b050;
                                                                         ">
-                                                                        <h4>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -797,7 +797,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h4>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                                 <template v-if="
@@ -807,7 +807,7 @@
                                                                     <td style="
                                                                             background: #00b0f0;
                                                                         ">
-                                                                        <h4>
+                                                                        <h3>
                                                                             <strong>
                                                                                 {{
                                                                                     show
@@ -820,7 +820,7 @@
                                                                                         : ""
                                                                                 }}
                                                                             </strong>
-                                                                        </h4>
+                                                                        </h3>
                                                                     </td>
                                                                 </template>
                                                             </template>
@@ -1074,13 +1074,18 @@
                                                         <td style="
                                                                 background: #f4b084;
                                                             ">
-                                                            <h5>
+                                                            <h3>
                                                                 <strong>
                                                                     {{
-                                                                        data.reg_no
+                                                                        data.reg_no.substr(
+                                                                            data
+                                                                                .reg_no
+                                                                                .length -
+                                                                            4
+                                                                        )
                                                                     }}
                                                                 </strong>
-                                                            </h5>
+                                                            </h3>
                                                         </td>
                                                     </template>
                                                 </tr>
