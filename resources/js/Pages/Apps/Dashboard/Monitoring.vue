@@ -1077,12 +1077,7 @@
                                                             <h6>
                                                                 <strong>
                                                                     {{
-                                                                        data.reg_no.substr(
-                                                                            data
-                                                                                .reg_no
-                                                                                .length -
-                                                                            4
-                                                                        )
+                                                                        data.reg_no
                                                                     }}
                                                                 </strong>
                                                             </h6>
