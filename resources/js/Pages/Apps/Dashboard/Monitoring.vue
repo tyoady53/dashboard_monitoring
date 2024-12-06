@@ -60,7 +60,7 @@
                                                                 show.type ==
                                                                 '1'
                                                             ">
-                                                                <td style="background: #ff0000">
+                                                                <td style="background: #ff0000; padding:0px;">
                                                                     <strong>
                                                                         <p class="regno_font">
                                                                             {{
@@ -81,7 +81,7 @@
                                                                 show.type ==
                                                                 '2'
                                                             ">
-                                                                <td style="background: #ffff00">
+                                                                <td style="background: #ffff00; padding:0px;">
                                                                     <strong>
                                                                         <p class="regno_font">
                                                                             {{
@@ -102,7 +102,7 @@
                                                                 show.type ==
                                                                 '3'
                                                             ">
-                                                                <td style="background: #00ff73">
+                                                                <td style="background: #00ff73; padding:0px;">
                                                                     <strong>
                                                                         <p class="regno_font">
                                                                             {{
@@ -123,7 +123,7 @@
                                                                 show.type ==
                                                                 '4'
                                                             ">
-                                                                <td style="background: #00b0f0">
+                                                                <td style="background: #00b0f0; padding:0px;">
                                                                     <strong>
                                                                         <p class="regno_font">
                                                                             {{
@@ -178,7 +178,7 @@
                                                                     show.type ==
                                                                     '1'
                                                                 ">
-                                                                    <td style="background: #ff0000">
+                                                                    <td style="background: #ff0000; padding:0px;">
                                                                         <strong>
                                                                         <p class="regno_font">
                                                                             {{
@@ -199,7 +199,7 @@
                                                                     show.type ==
                                                                     '2'
                                                                 ">
-                                                                    <td style="background: #ffff00">
+                                                                    <td style="background: #ffff00; padding:0px;">
                                                                         <strong>
                                                                         <p class="regno_font">
                                                                             {{
@@ -220,7 +220,7 @@
                                                                     show.type ==
                                                                     '3'
                                                                 ">
-                                                                    <td style="background: #00ff73">
+                                                                    <td style="background: #00ff73; padding:0px;">
                                                                         <strong>
                                                                         <p class="regno_font">
                                                                             {{
@@ -241,7 +241,7 @@
                                                                     show.type ==
                                                                     '4'
                                                                 ">
-                                                                    <td style="background: #00b0f0">
+                                                                    <td style="background: #00b0f0; padding:0px;">
                                                                         <strong>
                                                                         <p class="regno_font">
                                                                             {{
@@ -269,7 +269,7 @@
                                                                     show.type ==
                                                                     '1'
                                                                 ">
-                                                                    <td style="background: #ff0000">
+                                                                    <td style="background: #ff0000; padding:0px;">
                                                                         <strong>
                                                                         <p class="regno_font">
                                                                             {{
@@ -290,7 +290,7 @@
                                                                     show.type ==
                                                                     '2'
                                                                 ">
-                                                                    <td style="background: #ffff00">
+                                                                    <td style="background: #ffff00; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -311,7 +311,7 @@
                                                                     show.type ==
                                                                     '3'
                                                                 ">
-                                                                    <td style="background: #00ff73">
+                                                                    <td style="background: #00ff73; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -332,7 +332,7 @@
                                                                     show.type ==
                                                                     '4'
                                                                 ">
-                                                                    <td style="background: #00b0f0">
+                                                                    <td style="background: #00b0f0; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -386,7 +386,7 @@
                                                                     show.type ==
                                                                     '1'
                                                                 ">
-                                                                    <td style="background: #ff0000">
+                                                                    <td style="background: #ff0000; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -407,7 +407,7 @@
                                                                     show.type ==
                                                                     '2'
                                                                 ">
-                                                                    <td style="background: #ffff00">
+                                                                    <td style="background: #ffff00; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -428,7 +428,7 @@
                                                                     show.type ==
                                                                     '3'
                                                                 ">
-                                                                    <td style="background: #00ff73">
+                                                                    <td style="background: #00ff73; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -449,7 +449,7 @@
                                                                     show.type ==
                                                                     '4'
                                                                 ">
-                                                                    <td style="background: #00b0f0">
+                                                                    <td style="background: #00b0f0; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -477,7 +477,7 @@
                                                                     show.type ==
                                                                     '1'
                                                                 ">
-                                                                    <td style="background: #ff0000">
+                                                                    <td style="background: #ff0000; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -498,7 +498,7 @@
                                                                     show.type ==
                                                                     '2'
                                                                 ">
-                                                                    <td style="background: #ffff00">
+                                                                    <td style="background: #ffff00; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -519,7 +519,7 @@
                                                                     show.type ==
                                                                     '3'
                                                                 ">
-                                                                    <td style="background: #00ff73">
+                                                                    <td style="background: #00ff73; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -540,7 +540,7 @@
                                                                     show.type ==
                                                                     '4'
                                                                 ">
-                                                                    <td style="background: #00b0f0">
+                                                                    <td style="background: #00b0f0; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -596,7 +596,7 @@
                                                                     show.type ==
                                                                     '1'
                                                                 ">
-                                                                    <td style="background: #ff0000">
+                                                                    <td style="background: #ff0000; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -617,7 +617,7 @@
                                                                     show.type ==
                                                                     '2'
                                                                 ">
-                                                                    <td style="background: #ffff00">
+                                                                    <td style="background: #ffff00; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -638,7 +638,7 @@
                                                                     show.type ==
                                                                     '3'
                                                                 ">
-                                                                    <td style="background: #00ff73">
+                                                                    <td style="background: #00ff73; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -659,7 +659,7 @@
                                                                     show.type ==
                                                                     '4'
                                                                 ">
-                                                                    <td style="background: #00b0f0">
+                                                                    <td style="background: #00b0f0; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -687,7 +687,7 @@
                                                                     show.type ==
                                                                     '1'
                                                                 ">
-                                                                    <td style="background: #ff0000">
+                                                                    <td style="background: #ff0000; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -708,7 +708,7 @@
                                                                     show.type ==
                                                                     '2'
                                                                 ">
-                                                                    <td style="background: #ffff00">
+                                                                    <td style="background: #ffff00; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -729,7 +729,7 @@
                                                                     show.type ==
                                                                     '3'
                                                                 ">
-                                                                    <td style="background: #00ff73">
+                                                                    <td style="background: #00ff73; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -750,7 +750,7 @@
                                                                     show.type ==
                                                                     '4'
                                                                 ">
-                                                                    <td style="background: #00b0f0">
+                                                                    <td style="background: #00b0f0; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -806,7 +806,7 @@
                                                                     show.type ==
                                                                     '1'
                                                                 ">
-                                                                    <td style="background: #ff0000">
+                                                                    <td style="background: #ff0000; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -827,7 +827,7 @@
                                                                     show.type ==
                                                                     '2'
                                                                 ">
-                                                                    <td style="background: #ffff00">
+                                                                    <td style="background: #ffff00; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -848,7 +848,7 @@
                                                                     show.type ==
                                                                     '3'
                                                                 ">
-                                                                    <td style="background: #00ff73">
+                                                                    <td style="background: #00ff73; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -869,7 +869,7 @@
                                                                     show.type ==
                                                                     '4'
                                                                 ">
-                                                                    <td style="background: #00b0f0">
+                                                                    <td style="background: #00b0f0; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -897,7 +897,7 @@
                                                                     show.type ==
                                                                     '1'
                                                                 ">
-                                                                    <td style="background: #ff0000">
+                                                                    <td style="background: #ff0000; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -918,7 +918,7 @@
                                                                     show.type ==
                                                                     '2'
                                                                 ">
-                                                                    <td style="background: #ffff00">
+                                                                    <td style="background: #ffff00; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -939,7 +939,7 @@
                                                                     show.type ==
                                                                     '3'
                                                                 ">
-                                                                    <td style="background: #00ff73">
+                                                                    <td style="background: #00ff73; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -960,7 +960,7 @@
                                                                     show.type ==
                                                                     '4'
                                                                 ">
-                                                                    <td style="background: #00b0f0">
+                                                                    <td style="background: #00b0f0; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -1000,7 +1000,7 @@
                                                     ) in table_data.kr" class="text-center">
                                                     <template v-if="data.type == '1'">
                                                         <td style="
-                                                                background: #f4b084;
+                                                                background: #f4b084; padding:0px;
                                                             ">
                                                             <strong>
                                                                 <p class="regno_font">
@@ -1320,7 +1320,7 @@ h3{
 } */
 
 .regno_font {
-    font-size: 24px;
+    font-size: 32px;
     margin-bottom: 0;
 }
 

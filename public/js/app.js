@@ -24735,7 +24735,8 @@ var _hoisted_12 = {
 var _hoisted_13 = {
   key: 0,
   style: {
-    "background": "#ff0000"
+    "background": "#ff0000",
+    "padding": "0px"
   }
 };
 var _hoisted_14 = {
@@ -24744,7 +24745,8 @@ var _hoisted_14 = {
 var _hoisted_15 = {
   key: 1,
   style: {
-    "background": "#ffff00"
+    "background": "#ffff00",
+    "padding": "0px"
   }
 };
 var _hoisted_16 = {
@@ -24753,7 +24755,8 @@ var _hoisted_16 = {
 var _hoisted_17 = {
   key: 2,
   style: {
-    "background": "#00ff73"
+    "background": "#00ff73",
+    "padding": "0px"
   }
 };
 var _hoisted_18 = {
@@ -24762,7 +24765,8 @@ var _hoisted_18 = {
 var _hoisted_19 = {
   key: 3,
   style: {
-    "background": "#00b0f0"
+    "background": "#00b0f0",
+    "padding": "0px"
   }
 };
 var _hoisted_20 = {
@@ -24783,7 +24787,8 @@ var _hoisted_24 = {
 var _hoisted_25 = {
   key: 0,
   style: {
-    "background": "#ff0000"
+    "background": "#ff0000",
+    "padding": "0px"
   }
 };
 var _hoisted_26 = {
@@ -24792,7 +24797,8 @@ var _hoisted_26 = {
 var _hoisted_27 = {
   key: 1,
   style: {
-    "background": "#ffff00"
+    "background": "#ffff00",
+    "padding": "0px"
   }
 };
 var _hoisted_28 = {
@@ -24801,7 +24807,8 @@ var _hoisted_28 = {
 var _hoisted_29 = {
   key: 2,
   style: {
-    "background": "#00ff73"
+    "background": "#00ff73",
+    "padding": "0px"
   }
 };
 var _hoisted_30 = {
@@ -24810,7 +24817,8 @@ var _hoisted_30 = {
 var _hoisted_31 = {
   key: 3,
   style: {
-    "background": "#00b0f0"
+    "background": "#00b0f0",
+    "padding": "0px"
   }
 };
 var _hoisted_32 = {
@@ -24822,7 +24830,8 @@ var _hoisted_33 = {
 var _hoisted_34 = {
   key: 0,
   style: {
-    "background": "#ff0000"
+    "background": "#ff0000",
+    "padding": "0px"
   }
 };
 var _hoisted_35 = {
@@ -24831,7 +24840,8 @@ var _hoisted_35 = {
 var _hoisted_36 = {
   key: 1,
   style: {
-    "background": "#ffff00"
+    "background": "#ffff00",
+    "padding": "0px"
   }
 };
 var _hoisted_37 = {
@@ -24840,7 +24850,8 @@ var _hoisted_37 = {
 var _hoisted_38 = {
   key: 2,
   style: {
-    "background": "#00ff73"
+    "background": "#00ff73",
+    "padding": "0px"
   }
 };
 var _hoisted_39 = {
@@ -24849,7 +24860,8 @@ var _hoisted_39 = {
 var _hoisted_40 = {
   key: 3,
   style: {
-    "background": "#00b0f0"
+    "background": "#00b0f0",
+    "padding": "0px"
   }
 };
 var _hoisted_41 = {
@@ -24870,7 +24882,8 @@ var _hoisted_45 = {
 var _hoisted_46 = {
   key: 0,
   style: {
-    "background": "#ff0000"
+    "background": "#ff0000",
+    "padding": "0px"
   }
 };
 var _hoisted_47 = {
@@ -24879,7 +24892,8 @@ var _hoisted_47 = {
 var _hoisted_48 = {
   key: 1,
   style: {
-    "background": "#ffff00"
+    "background": "#ffff00",
+    "padding": "0px"
   }
 };
 var _hoisted_49 = {
@@ -24888,7 +24902,8 @@ var _hoisted_49 = {
 var _hoisted_50 = {
   key: 2,
   style: {
-    "background": "#00ff73"
+    "background": "#00ff73",
+    "padding": "0px"
   }
 };
 var _hoisted_51 = {
@@ -24897,7 +24912,8 @@ var _hoisted_51 = {
 var _hoisted_52 = {
   key: 3,
   style: {
-    "background": "#00b0f0"
+    "background": "#00b0f0",
+    "padding": "0px"
   }
 };
 var _hoisted_53 = {
@@ -24909,7 +24925,8 @@ var _hoisted_54 = {
 var _hoisted_55 = {
   key: 0,
   style: {
-    "background": "#ff0000"
+    "background": "#ff0000",
+    "padding": "0px"
   }
 };
 var _hoisted_56 = {
@@ -24918,7 +24935,8 @@ var _hoisted_56 = {
 var _hoisted_57 = {
   key: 1,
   style: {
-    "background": "#ffff00"
+    "background": "#ffff00",
+    "padding": "0px"
   }
 };
 var _hoisted_58 = {
@@ -24927,7 +24945,8 @@ var _hoisted_58 = {
 var _hoisted_59 = {
   key: 2,
   style: {
-    "background": "#00ff73"
+    "background": "#00ff73",
+    "padding": "0px"
   }
 };
 var _hoisted_60 = {
@@ -24936,7 +24955,8 @@ var _hoisted_60 = {
 var _hoisted_61 = {
   key: 3,
   style: {
-    "background": "#00b0f0"
+    "background": "#00b0f0",
+    "padding": "0px"
   }
 };
 var _hoisted_62 = {
@@ -24957,7 +24977,8 @@ var _hoisted_66 = {
 var _hoisted_67 = {
   key: 0,
   style: {
-    "background": "#ff0000"
+    "background": "#ff0000",
+    "padding": "0px"
   }
 };
 var _hoisted_68 = {
@@ -24966,7 +24987,8 @@ var _hoisted_68 = {
 var _hoisted_69 = {
   key: 1,
   style: {
-    "background": "#ffff00"
+    "background": "#ffff00",
+    "padding": "0px"
   }
 };
 var _hoisted_70 = {
@@ -24975,7 +24997,8 @@ var _hoisted_70 = {
 var _hoisted_71 = {
   key: 2,
   style: {
-    "background": "#00ff73"
+    "background": "#00ff73",
+    "padding": "0px"
   }
 };
 var _hoisted_72 = {
@@ -24984,7 +25007,8 @@ var _hoisted_72 = {
 var _hoisted_73 = {
   key: 3,
   style: {
-    "background": "#00b0f0"
+    "background": "#00b0f0",
+    "padding": "0px"
   }
 };
 var _hoisted_74 = {
@@ -24996,7 +25020,8 @@ var _hoisted_75 = {
 var _hoisted_76 = {
   key: 0,
   style: {
-    "background": "#ff0000"
+    "background": "#ff0000",
+    "padding": "0px"
   }
 };
 var _hoisted_77 = {
@@ -25005,7 +25030,8 @@ var _hoisted_77 = {
 var _hoisted_78 = {
   key: 1,
   style: {
-    "background": "#ffff00"
+    "background": "#ffff00",
+    "padding": "0px"
   }
 };
 var _hoisted_79 = {
@@ -25014,7 +25040,8 @@ var _hoisted_79 = {
 var _hoisted_80 = {
   key: 2,
   style: {
-    "background": "#00ff73"
+    "background": "#00ff73",
+    "padding": "0px"
   }
 };
 var _hoisted_81 = {
@@ -25023,7 +25050,8 @@ var _hoisted_81 = {
 var _hoisted_82 = {
   key: 3,
   style: {
-    "background": "#00b0f0"
+    "background": "#00b0f0",
+    "padding": "0px"
   }
 };
 var _hoisted_83 = {
@@ -25044,7 +25072,8 @@ var _hoisted_87 = {
 var _hoisted_88 = {
   key: 0,
   style: {
-    "background": "#ff0000"
+    "background": "#ff0000",
+    "padding": "0px"
   }
 };
 var _hoisted_89 = {
@@ -25053,7 +25082,8 @@ var _hoisted_89 = {
 var _hoisted_90 = {
   key: 1,
   style: {
-    "background": "#ffff00"
+    "background": "#ffff00",
+    "padding": "0px"
   }
 };
 var _hoisted_91 = {
@@ -25062,7 +25092,8 @@ var _hoisted_91 = {
 var _hoisted_92 = {
   key: 2,
   style: {
-    "background": "#00ff73"
+    "background": "#00ff73",
+    "padding": "0px"
   }
 };
 var _hoisted_93 = {
@@ -25071,7 +25102,8 @@ var _hoisted_93 = {
 var _hoisted_94 = {
   key: 3,
   style: {
-    "background": "#00b0f0"
+    "background": "#00b0f0",
+    "padding": "0px"
   }
 };
 var _hoisted_95 = {
@@ -25083,7 +25115,8 @@ var _hoisted_96 = {
 var _hoisted_97 = {
   key: 0,
   style: {
-    "background": "#ff0000"
+    "background": "#ff0000",
+    "padding": "0px"
   }
 };
 var _hoisted_98 = {
@@ -25092,7 +25125,8 @@ var _hoisted_98 = {
 var _hoisted_99 = {
   key: 1,
   style: {
-    "background": "#ffff00"
+    "background": "#ffff00",
+    "padding": "0px"
   }
 };
 var _hoisted_100 = {
@@ -25101,7 +25135,8 @@ var _hoisted_100 = {
 var _hoisted_101 = {
   key: 2,
   style: {
-    "background": "#00ff73"
+    "background": "#00ff73",
+    "padding": "0px"
   }
 };
 var _hoisted_102 = {
@@ -25110,7 +25145,8 @@ var _hoisted_102 = {
 var _hoisted_103 = {
   key: 3,
   style: {
-    "background": "#00b0f0"
+    "background": "#00b0f0",
+    "padding": "0px"
   }
 };
 var _hoisted_104 = {
@@ -25131,7 +25167,8 @@ var _hoisted_108 = {
 var _hoisted_109 = {
   key: 0,
   style: {
-    "background": "#f4b084"
+    "background": "#f4b084",
+    "padding": "0px"
   }
 };
 var _hoisted_110 = {
@@ -29326,7 +29363,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nh4{\n    margin-bottom: 0;\n}\nh3{\n    margin-bottom: 0;\n}\n\n/* .bgred {\n    background: #ff0000;\n    background-color: #ff0000;\n}\n\n.bgyellow {\n    background: #ffff00;\n}\n\n.bggreen {\n    background: #00ff73;\n}\n\n.bgblue {\n    background: #00b0f0;\n} */\n.regno_font {\n    font-size: 24px;\n    margin-bottom: 0;\n}\n.myTicket:hover {\n    background-color: blue;\n    color: white;\n}\n.count {\n    position: relative;\n    top: -30px;\n    color: white;\n    font-size: 20px;\n}\n.count2 {\n    position: relative;\n    top: -20px;\n    padding: 10px 50px 10px 50px;\n    border-radius: 10%;\n    color: white;\n    background-color: black;\n    font-size: 40px;\n}\n.myTicket:hover .count {\n    background-color: white;\n    color: black;\n}\n.myTicket:hover .count2 {\n    background-color: blue;\n    color: white;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nh4{\n    margin-bottom: 0;\n}\nh3{\n    margin-bottom: 0;\n}\n\n/* .bgred {\n    background: #ff0000;\n    background-color: #ff0000;\n}\n\n.bgyellow {\n    background: #ffff00;\n}\n\n.bggreen {\n    background: #00ff73;\n}\n\n.bgblue {\n    background: #00b0f0;\n} */\n.regno_font {\n    font-size: 32px;\n    margin-bottom: 0;\n}\n.myTicket:hover {\n    background-color: blue;\n    color: white;\n}\n.count {\n    position: relative;\n    top: -30px;\n    color: white;\n    font-size: 20px;\n}\n.count2 {\n    position: relative;\n    top: -20px;\n    padding: 10px 50px 10px 50px;\n    border-radius: 10%;\n    color: white;\n    background-color: black;\n    font-size: 40px;\n}\n.myTicket:hover .count {\n    background-color: white;\n    color: black;\n}\n.myTicket:hover .count2 {\n    background-color: blue;\n    color: white;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
