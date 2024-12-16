@@ -125,7 +125,7 @@ class MonitoringController extends Controller
 
     public function get_data($email)
     {
-        $parameters = [1,2,3,4];
+        $parameters = [1,2,3,5];
         $user = User::with('has_company','has_branch')->where('email',$email)->first();
         $array = Dashboard::where('cust_name',$user->has_company->customer_id)->where('cust_branch',$user->has_branch->outlet_id)->orderBy('reg_no')->get();
         $data = array();

@@ -36,7 +36,7 @@
                             <template v-if="table_data">
                                 <div class="row">
                                     <div class="col-2">
-                                        <table class="table table-bordered display">
+                                        <table class="table table-bordered solid display">
                                             <thead>
                                                 <tr class="text-center">
                                                     <th colspan="2">
@@ -124,6 +124,27 @@
                                                                 '4'
                                                             ">
                                                                 <td style="background: #00b0f0; padding:0px;">
+                                                                    <strong>
+                                                                        <p class="regno_font">
+                                                                            {{
+                                                                                show
+                                                                                    ? show.reg_no.substr(
+                                                                                        show
+                                                                                            .reg_no
+                                                                                            .length -
+                                                                                        4
+                                                                                    )
+                                                                                    : ""
+                                                                            }}
+                                                                        </p>
+                                                                    </strong>
+                                                                </td>
+                                                            </template>
+                                                            <template v-if="
+                                                                show.type ==
+                                                                '5'
+                                                            ">
+                                                                <td style="background: #e6e6e6; padding:0px;">
                                                                     <strong>
                                                                         <p class="regno_font">
                                                                             {{
@@ -258,6 +279,27 @@
                                                                     </strong>
                                                                     </td>
                                                                 </template>
+                                                                <template v-if="
+                                                                    show.type ==
+                                                                    '5'
+                                                                ">
+                                                                    <td style="background: #e6e6e6; padding:0px;">
+                                                                        <strong>
+                                                                            <p class="regno_font">
+                                                                                {{
+                                                                                    show
+                                                                                        ? show.reg_no.substr(
+                                                                                            show
+                                                                                                .reg_no
+                                                                                                .length -
+                                                                                            4
+                                                                                        )
+                                                                                        : ""
+                                                                                }}
+                                                                            </p>
+                                                                        </strong>
+                                                                    </td>
+                                                                </template>
                                                             </template>
                                                             <template v-else>
                                                                 <td></td>
@@ -333,6 +375,27 @@
                                                                     '4'
                                                                 ">
                                                                     <td style="background: #00b0f0; padding:0px;">
+                                                                        <strong>
+                                                                            <p class="regno_font">
+                                                                                {{
+                                                                                    show
+                                                                                        ? show.reg_no.substr(
+                                                                                            show
+                                                                                                .reg_no
+                                                                                                .length -
+                                                                                            4
+                                                                                        )
+                                                                                        : ""
+                                                                                }}
+                                                                            </p>
+                                                                        </strong>
+                                                                    </td>
+                                                                </template>
+                                                                <template v-if="
+                                                                    show.type ==
+                                                                    '5'
+                                                                ">
+                                                                    <td style="background: #e6e6e6; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -466,6 +529,27 @@
                                                                         </strong>
                                                                     </td>
                                                                 </template>
+                                                                <template v-if="
+                                                                    show.type ==
+                                                                    '5'
+                                                                ">
+                                                                    <td style="background: #e6e6e6; padding:0px;">
+                                                                        <strong>
+                                                                            <p class="regno_font">
+                                                                                {{
+                                                                                    show
+                                                                                        ? show.reg_no.substr(
+                                                                                            show
+                                                                                                .reg_no
+                                                                                                .length -
+                                                                                            4
+                                                                                        )
+                                                                                        : ""
+                                                                                }}
+                                                                            </p>
+                                                                        </strong>
+                                                                    </td>
+                                                                </template>
                                                             </template>
                                                             <template v-else>
                                                                 <td></td>
@@ -541,6 +625,27 @@
                                                                     '4'
                                                                 ">
                                                                     <td style="background: #00b0f0; padding:0px;">
+                                                                        <strong>
+                                                                            <p class="regno_font">
+                                                                                {{
+                                                                                    show
+                                                                                        ? show.reg_no.substr(
+                                                                                            show
+                                                                                                .reg_no
+                                                                                                .length -
+                                                                                            4
+                                                                                        )
+                                                                                        : ""
+                                                                                }}
+                                                                            </p>
+                                                                        </strong>
+                                                                    </td>
+                                                                </template>
+                                                                <template v-if="
+                                                                    show.type ==
+                                                                    '5'
+                                                                ">
+                                                                    <td style="background: #e6e6e6; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -676,6 +781,27 @@
                                                                         </strong>
                                                                     </td>
                                                                 </template>
+                                                                <template v-if="
+                                                                    show.type ==
+                                                                    '5'
+                                                                ">
+                                                                    <td style="background: #e6e6e6; padding:0px;">
+                                                                        <strong>
+                                                                            <p class="regno_font">
+                                                                                {{
+                                                                                    show
+                                                                                        ? show.reg_no.substr(
+                                                                                            show
+                                                                                                .reg_no
+                                                                                                .length -
+                                                                                            4
+                                                                                        )
+                                                                                        : ""
+                                                                                }}
+                                                                            </p>
+                                                                        </strong>
+                                                                    </td>
+                                                                </template>
                                                             </template>
                                                             <template v-else>
                                                                 <td></td>
@@ -751,6 +877,27 @@
                                                                     '4'
                                                                 ">
                                                                     <td style="background: #00b0f0; padding:0px;">
+                                                                        <strong>
+                                                                            <p class="regno_font">
+                                                                                {{
+                                                                                    show
+                                                                                        ? show.reg_no.substr(
+                                                                                            show
+                                                                                                .reg_no
+                                                                                                .length -
+                                                                                            4
+                                                                                        )
+                                                                                        : ""
+                                                                                }}
+                                                                            </p>
+                                                                        </strong>
+                                                                    </td>
+                                                                </template>
+                                                                <template v-if="
+                                                                    show.type ==
+                                                                    '5'
+                                                                ">
+                                                                    <td style="background: #e6e6e6; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
@@ -886,6 +1033,27 @@
                                                                         </strong>
                                                                     </td>
                                                                 </template>
+                                                                <template v-if="
+                                                                    show.type ==
+                                                                    '5'
+                                                                ">
+                                                                    <td style="background: #e6e6e6; padding:0px;">
+                                                                        <strong>
+                                                                            <p class="regno_font">
+                                                                                {{
+                                                                                    show
+                                                                                        ? show.reg_no.substr(
+                                                                                            show
+                                                                                                .reg_no
+                                                                                                .length -
+                                                                                            4
+                                                                                        )
+                                                                                        : ""
+                                                                                }}
+                                                                            </p>
+                                                                        </strong>
+                                                                    </td>
+                                                                </template>
                                                             </template>
                                                             <template v-else>
                                                                 <td></td>
@@ -961,6 +1129,27 @@
                                                                     '4'
                                                                 ">
                                                                     <td style="background: #00b0f0; padding:0px;">
+                                                                        <strong>
+                                                                            <p class="regno_font">
+                                                                                {{
+                                                                                    show
+                                                                                        ? show.reg_no.substr(
+                                                                                            show
+                                                                                                .reg_no
+                                                                                                .length -
+                                                                                            4
+                                                                                        )
+                                                                                        : ""
+                                                                                }}
+                                                                            </p>
+                                                                        </strong>
+                                                                    </td>
+                                                                </template>
+                                                                <template v-if="
+                                                                    show.type ==
+                                                                    '5'
+                                                                ">
+                                                                    <td style="background: #e6e6e6; padding:0px;">
                                                                         <strong>
                                                                             <p class="regno_font">
                                                                                 {{
