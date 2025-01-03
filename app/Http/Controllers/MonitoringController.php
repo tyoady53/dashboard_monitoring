@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dashboard;
+use App\Models\DashMonitoringTat;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -306,6 +307,9 @@ class MonitoringController extends Controller
                 }
             }
         }
+
+        $data['tat'] = DashMonitoringTat::get();
+        // $data['tat'] = $tat;
 
         return response()->json([
             'status'    => true,

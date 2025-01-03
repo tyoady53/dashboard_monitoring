@@ -1228,6 +1228,40 @@
                         </template>
                     </div>
                 </div>
+                <div class="card border-0 rounded-3 shadow-border-top-purple mt-4">
+                    <div class="card-body">
+                        <template v-if="isLoading">
+                            <div class="page-loader">
+                                <div class="loading-spinner">
+                                    <div class="spinner-border"></div>
+                                </div>
+                                <h3>Loading Data</h3>
+                            </div>
+                        </template>
+                        <template v-else>
+                            <div>
+                                <table class="table table-bordered solid display">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th style="width: 5%;">No</th>
+                                            <th>Regno</th>
+                                            <th>TAT Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr v-for="(
+                                                data, index
+                                            ) in table_data.tat" class="text-center">
+                                            <td><p class="regno_font">{{ data.seq_no }}</p></td>
+                                            <td><p class="regno_font">{{ data.regno }}</p></td>
+                                            <td><p class="regno_font">{{ convert(data.tat_time) }}</p></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </template>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1456,6 +1490,27 @@ export default {
             if (this.refreshRate > 0) {
                 this.timeCount == this.refreshRate;
             }
+        },
+
+        convert(time_res) {
+            console.log(time_res)
+            const days = Math.floor(Math.abs(time_res) / 86400);
+            const hours = Math.floor((Math.abs(time_res) % 86400) / 3600);
+            const minutes = Math.floor((Math.abs(time_res) % 3600) / 60);
+            const seconds = Math.abs(time_res) % 60;
+            if(time_res>0){
+                // const days = Math.floor(time_res / 86400);
+                // const hours = Math.floor((time_res % 86400) / 3600);
+                // const minutes = Math.floor((time_res % 3600) / 60);
+                // const seconds = time_res % 60;
+                var result = (days ? (days<10 ? '0'+days : days) + ':' : '') + (hours ? (hours<10 ? '0'+hours : hours) + ':' : '00:') + (minutes ? (minutes<10 ? '0'+minutes : minutes) + ':' : '00:')+(seconds<10 ? '0'+seconds : seconds);
+            } else if(time_res<0) {
+                var result = "-" + (days ? (days<10 ? '0'+days : days) + ':' : '') + (hours ? (hours<10 ? '0'+hours : hours) + ':' : '00:') + (minutes ? (minutes<10 ? '0'+minutes : minutes) + ':' : '00:')+(seconds<10 ? '0'+seconds : seconds);
+            } else {
+                var result = "-";
+            }
+
+            return result;
         },
     },
 

@@ -15,18 +15,17 @@ class CustomerController extends Controller
      */
     public function index()
     {
-
-        if(Auth::user()->id != 1) {
-            return Inertia::render('Forbidden403', []);
-        }
-
-        $customers = Customer::with('has_branch')->orderBy('customer_name')->get();
-        // if(!count($customers)) {
-        //     $customers = [];
+        // if(Auth::user()->id != 1) {
+        //     return Inertia::render('Forbidden403', []);
         // }
-        return Inertia::render('Apps/Customer/Index', [
-            'customers'     => $customers
-        ]);
+
+        // $customers = Customer::with('has_branch')->orderBy('customer_name')->get();
+        // // if(!count($customers)) {
+        // //     $customers = [];
+        // // }
+        // return Inertia::render('Apps/Customer/Index', [
+        //     'customers'     => $customers
+        // ]);
     }
 
     /**
