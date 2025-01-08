@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('seq_no',1);
             $table->string('regno',50)->unique();
             $table->string('tat',50);
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 
