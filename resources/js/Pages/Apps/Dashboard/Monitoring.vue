@@ -1254,7 +1254,7 @@
                                             ) in table_data.tat" class="text-center">
                                             <td><p class="regno_font">{{ data.seq_no }}</p></td>
                                             <td><p class="regno_font">{{ data.regno }}</p></td>
-                                            <td><p class="regno_font">{{ convert(data.tat_time) }}</p></td>
+                                            <td><p class="regno_font">{{ convert(data.tat) }}</p></td>
                                         </tr>
                                     </tbody>
                                 </table>

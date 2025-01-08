@@ -317,9 +317,14 @@ class MonitoringController extends Controller
         ])->send();
 
         // Step 3: Close the connection
-        if (function_exists('fastcgi_finish_request')) {
-            fastcgi_finish_request();
+        // if (function_exists('fastcgi_finish_request')) {
+        //     dd('fastcgi_finish_request exist');
+        //     fastcgi_finish_request();
+        // }
+        if (ob_get_level() > 0) {
+            ob_flush();
         }
+        flush();
 
         // Step 4: Perform any background tasks (optional)
         // Example: Log something, send an email, etc.
