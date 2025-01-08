@@ -309,13 +309,23 @@ class MonitoringController extends Controller
         }
 
         $data['tat'] = DashMonitoringTat::where('cust_name',$user->has_company->customer_id)->where('cust_branch',$user->has_branch->outlet_id)->get();
-        // $data['tat'] = $tat;
 
-        return response()->json([
+        response()->json([
             'status'    => true,
             'message'   => 'Monitoring Data',
             'data'      => $data
-        ]);
+        ])->send();
+
+        // Step 3: Close the connection
+        if (function_exists('fastcgi_finish_request')) {
+            fastcgi_finish_request();
+        }
+
+        // Step 4: Perform any background tasks (optional)
+        // Example: Log something, send an email, etc.
+        // \Log::info("Connection closed. Background task is running.");
+
+        return;
     }
 
     public function get_permissions()
