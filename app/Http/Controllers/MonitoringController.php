@@ -308,7 +308,7 @@ class MonitoringController extends Controller
             }
         }
 
-        $data['tat'] = DashMonitoringTat::get();
+        $data['tat'] = DashMonitoringTat::where('cust_name',$user->has_company->customer_id)->where('cust_branch',$user->has_branch->outlet_id)->get();
         // $data['tat'] = $tat;
 
         return response()->json([
