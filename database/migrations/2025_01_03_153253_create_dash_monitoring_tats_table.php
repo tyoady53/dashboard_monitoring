@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('dash_monitoring_tats', function (Blueprint $table) {
             // $table->id();
-            $table->string('seq_no',1);
+            $table->timestamp('dttm');
+            $table->string('cust_name',50);
+            $table->string('cust_branch',50);
+            $table->integer('seq_no',1);
             $table->string('regno',50)->unique();
-            $table->string('tat_time',8);
+            $table->string('tat',50);
             $table->timestamps();
         });
     }

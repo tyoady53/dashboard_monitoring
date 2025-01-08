@@ -22530,7 +22530,11 @@ __webpack_require__.r(__webpack_exports__);
       console.log("Loaded : " + Date.now());
       this.timeCount = 0;
       var UrlOrigin = window.location.origin;
-      axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(UrlOrigin + "/api/dashboard/get_data/".concat(this.auth.user.email)).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(UrlOrigin + "/api/dashboard/get_data/".concat(this.auth.user.email), {
+        headers: {
+          'Connection': 'close'
+        }
+      }).then(function (response) {
         _this2.table_data = response.data.data;
         _this2.last_update = response.data.data.last_update;
         _this2.isLoading = false;

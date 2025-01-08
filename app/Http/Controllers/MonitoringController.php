@@ -58,37 +58,37 @@ class MonitoringController extends Controller
      */
     public function store(Request $request)
     {
-        if(count($request->data) > 0) {
-            $cust_name = '';
-            $cust_branch = '';
+        // if(count($request->data) > 0) {
+        //     $cust_name = '';
+        //     $cust_branch = '';
 
-            // Dashboard::truncate();
-            for($i=0; $i < count($request->data); $i ++) {
-                $cust_name_old = $cust_name; $cust_branch_old = $cust_branch;
-                $cust_name = $request->data[0]['cust_name'];
-                $cust_branch = $request->data[0]['cust_branch'];
-                if($cust_name_old != $cust_name && $cust_branch_old != $cust_branch) {
-                    Dashboard::where('cust_name',$cust_name)->where('cust_branch',$cust_branch)->delete();
-                    // $last =
-                }
-                Dashboard::create([
-                    // "id"            => $i + 1,
-                    "dttm"          => $request->data[$i]['dttm'],
-                    "cust_name"     => $cust_name,
-                    "cust_branch"   => $cust_branch,
-                    "reg_no"         => $request->data[$i]['reg_no'],
-                    "type"          => $request->data[$i]['type'],
-                    "sc"            => $request->data[$i]['sc'],
-                    "ps"            => $request->data[$i]['ps'],
-                    "rs"            => $request->data[$i]['rs'],
-                    "vr"            => $request->data[$i]['vr'],
-                    "au"            => $request->data[$i]['au'],
-                    "kr"            => $request->data[$i]['kr']
-                ]);
-            }
-        }
+        //     // Dashboard::truncate();
+        //     for($i=0; $i < count($request->data); $i ++) {
+        //         $cust_name_old = $cust_name; $cust_branch_old = $cust_branch;
+        //         $cust_name = $request->data[0]['cust_name'];
+        //         $cust_branch = $request->data[0]['cust_branch'];
+        //         if($cust_name_old != $cust_name && $cust_branch_old != $cust_branch) {
+        //             Dashboard::where('cust_name',$cust_name)->where('cust_branch',$cust_branch)->delete();
+        //             // $last =
+        //         }
+        //         Dashboard::create([
+        //             // "id"            => $i + 1,
+        //             "dttm"          => $request->data[$i]['dttm'],
+        //             "cust_name"     => $cust_name,
+        //             "cust_branch"   => $cust_branch,
+        //             "reg_no"         => $request->data[$i]['reg_no'],
+        //             "type"          => $request->data[$i]['type'],
+        //             "sc"            => $request->data[$i]['sc'],
+        //             "ps"            => $request->data[$i]['ps'],
+        //             "rs"            => $request->data[$i]['rs'],
+        //             "vr"            => $request->data[$i]['vr'],
+        //             "au"            => $request->data[$i]['au'],
+        //             "kr"            => $request->data[$i]['kr']
+        //         ]);
+        //     }
+        // }
 
-        return null;
+        // return null;
         // dd(count($request->data));
     }
 

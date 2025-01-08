@@ -25,4 +25,6 @@ Route::prefix('dashboard')->group(function (){
     Route::get('/get_data/{email}', [MonitoringController::class, 'get_data']);
     Route::get('/random_data', [MonitoringController::class, 'create']);
     Route::post('/store', [MonitoringController::class, 'store']);
+
+    // Route::post('/store', [MonitoringController::class, 'store']);
 });

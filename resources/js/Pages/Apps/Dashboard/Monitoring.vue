@@ -1456,7 +1456,11 @@ export default {
             axios
                 .get(
                     UrlOrigin +
-                    `/api/dashboard/get_data/${this.auth.user.email}`
+                    `/api/dashboard/get_data/${this.auth.user.email}`, {
+                        headers: {
+                            'Connection': 'close'
+                        }
+                    }
                 )
                 .then((response) => {
                     this.table_data = response.data.data;
