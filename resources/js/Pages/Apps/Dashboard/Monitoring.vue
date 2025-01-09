@@ -1253,7 +1253,7 @@
                                                 data, index
                                             ) in table_data.tat" class="text-center">
                                             <td><p class="regno_font">{{ data.seq_no }}</p></td>
-                                            <td><p class="regno_font">{{ data.regno }}</p></td>
+                                            <td><p class="regno_font">{{ data.reg_no }}</p></td>
                                             <td><p class="regno_font">{{ data.tat }}</p></td>
                                             <!-- <td><p class="regno_font">{{ convert(data.tat) }}</p></td> -->
                                         </tr>
