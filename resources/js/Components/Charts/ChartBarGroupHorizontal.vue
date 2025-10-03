@@ -3,7 +3,7 @@
     <div v-else>
         <!-- <h5 class="text-lg font-semibold mb-2  text-center">{{ title }}</h5> -->
         <h5 class="text-lg font-semibold mb-2  text-center">{{ chart_title }}</h5>
-        <div class="card shadow-sm p-4 chart" style="height: 400PX;">
+        <div class="card shadow-sm p-4 chart" :style="`height: ${height}PX;`">
             <apexchart v-if="chart_data.length" type="bar" height="300" :options="chartOptions" :series="chart_data" />
             <div class="row m-2 justify-content-center text-center" v-if="props.summary">
                 <div class="col-12"><strong>{{ props.summary.toUpperCase() }}</strong></div>
@@ -21,7 +21,7 @@ const props = defineProps({
     series: Array,
     categories: Array,
     cust: Number,
-    branch: Number,
+    height: Number,
     datas: Array,
     summary: String,
 });

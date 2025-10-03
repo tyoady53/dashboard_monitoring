@@ -2,7 +2,7 @@
     <LoadingComponent v-if="isLoading" class="col-12 text-center" />
     <div v-else>
         <h5 class="text-lg font-semibold mb-2 text-center">{{ chart_title }}</h5>
-        <div class="card  shadow-sm p-4 d-flex align-items-center justify-content-center" style="height: 400PX;">
+        <div class="card  shadow-sm p-4 d-flex align-items-center justify-content-center" :style="`height: ${height}PX;`">
             <apexchart v-if="chart_data.length" type="donut" height="350" :options="chartOptions" :series="chart_data" />
             <div v-if="total" class="text-sm text-gray-500">
                 Total: <strong>{{ total }}</strong>
@@ -17,6 +17,7 @@ import LoadingComponent from '../LoadingComponent.vue';
 
 const props = defineProps({
     series: Array,
+    height: Number,
     categories: Array,
     datas: Array,
 });

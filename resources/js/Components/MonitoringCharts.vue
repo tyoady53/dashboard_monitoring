@@ -5,7 +5,7 @@
                 Last Update : {{ globalConfig.formatCompat(last_update) }} <br />
                 Time : {{ time }}
             </div>
-
+            <br>
             <template v-if="isLoading">
                 <div class="page-loader">
                     <div class="loading-spinner">
@@ -17,41 +17,38 @@
             <template v-else>
                 <div class="row align-items-stretch mb-3">
                     <div class="col-md-4 mb-3">
-                        <ChartBarGroupHorizontal :datas="chart_data[0]" summary="Total pemeriksaan per layanan" />
+                        <ChartBarGroupHorizontal :datas="chart_data[0]" summary="Total pemeriksaan per layanan" height="450"/>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <ChartBarGroupHorizontal :datas="chart_data[1]" summary="Total pemeriksaan per janji hasil" />
+                        <ChartBarGroupHorizontal :datas="chart_data[1]" summary="Total pemeriksaan per janji hasil" height="450"/>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <ChartDonut :datas="chart_data[2]" />
+                        <ChartDonut :datas="chart_data[2]" height="450"/>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <ChartBarGroupHorizontal :datas="chart_data[3]" :summary="null" />
+                        <ChartBarGroupHorizontal :datas="chart_data[3]" :summary="null" height="400"/>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <PatientTable :datas="chart_data[4]" />
+                        <PatientTable :datas="chart_data[4]" height="400"/>
                     </div>
                     <div class="col-md-4 mb-3">
                         <h5 class="text-lg font-semibold mb-2 text-center">&nbsp</h5>
-                        <div class="card shadow p-3 chart shadow-sm p-4 d-flex align-items-center justify-content-center"
-                            style="height: 400PX;">
-                            <h5 class="text-lg font-semibold mb-2 text-center">{{ (chart_data[5] ? chart_data[5].title :
-                                '') }}</h5>
-                            <h5 class="text-lg font-semibold mb-2 text-center">PERIODE:{{ (chart_data[5] ?
-                                chart_data[5].period: '') }}</h5>
-                            <StatBox :datas="(chart_data[5] ? chart_data[5].data : [])" />
+                        <div class="card shadow p-3 chart shadow-sm p-4 d-flex align-items-center justify-content-center" style="height: 400PX;">
+                            <h5 class="text-lg font-semibold mb-2 text-center">{{ (chart_data[5] ? chart_data[5].title : '') }}</h5>
+                            <h5 class="text-lg font-semibold mb-2 text-center">PERIODE:{{ (chart_data[5] ? chart_data[5].period: '') }}</h5>
+                            <StatBox :datas="( chart_data[5] ? chart_data[5].data : [])" />
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-4">
-                        <StatBox v-if="chart_data[6] && chart_data[6][0]" :datas="chart_data[6][0]" />
+                                <StatBox v-if="chart_data[6] && chart_data[6][0]" :datas="chart_data[6][0]" />
                     </div>
                     <div class="col-4">
-                        <StatBox v-if="chart_data[6] && chart_data[6][1]" :datas="chart_data[6][1]" />
+                                <StatBox v-if="chart_data[6] && chart_data[6][1]" :datas="chart_data[6][1]" />
                     </div>
                     <div class="col-4">
-                        <StatBox v-if="chart_data[6] && chart_data[6][2]" :datas="chart_data[6][2]" />
+                                <StatBox v-if="chart_data[6] && chart_data[6][2]" :datas="chart_data[6][2]" />
                     </div>
                 </div>
             </template>
