@@ -18,22 +18,22 @@ class UserController extends Controller
     public function index()
     {
         // dd(Auth::user()->roles[0]['id']);
-        if(auth()){
+        if (auth()) {
             $user_id = auth()->user()->id;
         }
         $a = '';
-        $user = User::where('id',$user_id)->first();
+        $user = User::where('id', $user_id)->first();
         $permissions = $user->getPermissionsViaRoles();
-        for ($j = 0; $j < $permissions->count(); $j++){
-            if(str_contains($permissions[$j]['name'], 'index')){
-                $a .= $permissions[$j]['name'].', ';
+        for ($j = 0; $j < $permissions->count(); $j++) {
+            if (str_contains($permissions[$j]['name'], 'index')) {
+                $a .= $permissions[$j]['name'] . ', ';
             }
         }
-        if(str_contains($a, 'users.index')){
-            if(Auth::user()->roles[0]['id'] == 1) {
-                $users = User::with('has_company','has_branch','roles')->orderBy('name')->paginate(25);
+        if (str_contains($a, 'users.index')) {
+            if (Auth::user()->roles[0]['id'] == 1) {
+                $users = User::with('has_company', 'has_branch', 'roles')->orderBy('name')->paginate(25);
             } else {
-                $users = User::with('has_company','has_branch','roles')->where('customer_id',Auth::user()->customer_id)->where('customer_branch',Auth::user()->customer_branch)->orderBy('name')->paginate(25);
+                $users = User::with('has_company', 'has_branch', 'roles')->where('customer_id', Auth::user()->customer_id)->where('customer_branch', Auth::user()->customer_branch)->orderBy('name')->paginate(25);
             }
 
             return Inertia::render('Apps/User/Index', [
@@ -41,8 +41,7 @@ class UserController extends Controller
             ]);
         }
 
-        return Inertia::render('Forbidden403', [
-        ]);
+        return Inertia::render('Forbidden403', []);
     }
 
     /**
@@ -50,12 +49,12 @@ class UserController extends Controller
      */
     public function create()
     {
-        if(Auth::user()->roles[0]['id'] == 1) {
-            $companies  = Customer::where('is_show',1)->get();
+        if (Auth::user()->roles[0]['id'] == 1) {
+            $companies  = Customer::where('is_show', 1)->get();
             $roles      = Role::all();
         } else {
-            $companies  = Customer::where('is_show',1)->where('id',Auth::user()->customer_id)->get();
-            $roles      = Role::where('id','>',1)->get();
+            $companies  = Customer::where('is_show', 1)->where('id', Auth::user()->customer_id)->get();
+            $roles      = Role::where('id', '>', 1)->get();
         }
         return Inertia::render('Apps/User/Create', [
             'companies'     => $companies,
@@ -79,14 +78,12 @@ class UserController extends Controller
 
         $id = 1;
         $user = User::latest()->first();
-        if($user) {
+        if ($user) {
             $id = $user->id + 1;
         }
 
-        // dd($request,$id);
-
         $user = User::create([
-            // 'id'            => $id,
+            'id'            => $id,
             'name'          => strtoupper($request->name),
             'email'         => $request->email,
             'password'      => md5($request->password),
@@ -98,7 +95,6 @@ class UserController extends Controller
         $user->assignRole($request->roles);
 
         return redirect()->route('apps.user.index');
-        // dd($request);
     }
 
     /**
@@ -114,48 +110,48 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        if(auth()){
+        if (auth()) {
             $user_id = auth()->user()->id;
         }
         $a = '';
-        $user = User::where('id',$user_id)->first();
+        $user = User::where('id', $user_id)->first();
         $permissions = $user->getPermissionsViaRoles();
-        for ($j = 0; $j < $permissions->count(); $j++){
-            if(str_contains($permissions[$j]['name'], 'edit')){
-                $a .= $permissions[$j]['name'].', ';
+        for ($j = 0; $j < $permissions->count(); $j++) {
+            if (str_contains($permissions[$j]['name'], 'edit')) {
+                $a .= $permissions[$j]['name'] . ', ';
             }
         }
-        if(str_contains($a, 'users.edit')){
-            $user = User::where('id',$id)->first();
-            if(Auth::user()->roles[0]['id'] == 1) {
-                $companies  = Customer::where('is_show',1)->get();
+        if (str_contains($a, 'users.edit')) {
+            $user = User::where('id', $id)->first();
+            if (Auth::user()->roles[0]['id'] == 1) {
+                $companies  = Customer::where('is_show', 1)->get();
                 $roles      = Role::all();
-                $user_role  = User::with('roles')->where('id',$id)->first();
+                $user_role  = User::with('roles')->where('id', $id)->first();
             } else {
-                $companies  = Customer::where('is_show',1)->where('id',Auth::user()->customer_id)->get();
-                $roles      = Role::where('id','>',1)->get();
-                $user_role  = User::with('roles')->where('id',$id)->first();
+                $companies  = Customer::where('is_show', 1)->where('id', Auth::user()->customer_id)->get();
+                $roles      = Role::where('id', '>', 1)->get();
+                $user_role  = User::with('roles')->where('id', $id)->first();
             }
             $user_roles = array();
-            foreach($user_role->roles as $role) {
-                array_push($user_roles,['id'=>$role->id,'name'=>$role->name]);
+            foreach ($user_role->roles as $role) {
+                array_push($user_roles, ['id' => $role->id, 'name' => $role->name]);
             }
             // dd($user_roles);
             return Inertia::render('Apps/User/Edit', [
                 'user'      => $user,
                 'roles'     => $roles,
                 'companies' => $companies,
-                'user_roles'=> $user_roles,
+                'user_roles' => $user_roles,
             ]);
         }
 
-        return Inertia::render('Forbidden403', [
-        ]);
+        return Inertia::render('Forbidden403', []);
     }
 
-    public function my_profile() {
+    public function my_profile()
+    {
         $id = auth()->user()->id;
-        $user = User::where('id',$id)->first();
+        $user = User::where('id', $id)->first();
         return Inertia::render('Apps/User/MyProfile', [
             'user'     => $user
         ]);
@@ -166,15 +162,15 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $user = User::where('id',$id)->first();
+        $user = User::where('id', $id)->first();
 
-        if($request->password) {
+        if ($request->password) {
             $user->update([
                 'password'      => md5($request->password)
             ]);
         }
 
-        if($request->roles) {
+        if ($request->roles) {
             $user->syncRoles($request->roles);
         }
 
@@ -203,7 +199,7 @@ class UserController extends Controller
             array_push($array_permission, $permission->name);
         }
 
-        if(count($array_permission)) {
+        if (count($array_permission)) {
             $return['status']   = 200;
             $return['data']     = $array_permission;
         } else {

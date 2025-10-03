@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class DashMonitoringTat extends Model
 {
     use HasFactory;
-    protected $table = 'dash_monitoring_tat';
-    protected $guarded = [
-    ];
+    protected $table = 'dash_monitoring_tats';
+    protected $guarded = [];
 }

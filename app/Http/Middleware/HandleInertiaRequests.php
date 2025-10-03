@@ -38,13 +38,13 @@ class HandleInertiaRequests extends Middleware
         return array_merge(parent::share($request), [
             //session
             'session' => [
-                'status' 	=> fn () => $request->session()->get('status'),
-                'success'   => fn () => $request->session()->get('success'),
-                'error'    	=> fn () => $request->session()->get('error'),
+                'status'     => fn() => $request->session()->get('status'),
+                'success'   => fn() => $request->session()->get('success'),
+                'error'        => fn() => $request->session()->get('error'),
             ],
             //user authenticated
-            'auth'=>[
-                'user'          => $request->user() ? $request->user() : null,
+            'auth' => [
+                'user'          => $request->user() ? $request->user()->load('has_company', 'has_branch') : null,
                 // 'permissions'   => $request->user() ? $request->user()->getPermissionArray() : []
             ],
             //route
@@ -55,8 +55,5 @@ class HandleInertiaRequests extends Middleware
                 ];
             },
         ]);
-        // return array_merge(parent::share($request), [
-        //     //
-        // ]);
     }
 }
