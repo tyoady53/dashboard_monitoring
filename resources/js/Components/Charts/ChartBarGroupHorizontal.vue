@@ -6,8 +6,8 @@
         <div class="card shadow-sm p-4 chart" :style="`height: ${height}PX;`">
             <apexchart v-if="chart_data.length" type="bar" height="300" :options="chartOptions" :series="chart_data" />
             <div class="row m-2 justify-content-center text-center" v-if="props.summary">
-                <div class="col-12"><strong>{{ props.summary.toUpperCase() }}</strong></div>
-                <div class="col-4" v-for="(label,idx) in chart_labels">{{ label }}: {{ chart_data[0].data[idx] + chart_data[1].data[idx] }}</div>
+                <div class="col-12"><h6><strong>{{ props.summary.toUpperCase() }}</strong></h6></div>
+                <div class="col-4" v-for="(label,idx) in chart_labels"><strong>{{ label }}</strong>: {{ chart_data[0].data[idx] + chart_data[1].data[idx] }}</div>
             </div>
         </div>
     </div>
