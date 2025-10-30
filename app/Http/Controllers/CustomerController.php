@@ -19,13 +19,13 @@ class CustomerController extends Controller
         //     return Inertia::render('Forbidden403', []);
         // }
 
-        // $customers = Customer::with('has_branch')->orderBy('customer_name')->get();
-        // // if(!count($customers)) {
-        // //     $customers = [];
-        // // }
-        // return Inertia::render('Apps/Customer/Index', [
-        //     'customers'     => $customers
-        // ]);
+        $customers = Customer::with('has_branch')->orderBy('customer_name')->get();
+        if (!count($customers)) {
+            $customers = [];
+        }
+        return Inertia::render('Apps/Customer/Index', [
+            'customers'     => $customers
+        ]);
     }
 
     /**
@@ -43,7 +43,7 @@ class CustomerController extends Controller
     {
         $id = 1;
         $customer = Customer::latest()->first();
-        if($customer) {
+        if ($customer) {
             $id = $customer->id + 1;
         }
 
@@ -57,10 +57,11 @@ class CustomerController extends Controller
         return redirect()->route('apps.customer.index');
     }
 
-    public function store_branch(Request $request) {
+    public function store_branch(Request $request)
+    {
         $id = 1;
         $branch = CustomerBranch::latest()->first();
-        if($branch) {
+        if ($branch) {
             $id = $branch->id + 1;
         }
 
@@ -109,8 +110,9 @@ class CustomerController extends Controller
         //
     }
 
-    public function get_branch($cust_id) {
-        $branches = CustomerBranch::where('customer_id',$cust_id)->get();
+    public function get_branch($cust_id)
+    {
+        $branches = CustomerBranch::where('customer_id', $cust_id)->get();
         // dd($branches,$cust_id);
         return response()->json([
             'status'    => true,
