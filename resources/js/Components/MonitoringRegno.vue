@@ -1213,7 +1213,7 @@
                                     <p class="regno_font">{{ data.seq_no }}</p>
                                 </td>
                                 <td>
-                                    <p class="regno_font">{{ data.regno }}</p>
+                                    <p class="regno_font">{{ data.reg_no }}</p>
                                 </td>
                                 <td>
                                     <p class="regno_font">{{ data.tat }}</p>

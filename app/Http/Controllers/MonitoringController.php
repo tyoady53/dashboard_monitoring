@@ -191,7 +191,7 @@ class MonitoringController extends Controller
 
     function monitoringTAT($cust_id, $branch_id)
     {
-        $qry_data = DB::table('dash_tat')
+        $qry_data = DB::table('dash_tat_v1')
             ->where('cust_name', $cust_id)
             ->where('cust_branch', $branch_id)
             ->get();
@@ -257,19 +257,6 @@ class MonitoringController extends Controller
             ->where('cust_name', $cust_id)
             ->where('cust_branch', $branch_id)
             ->first();
-        // dd($qry_data);
-        // $return_array = array();
-        // foreach ($qry_data as $data) {
-        //     $return_array['data'][] = [
-        //         'lab_no'        => $data->lab_no,
-        //         'patient_name'  => $data->patient_name,
-        //         'result_time'   => $data->result_time
-        //     ];
-        // }
-
-        // sample_not_running
-        // sample_not_verify
-        // sample_not_auth
 
         $data['title'] = strtoupper('rekap pasien');
         $data['period'] = $qry_data->period;
@@ -303,7 +290,6 @@ class MonitoringController extends Controller
             ];
         }
 
-        // dd($return_array);
         return $return_array;
     }
     function jumlahRegistrasidanPemeriksaan($cust_id, $branch_id)
