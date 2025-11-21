@@ -75,7 +75,7 @@ const chartOptions = computed(() => ({
     plotOptions: {
         pie: {
             donut: {
-                size: '60%'
+                size: '45%'
             }
         }
     },

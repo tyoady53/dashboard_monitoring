@@ -5,7 +5,7 @@
         <div class="card shadow-sm p-4 chart">
           <apexchart
             type="bar"
-            height="300"
+            height="250"
             :options="chartOptions"
             :series="datas"
           />

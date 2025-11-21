@@ -1,5 +1,4 @@
 <template>
-
     <Head>
         <title>Patient Monitoring - {{ auth.user.has_branch.branch_name }}</title>
     </Head>
@@ -7,7 +6,7 @@
         <!-- <MonitoringCharts :refreshInterval="(refreshRate > 0 ? refreshRate : 1)" :link="`api/dashboard/get_data/${this.auth.user.email}`" /> -->
         <div class="container-fluid">
             <!-- <div class="container-fluid"> -->
-            <div class="fade-in">
+            <div class="fade-in" style="margin-top: -25px;">
                 <div class="text-center">
                     <h4>Patient Monitoring {{ auth.user.has_branch.branch_name }}</h4>
                 </div>

@@ -1,5 +1,5 @@
 <template>
-    <div class="card border-0 rounded-3 shadow-border-top-purple mt-4">
+    <div class="card border-0 rounded-3 shadow-border-top-purple mt-2">
         <div class="card-body">
             <div class="text-center">
                 Last Update : {{ globalConfig.formatCompat(last_update) }} <br />
@@ -17,23 +17,23 @@
             <template v-else>
                 <div class="row align-items-stretch mb-3">
                     <div class="col-md-4 mb-3">
-                        <ChartBarGroupHorizontal :datas="chart_data[0]" summary="Total pemeriksaan per layanan" height="450"/>
+                        <ChartBarGroupHorizontal :datas="chart_data[0]" summary="Total pemeriksaan per layanan" height="400"/>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <ChartBarGroupHorizontal :datas="chart_data[1]" summary="Total pemeriksaan per janji hasil" height="450"/>
+                        <ChartBarGroupHorizontal :datas="chart_data[1]" summary="Total pemeriksaan per janji hasil" height="400"/>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <ChartDonut :datas="chart_data[2]" height="450"/>
+                        <ChartDonut :datas="chart_data[2]" height="400"/>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <ChartBarGroupHorizontal :datas="chart_data[3]" :summary="null" height="400"/>
+                        <ChartBarGroupHorizontal :datas="chart_data[3]" :summary="null" height="350"/>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <PatientTable :datas="chart_data[4]" height="400"/>
+                        <PatientTable :datas="chart_data[4]" height="350"/>
                     </div>
                     <div class="col-md-4 mb-3">
                         <h5 class="text-lg font-semibold mb-2 text-center">&nbsp</h5>
-                        <div class="card shadow p-3 chart shadow-sm p-4 d-flex align-items-center justify-content-center" style="height: 400PX;">
+                        <div class="card shadow p-3 chart shadow-sm p-4 d-flex align-items-center justify-content-center" style="height: 350PX;">
                             <h5 class="text-lg font-semibold mb-2 text-center">{{ (chart_data[5] ? chart_data[5].title : '') }}</h5>
                             <h5 class="text-lg font-semibold mb-2 text-center">PERIODE:{{ (chart_data[5] ? chart_data[5].period: '') }}</h5>
                             <StatBox :datas="( chart_data[5] ? chart_data[5].data : [])" />

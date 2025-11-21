@@ -22244,7 +22244,7 @@ __webpack_require__.r(__webpack_exports__);
         plotOptions: {
           bar: {
             horizontal: true,
-            barHeight: '90%' // optional, better for horizontal layout
+            barHeight: '70%' // optional, better for horizontal layout
           }
         },
         dataLabels: {
@@ -22383,7 +22383,7 @@ __webpack_require__.r(__webpack_exports__);
         plotOptions: {
           pie: {
             donut: {
-              size: '60%'
+              size: '45%'
             }
           }
         },
@@ -24531,7 +24531,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "col-12 text-center"
   })) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.title), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_apexchart, {
     type: "bar",
-    height: "300",
+    height: "250",
     options: $setup.chartOptions,
     series: $setup.datas
   }, null, 8 /* PROPS */, ["options", "series"])])]));
@@ -24573,13 +24573,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return $setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["LoadingComponent"], {
     key: 0,
     "class": "col-12 text-center"
-  })) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <h5 class=\"text-lg font-semibold mb-2  text-center\">{{ title }}</h5> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.chart_title), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  })) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.chart_title), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "card shadow-sm p-4 chart",
     style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)("height: ".concat($props.height, "PX;"))
   }, [$setup.chart_data.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_apexchart, {
     key: 0,
     type: "bar",
-    height: "300",
+    height: "250",
     options: $setup.chartOptions,
     series: $setup.chart_data
   }, null, 8 /* PROPS */, ["options", "series"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.props.summary ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.props.summary.toUpperCase()), 1 /* TEXT */)])]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.chart_labels, function (label, idx) {
@@ -24660,7 +24660,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "col-12 text-center"
   })) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.title), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_apexchart, {
     type: "line",
-    height: "300",
+    height: "250",
     options: $setup.chartOptions,
     series: $setup.datas
   }, null, 8 /* PROPS */, ["options", "series"])])]));
@@ -24690,7 +24690,7 @@ var _hoisted_2 = {
 var _hoisted_3 = {
   "class": "card shadow p-3 chart",
   style: {
-    "height": "400PX"
+    "height": "350PX"
   }
 };
 var _hoisted_4 = {
@@ -24738,15 +24738,12 @@ var _hoisted_3 = {
   "class": "col-4"
 };
 var _hoisted_4 = {
-  "class": "card_content"
-};
-var _hoisted_5 = {
   "class": "stat-box"
 };
-var _hoisted_6 = {
+var _hoisted_5 = {
   "class": "stat-value"
 };
-var _hoisted_7 = {
+var _hoisted_6 = {
   "class": "stat-label"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -24754,7 +24751,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     key: 0,
     "class": "col-12 text-center"
   })) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.chart_data, function (data) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.formatNumber(data.total)), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(data.label), 1 /* TEXT */)])])]);
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.formatNumber(data.total)), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(data.label), 1 /* TEXT */)])]);
   }), 256 /* UNKEYED_FRAGMENT */))])]));
 }
 
@@ -25169,7 +25166,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "card border-0 rounded-3 shadow-border-top-purple mt-4"
+  "class": "card border-0 rounded-3 shadow-border-top-purple mt-2"
 };
 var _hoisted_2 = {
   "class": "card-body"
@@ -25205,7 +25202,7 @@ var _hoisted_11 = {
 var _hoisted_12 = {
   "class": "card shadow p-3 chart shadow-sm p-4 d-flex align-items-center justify-content-center",
   style: {
-    "height": "400PX"
+    "height": "350PX"
   }
 };
 var _hoisted_13 = {
@@ -25236,21 +25233,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ChartBarGroupHorizontal"], {
     datas: $setup.chart_data[0],
     summary: "Total pemeriksaan per layanan",
-    height: "450"
+    height: "400"
   }, null, 8 /* PROPS */, ["datas"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ChartBarGroupHorizontal"], {
     datas: $setup.chart_data[1],
     summary: "Total pemeriksaan per janji hasil",
-    height: "450"
+    height: "400"
   }, null, 8 /* PROPS */, ["datas"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ChartDonut"], {
     datas: $setup.chart_data[2],
-    height: "450"
+    height: "400"
   }, null, 8 /* PROPS */, ["datas"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ChartBarGroupHorizontal"], {
     datas: $setup.chart_data[3],
     summary: null,
-    height: "400"
+    height: "350"
   }, null, 8 /* PROPS */, ["datas"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["PatientTable"], {
     datas: $setup.chart_data[4],
-    height: "400"
+    height: "350"
   }, null, 8 /* PROPS */, ["datas"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
     "class": "text-lg font-semibold mb-2 text-center"
   }, " ", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.chart_data[5] ? $setup.chart_data[5].title : ''), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_14, "PERIODE:" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.chart_data[5] ? $setup.chart_data[5].period : ''), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["StatBox"], {
@@ -26728,7 +26725,10 @@ var _hoisted_2 = {
   "class": "container-fluid"
 };
 var _hoisted_3 = {
-  "class": "fade-in"
+  "class": "fade-in",
+  style: {
+    "margin-top": "-25px"
+  }
 };
 var _hoisted_4 = {
   "class": "text-center"
@@ -30914,7 +30914,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.stat-box[data-v-702150f0] {\n    border-radius: 10px;\n    padding: 10px;\n    height: 100px;\n    background: #f3f4f6;\n    text-align: center;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);\n}\n.card_content[data-v-702150f0] {\n    display: flex;               /* Aktifkan flexbox */\n    justify-content: center;     /* Horizontal center */\n    align-items: center;         /* Vertical center */\n}\n.stat-label[data-v-702150f0] {\n    font-size: 12px;\n    color: #6b7280;\n}\n.stat-value[data-v-702150f0] {\n    font-size: 20px;\n    font-weight: bold;\n    color: #111827;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.stat-box[data-v-702150f0] {\n    border-radius: 10px;\n\theight: 80px;\n    padding: 10px;\n    background: #f3f4f6;\n    text-align: center;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);\n}\n.stat-label[data-v-702150f0] {\n    font-size: 12px;\n    color: #6b7280;\n}\n.stat-value[data-v-702150f0] {\n    font-size: 20px;\n    font-weight: bold;\n    color: #111827;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
