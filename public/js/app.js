@@ -24700,7 +24700,7 @@ var _hoisted_2 = {
 var _hoisted_3 = {
   "class": "card shadow p-2 chart",
   style: {
-    "height": "350PX"
+    "height": "280PX"
   }
 };
 var _hoisted_4 = {
@@ -25213,7 +25213,7 @@ var _hoisted_11 = {
 var _hoisted_12 = {
   "class": "card shadow p-3 chart shadow-sm p-4 d-flex align-items-center justify-content-center",
   style: {
-    "height": "350PX"
+    "height": "280PX"
   }
 };
 var _hoisted_13 = {
@@ -25244,21 +25244,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ChartBarGroupHorizontal"], {
     datas: $setup.chart_data[0],
     summary: "Total pemeriksaan per layanan",
-    height: "400"
+    height: "380"
   }, null, 8 /* PROPS */, ["datas"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ChartBarGroupHorizontal"], {
     datas: $setup.chart_data[1],
     summary: "Total pemeriksaan per janji hasil",
-    height: "400"
+    height: "380"
   }, null, 8 /* PROPS */, ["datas"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ChartDonut"], {
     datas: $setup.chart_data[2],
-    height: "400"
+    height: "380"
   }, null, 8 /* PROPS */, ["datas"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ChartBarGroupHorizontal"], {
     datas: $setup.chart_data[3],
     summary: null,
-    height: "350"
+    height: "280"
   }, null, 8 /* PROPS */, ["datas"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["PatientTable"], {
     datas: $setup.chart_data[4],
-    height: "350"
+    height: "280"
   }, null, 8 /* PROPS */, ["datas"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
     "class": "text-lg font-semibold mb-2 text-center"
   }, " ", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.chart_data[5] ? $setup.chart_data[5].title : ''), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_14, "PERIODE:" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.chart_data[5] ? $setup.chart_data[5].period : ''), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["StatBox"], {

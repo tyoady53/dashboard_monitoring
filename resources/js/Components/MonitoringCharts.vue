@@ -17,23 +17,23 @@
             <template v-else>
                 <div class="row align-items-stretch mb-1">
                     <div class="col-md-4">
-                        <ChartBarGroupHorizontal :datas="chart_data[0]" summary="Total pemeriksaan per layanan" height="400"/>
+                        <ChartBarGroupHorizontal :datas="chart_data[0]" summary="Total pemeriksaan per layanan" height="380"/>
                     </div>
                     <div class="col-md-4">
-                        <ChartBarGroupHorizontal :datas="chart_data[1]" summary="Total pemeriksaan per janji hasil" height="400"/>
+                        <ChartBarGroupHorizontal :datas="chart_data[1]" summary="Total pemeriksaan per janji hasil" height="380"/>
                     </div>
                     <div class="col-md-4">
-                        <ChartDonut :datas="chart_data[2]" height="400"/>
+                        <ChartDonut :datas="chart_data[2]" height="380"/>
                     </div>
                     <div class="col-md-4">
-                        <ChartBarGroupHorizontal :datas="chart_data[3]" :summary="null" height="350"/>
+                        <ChartBarGroupHorizontal :datas="chart_data[3]" :summary="null" height="280"/>
                     </div>
                     <div class="col-md-4">
-                        <PatientTable :datas="chart_data[4]" height="350"/>
+                        <PatientTable :datas="chart_data[4]" height="280"/>
                     </div>
                     <div class="col-md-4">
                         <h5 class="text-lg font-semibold mb-2 text-center">&nbsp</h5>
-                        <div class="card shadow p-3 chart shadow-sm p-4 d-flex align-items-center justify-content-center" style="height: 350PX;">
+                        <div class="card shadow p-3 chart shadow-sm p-4 d-flex align-items-center justify-content-center" style="height: 280PX;">
                             <h5 class="text-lg font-semibold mb-2 text-center">{{ (chart_data[5] ? chart_data[5].title : '') }}</h5>
                             <h5 class="text-lg font-semibold mb-2 text-center">PERIODE:{{ (chart_data[5] ? chart_data[5].period: '') }}</h5>
                             <StatBox :datas="( chart_data[5] ? chart_data[5].data : [])" />

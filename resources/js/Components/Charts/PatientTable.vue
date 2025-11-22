@@ -2,7 +2,7 @@
     <LoadingComponent v-if="isLoading" class="col-12 text-center" />
     <div v-else>
         <h5 class="text-lg font-semibold mb-1 text-center">{{ chart_title }}</h5>
-        <div class="card shadow p-2 chart" style="height: 350PX;">
+        <div class="card shadow p-2 chart" style="height: 280PX;">
             <div style="height: 99%; overflow-y: auto;">
                 <table class="table table-bordered table-striped">
                     <thead>
