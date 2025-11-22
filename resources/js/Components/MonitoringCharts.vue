@@ -3,7 +3,7 @@
         <div class="card-body">
             <div class="text-center">
                 Last Update : {{ globalConfig.formatCompat(last_update) }} <br />
-                Time : {{ time }}
+                <!-- Time : {{ time }} -->
             </div>
             <br>
             <template v-if="isLoading">
@@ -15,23 +15,23 @@
                 </div>
             </template>
             <template v-else>
-                <div class="row align-items-stretch mb-3">
-                    <div class="col-md-4 mb-3">
+                <div class="row align-items-stretch mb-1">
+                    <div class="col-md-4">
                         <ChartBarGroupHorizontal :datas="chart_data[0]" summary="Total pemeriksaan per layanan" height="400"/>
                     </div>
-                    <div class="col-md-4 mb-3">
+                    <div class="col-md-4">
                         <ChartBarGroupHorizontal :datas="chart_data[1]" summary="Total pemeriksaan per janji hasil" height="400"/>
                     </div>
-                    <div class="col-md-4 mb-3">
+                    <div class="col-md-4">
                         <ChartDonut :datas="chart_data[2]" height="400"/>
                     </div>
-                    <div class="col-md-4 mb-3">
+                    <div class="col-md-4">
                         <ChartBarGroupHorizontal :datas="chart_data[3]" :summary="null" height="350"/>
                     </div>
-                    <div class="col-md-4 mb-3">
+                    <div class="col-md-4">
                         <PatientTable :datas="chart_data[4]" height="350"/>
                     </div>
-                    <div class="col-md-4 mb-3">
+                    <div class="col-md-4">
                         <h5 class="text-lg font-semibold mb-2 text-center">&nbsp</h5>
                         <div class="card shadow p-3 chart shadow-sm p-4 d-flex align-items-center justify-content-center" style="height: 350PX;">
                             <h5 class="text-lg font-semibold mb-2 text-center">{{ (chart_data[5] ? chart_data[5].title : '') }}</h5>

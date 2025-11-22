@@ -18,9 +18,7 @@ class MonitoringController extends Controller
      */
     public function index()
     {
-        // dd(auth()->user()->getAllPermissions());
         $permissions = $this->get_permissions();
-        // dd($permissions);
         return Inertia::render('Apps/Dashboard/Monitoring', [
             'permissions'     => $permissions
         ]);
@@ -48,7 +46,6 @@ class MonitoringController extends Controller
             ];
         };
 
-        // dd(request(),$array,(int)request()['length']);
         return response()->json([
             'data' => $array
         ]);
@@ -139,17 +136,17 @@ class MonitoringController extends Controller
             $data = $this->monitoring_regno($user);
         } else if (in_array("dash_monitoring.charts", $array_permission)) {
             $last_ = $qry_data = DB::table('dash_patient_monitoring')
-                ->where('cust_name', $user->has_company->customer_name)
+                ->where('cust_name', $user->has_company->customer_id)
                 ->where('cust_branch', $user->has_branch->outlet_id)
                 ->first();
             $last_update = $last_->dttm;
-            $data[0] = $this->statistikPemeriksaanPerLayanan($user->has_company->customer_name, $user->has_branch->outlet_id);
-            $data[1] = $this->monitoringTAT($user->has_company->customer_name, $user->has_branch->outlet_id);
-            $data[2] = $this->statistikAsalPasien($user->has_company->customer_name, $user->has_branch->outlet_id);
-            $data[3] = $this->statistikPasienBelumOtorisasi($user->has_company->customer_name, $user->has_branch->outlet_id);
-            $data[4] = $this->pasienJanjiHasil($user->has_company->customer_name, $user->has_branch->outlet_id);
-            $data[5] = $this->rekapPasienMingguSebelumnya($user->has_company->customer_name, $user->has_branch->outlet_id);
-            $data[6] = $this->jumlahRegistrasidanPemeriksaan($user->has_company->customer_name, $user->has_branch->outlet_id);
+            $data[0] = $this->statistikPemeriksaanPerLayanan($user->has_company->customer_id, $user->has_branch->outlet_id);
+            $data[1] = $this->monitoringTAT($user->has_company->customer_id, $user->has_branch->outlet_id);
+            $data[2] = $this->statistikAsalPasien($user->has_company->customer_id, $user->has_branch->outlet_id);
+            $data[3] = $this->statistikPasienBelumOtorisasi($user->has_company->customer_id, $user->has_branch->outlet_id);
+            $data[4] = $this->pasienJanjiHasil($user->has_company->customer_id, $user->has_branch->outlet_id);
+            $data[5] = $this->rekapPasienMingguSebelumnya($user->has_company->customer_id, $user->has_branch->outlet_id);
+            $data[6] = $this->jumlahRegistrasidanPemeriksaan($user->has_company->customer_id, $user->has_branch->outlet_id);
         }
 
         response()->json([

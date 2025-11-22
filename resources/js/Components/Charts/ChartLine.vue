@@ -1,8 +1,8 @@
 <template>
     <LoadingComponent v-if="isLoading" class="col-12 text-center" />
     <div v-else>
-        <h5 class="text-lg font-semibold mb-2 text-center">{{ title }}</h5>
-        <div class="card shadow-sm p-4 chart">
+        <h5 class="text-lg font-semibold mb-1 text-center">{{ title }}</h5>
+        <div class="card shadow-sm p-2 chart">
           <apexchart
             type="line"
             height="250"

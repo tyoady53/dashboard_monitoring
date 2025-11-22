@@ -1,5 +1,5 @@
 let config = {
-    refreshRate: 1, // default: refresh every 1 minute
+    refreshRate: 5, // default: refresh every 1 minute
     appName: "Dashboard Monitoring",
 };
 
