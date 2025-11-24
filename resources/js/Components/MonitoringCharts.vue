@@ -2,7 +2,7 @@
     <div class="card border-0 rounded-3 shadow-border-top-purple mt-2">
         <div class="card-body">
             <div class="text-center mb-1">
-                <h5><strong>MONITORING OPERASIONAL LAB {{ title.toUpperCase() }}</strong></h5>
+                <h5><strong>MONITORING OPERASIONAL {{ title.toUpperCase() }}</strong></h5>
                 <span><strong>{{ weekRange }}</strong></span><br>
                 Last Update : {{ globalConfig.formatCompat(last_update) }} <br />
                 <!-- Time : {{ time }} -->

@@ -1,7 +1,7 @@
 <template>
     <Head>
         <title v-if="permissions.original.includes('dash_monitoring.regno')">Patient Monitoring - {{ auth.user.has_branch.branch_name }}</title>
-        <title v-else>MONITORING OPERASIONAL LAB {{ auth.user.has_branch.branch_name }}</title>
+        <title v-else>MONITORING OPERASIONAL {{ auth.user.has_branch.branch_name }}</title>
     </Head>
     <main class="c-main">
         <!-- <MonitoringCharts :refreshInterval="(refreshRate > 0 ? refreshRate : 1)" :link="`api/dashboard/get_data/${this.auth.user.email}`" /> -->
