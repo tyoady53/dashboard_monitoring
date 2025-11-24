@@ -1,6 +1,7 @@
 <template>
     <Head>
-        <title>Patient Monitoring - {{ auth.user.has_branch.branch_name }}</title>
+        <title v-if="permissions.original.includes('dash_monitoring.regno')">Patient Monitoring - {{ auth.user.has_branch.branch_name }}</title>
+        <title v-else>MONITORING OPERASIONAL LAB</title>
     </Head>
     <main class="c-main">
         <!-- <MonitoringCharts :refreshInterval="(refreshRate > 0 ? refreshRate : 1)" :link="`api/dashboard/get_data/${this.auth.user.email}`" /> -->
@@ -8,7 +9,8 @@
             <!-- <div class="container-fluid"> -->
             <div class="fade-in" style="margin-top: -25px;">
                 <div class="text-center">
-                    <h4>Patient Monitoring {{ auth.user.has_branch.branch_name }}</h4>
+                    <h4 v-if="permissions.original.includes('dash_monitoring.regno')">Patient Monitoring {{ auth.user.has_branch.branch_name }}</h4>
+                    <!-- <h4 v-else>MONITORING OPERASIONAL LAB</h4> -->
                 </div>
                 <template v-if="permissions.original.includes('dash_monitoring.regno')">
                     <MonitoringRegno :refreshInterval="(refreshRate > 0 ? refreshRate : 1)"

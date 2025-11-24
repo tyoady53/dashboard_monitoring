@@ -2,6 +2,8 @@
     <div class="card border-0 rounded-3 shadow-border-top-purple mt-2">
         <div class="card-body">
             <div class="text-center">
+                <h5><strong>MONITORING OPERASIONAL LAB</strong></h5>
+                <span><strong>{{ weekRange }}</strong></span><br>
                 Last Update : {{ globalConfig.formatCompat(last_update) }} <br />
                 <!-- Time : {{ time }} -->
             </div>
@@ -140,4 +142,37 @@ const get_monitoring_data = () => {
             });
         });
 };
+
+const formatDate = (date) => {
+  return date.toLocaleDateString('en-GB', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric'
+  }).toUpperCase();
+};
+
+function formatDateDash(date) {
+  const d = date.getDate().toString().padStart(2, '0');
+  const m = (date.getMonth() + 1).toString().padStart(2, '0');
+  const y = date.getFullYear();
+
+  return `${d}-${m}-${y}`;
+}
+
+const getWeekRange = () => {
+  const today = new Date();
+//   const today = new Date('2025-12-29');
+  const day = today.getDay(); // 0 = Sun, 1 = Mon, ...
+  const mondayOffset = day === 0 ? -6 : 1 - day;
+
+  const start = new Date(today);
+  start.setDate(today.getDate() + mondayOffset);
+
+  const end = new Date(start);
+  end.setDate(start.getDate() + 6);
+
+  return `PERIODE : ${formatDateDash(start)} - ${formatDateDash(end)}`;
+};
+
+const weekRange = ref(getWeekRange());
 </script>
