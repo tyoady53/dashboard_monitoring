@@ -1,7 +1,7 @@
 <template>
     <LoadingComponent v-if="isLoading" class="col-12 text-center" />
     <div v-else>
-        <h5 class="text-lg font-semibold mb-1 text-center">{{ chart_title }}</h5>
+        <h6 class="text-lg font-semibold mb-1 text-center"><strong>{{ chart_title }}</strong></h6>
         <div class="card shadow p-2 chart" style="height: 280PX;">
             <div style="height: 99%; overflow-y: auto;">
                 <table class="table table-bordered table-striped">

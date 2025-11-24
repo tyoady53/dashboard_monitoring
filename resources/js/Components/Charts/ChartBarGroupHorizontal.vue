@@ -1,7 +1,7 @@
 <template>
     <LoadingComponent v-if="isLoading" class="col-12 text-center" />
     <div v-else>
-        <h5 class="text-lg font-semibold mb-1  text-center">{{ chart_title }}</h5>
+        <h6 class="text-lg font-semibold mb-1  text-center"><strong>{{ chart_title }}</strong></h6>
         <div class="card shadow-sm p-2 chart" :style="`height: ${height}PX;`">
             <apexchart v-if="chart_data.length" type="bar" height="250" :options="chartOptions" :series="chart_data" />
             <div class="row m-2 justify-content-center text-center" v-if="props.summary">

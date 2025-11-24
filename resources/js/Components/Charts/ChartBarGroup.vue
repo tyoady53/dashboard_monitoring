@@ -1,7 +1,7 @@
 <template>
     <LoadingComponent v-if="isLoading" class="col-12 text-center" />
     <div v-else>
-        <h5 class="text-lg font-semibold mb-1 text-center">{{ title }}</h5>
+        <h6 class="text-lg font-semibold mb-1 text-center"><strong>{{ title }}</strong></h6>
         <div class="card shadow-sm p-2 chart">
           <apexchart
             type="bar"
