@@ -3,7 +3,7 @@
         <div class="card-body">
             <div class="text-center mb-1">
                 <h5><strong>MONITORING OPERASIONAL {{ title.toUpperCase() }}</strong></h5>
-                <span><strong>{{ weekRange }}</strong></span><br>
+                <span><strong>{{ weekRange.toUpperCase() }}</strong></span><br>
                 Last Update : {{ globalConfig.formatCompat(last_update) }} <br />
                 <!-- Time : {{ time }} -->
             </div>
@@ -162,7 +162,7 @@ function formatDateDash(date) {
 
 const getWeekRange = () => {
   const today = new Date();
-//   const today = new Date('2025-12-29');
+//   const today = new Date('2025-12-31');
   const day = today.getDay(); // 0 = Sun, 1 = Mon, ...
   const mondayOffset = day === 0 ? -6 : 1 - day;
 
@@ -172,7 +172,7 @@ const getWeekRange = () => {
   const end = new Date(start);
   end.setDate(start.getDate() + 6);
 
-  return `PERIODE : ${formatDateDash(start)} - ${formatDateDash(end)}`;
+  return `PERIODE : ${formatDateDash(start)} s/d ${formatDateDash(end)}`;
 };
 
 const weekRange = ref(getWeekRange());
