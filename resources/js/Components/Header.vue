@@ -137,6 +137,7 @@ export default {
         fullScreen: true,
         permissions: [],
         isHidden: false,
+        lastY: 0,
     }),
 
     watch: {

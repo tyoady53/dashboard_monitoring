@@ -22697,7 +22697,8 @@ __webpack_require__.r(__webpack_exports__);
       routeName: '',
       fullScreen: true,
       permissions: [],
-      isHidden: false
+      isHidden: false,
+      lastY: 0
     };
   },
   watch: {
@@ -22858,6 +22859,7 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     series: Array,
     link: String,
+    title: String,
     refreshInterval: Number
   },
   setup: function setup(__props, _ref) {
@@ -25212,7 +25214,7 @@ var _hoisted_2 = {
   "class": "card-body"
 };
 var _hoisted_3 = {
-  "class": "text-center"
+  "class": "text-center mb-1"
 };
 var _hoisted_4 = {
   key: 0,
@@ -25264,7 +25266,7 @@ var _hoisted_18 = {
   "class": "col-4"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "MONITORING OPERASIONAL LAB")], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.weekRange), 1 /* TEXT */)]), _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Last Update : " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.globalConfig.formatCompat($setup.last_update)) + " ", 1 /* TEXT */), _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Time : {{ time }} ")]), _cache[5] || (_cache[5] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */)), $setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, _cache[3] || (_cache[3] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "MONITORING OPERASIONAL " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title.toUpperCase()), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.weekRange), 1 /* TEXT */)]), _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Last Update : " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.globalConfig.formatCompat($setup.last_update)) + " ", 1 /* TEXT */), _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Time : {{ time }} ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br> "), $setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, _cache[2] || (_cache[2] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "loading-spinner"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "spinner-border"
@@ -25288,7 +25290,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8 /* PROPS */, ["datas"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["PatientTable"], {
     datas: $setup.chart_data[4],
     height: "280"
-  }, null, 8 /* PROPS */, ["datas"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  }, null, 8 /* PROPS */, ["datas"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
     "class": "text-lg font-semibold mb-2 text-center"
   }, " ", -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.chart_data[5] ? $setup.chart_data[5].title : ''), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_14, "PERIODE:" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.chart_data[5] ? $setup.chart_data[5].period : ''), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["StatBox"], {
     datas: $setup.chart_data[5] ? $setup.chart_data[5].data : []
@@ -26808,7 +26810,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_MonitoringCharts = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MonitoringCharts");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Head, null, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [$props.permissions.original.includes('dash_monitoring.regno') ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("title", _hoisted_1, "Patient Monitoring - " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.auth.user.has_branch.branch_name), 1 /* TEXT */)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("title", _hoisted_2, "MONITORING OPERASIONAL LAB"))];
+      return [$props.permissions.original.includes('dash_monitoring.regno') ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("title", _hoisted_1, "Patient Monitoring - " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.auth.user.has_branch.branch_name), 1 /* TEXT */)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("title", _hoisted_2, "MONITORING OPERASIONAL " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.auth.user.has_branch.branch_name), 1 /* TEXT */))];
     }),
     _: 1 /* STABLE */
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <MonitoringCharts :refreshInterval=\"(refreshRate > 0 ? refreshRate : 1)\" :link=\"`api/dashboard/get_data/${this.auth.user.email}`\" /> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"container-fluid\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [$props.permissions.original.includes('dash_monitoring.regno') ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("h4", _hoisted_7, "Patient Monitoring " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.auth.user.has_branch.branch_name), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <h4 v-else>MONITORING OPERASIONAL LAB</h4> ")]), $props.permissions.original.includes('dash_monitoring.regno') ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_MonitoringRegno, {
@@ -26817,9 +26819,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     link: "api/dashboard/get_data/".concat(this.auth.user.email)
   }, null, 8 /* PROPS */, ["refreshInterval", "link"])) : $props.permissions.original.includes('dash_monitoring.charts') ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_MonitoringCharts, {
     key: 1,
-    refreshInterval: _ctx.refreshRate > 0 ? _ctx.refreshRate : 1,
-    link: "api/dashboard/get_data/".concat(this.auth.user.email)
-  }, null, 8 /* PROPS */, ["refreshInterval", "link"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" The Modal Refresh Rate "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Modal Header "), _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    refreshInterval: _ctx.refreshRate > 0 ? _ctx.refreshRate : 5,
+    link: "api/dashboard/get_data/".concat(this.auth.user.email),
+    title: $props.auth.user.has_branch.branch_name
+  }, null, 8 /* PROPS */, ["refreshInterval", "link", "title"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" The Modal Refresh Rate "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Modal Header "), _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "modal-header"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
     "class": "modal-title"

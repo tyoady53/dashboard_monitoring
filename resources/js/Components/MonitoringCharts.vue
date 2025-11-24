@@ -1,13 +1,13 @@
 <template>
     <div class="card border-0 rounded-3 shadow-border-top-purple mt-2">
         <div class="card-body">
-            <div class="text-center">
-                <h5><strong>MONITORING OPERASIONAL LAB</strong></h5>
+            <div class="text-center mb-1">
+                <h5><strong>MONITORING OPERASIONAL {{ title.toUpperCase() }}</strong></h5>
                 <span><strong>{{ weekRange }}</strong></span><br>
                 Last Update : {{ globalConfig.formatCompat(last_update) }} <br />
                 <!-- Time : {{ time }} -->
             </div>
-            <br>
+            <!-- <br> -->
             <template v-if="isLoading">
                 <div class="page-loader">
                     <div class="loading-spinner">
@@ -74,6 +74,7 @@ import StatBox from './Charts/StatBox.vue';
 const props = defineProps({
     series: Array,
     link: String,
+    title: String,
     refreshInterval: Number,
 });
 
