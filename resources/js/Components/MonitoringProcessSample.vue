@@ -22,8 +22,9 @@
                                     <h6><strong>NO.</strong></h6>
                                 </th>
                                 <th>
-                                    <strong>NAMA PASIEN</strong><br>
-                                    <span class="sub">REGNO</span>
+                                    <h6><strong>NAMA PASIEN | REGNO</strong></h6>
+                                    <!-- <strong>NAMA PASIEN</strong><br>
+                                    <span class="sub">REGNO</span> -->
                                 </th>
                                 <th>
                                     <h6><strong>RUANGAN</strong></h6>
