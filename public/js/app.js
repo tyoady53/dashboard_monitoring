@@ -25475,7 +25475,8 @@ var _hoisted_4 = {
   "class": "page-loader"
 };
 var _hoisted_5 = {
-  key: 1
+  key: 1,
+  "class": "table-scroll"
 };
 var _hoisted_6 = {
   "class": "table table-bordered solid display"
@@ -25484,7 +25485,7 @@ var _hoisted_7 = {
   "class": "text-center"
 };
 var _hoisted_8 = {
-  "class": "card border-0 rounded-3 shadow-border-top-purple mt-4 sticky-bottom-card"
+  "class": "card border-0 rounded-3 shadow-border-top-purple sticky-bottom-card"
 };
 var _hoisted_9 = {
   "class": "card-body py-2"
@@ -27030,10 +27031,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_MonitoringProcessSample = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MonitoringProcessSample");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Head, null, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [$props.permissions.original.includes('dash_monitoring.regno') ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("title", _hoisted_1, "Patient Monitoring - " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.auth.user.has_branch.branch_name), 1 /* TEXT */)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("title", _hoisted_2, "MONITORING OPERASIONAL " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.auth.user.has_branch.branch_name), 1 /* TEXT */))];
+      return [$props.permissions.original.includes('dash_monitoring.regno') || $props.permissions.original.includes('dash_monitoring.process_sample') ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("title", _hoisted_1, "Patient Monitoring - " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.auth.user.has_branch.branch_name), 1 /* TEXT */)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("title", _hoisted_2, "MONITORING OPERASIONAL " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.auth.user.has_branch.branch_name), 1 /* TEXT */))];
     }),
     _: 1 /* STABLE */
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <MonitoringCharts :refreshInterval=\"(refreshRate > 0 ? refreshRate : 1)\" :link=\"`api/dashboard/get_data/${this.auth.user.email}`\" /> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"container-fluid\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [$props.permissions.original.includes('dash_monitoring.regno') ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("h4", _hoisted_7, "Patient Monitoring " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.auth.user.has_branch.branch_name), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <h4 v-else>MONITORING OPERASIONAL LAB</h4> ")]), $props.permissions.original.includes('dash_monitoring.regno') ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_MonitoringRegno, {
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <MonitoringCharts :refreshInterval=\"(refreshRate > 0 ? refreshRate : 1)\" :link=\"`api/dashboard/get_data/${this.auth.user.email}`\" /> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"container-fluid\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [$props.permissions.original.includes('dash_monitoring.regno') || $props.permissions.original.includes('dash_monitoring.process_sample') ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("h4", _hoisted_7, "Patient Monitoring " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.auth.user.has_branch.branch_name), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <h4 v-else>MONITORING OPERASIONAL LAB</h4> ")]), $props.permissions.original.includes('dash_monitoring.regno') ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_MonitoringRegno, {
     key: 0,
     refreshInterval: _ctx.refreshRate > 0 ? _ctx.refreshRate : 1,
     link: "api/dashboard/get_data/".concat(this.auth.user.email)
@@ -31263,7 +31264,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.sticky-bottom-card {\n    position: sticky;\n    bottom: 0;\n    z-index: 1;\n    background: #fff;\n}\n.inner-card {\n    border-radius: 12px;\n    padding: 12px;\n    background: #f8f9fa;\n    box-shadow: 0 2px 6px rgba(0,0,0,.08);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    min-height: 60px;\n    font-weight: 600;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.sticky-bottom-card {\n    position: sticky;\n    bottom: 0;\n    z-index: 1;\n    background: #fff;\n}\n.inner-card {\n    border-radius: 12px;\n    padding: 12px;\n    background: #f8f9fa;\n    box-shadow: 0 2px 6px rgba(0,0,0,.08);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    min-height: 60px;\n    font-weight: 600;\n}\n.table-scroll {\n    max-height: calc(100vh - 280px); /* sesuaikan dengan layout */\n    overflow-y: auto;\n}\n\n/* Sticky header */\n.table thead th {\n    position: sticky;\n    top: 0;\n    z-index: 2;\n    color: #fff;\n}\nthead {\n    background: #0F67B4;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

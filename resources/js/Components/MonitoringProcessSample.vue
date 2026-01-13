@@ -14,7 +14,7 @@
                 </div>
             </template>
             <template v-else>
-                <div>
+                <div class="table-scroll">
                     <table class="table table-bordered solid display">
                         <thead>
                             <tr class="text-center">
@@ -62,7 +62,7 @@
             </template>
         </div>
     </div>
-    <div class="card border-0 rounded-3 shadow-border-top-purple mt-4 sticky-bottom-card">
+    <div class="card border-0 rounded-3 shadow-border-top-purple sticky-bottom-card">
         <!-- {{ table_data?.info?.total }} -->
         <div class="card-body py-2">
             <div class="row g-2 align-items-stretch">
@@ -181,6 +181,23 @@ const get_monitoring_data = () => {
     justify-content: center;
     min-height: 60px;
     font-weight: 600;
+}
+
+.table-scroll {
+    max-height: calc(100vh - 280px); /* sesuaikan dengan layout */
+    overflow-y: auto;
+}
+
+/* Sticky header */
+.table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    color: #fff;
+}
+
+thead {
+    background: #0F67B4;
 }
 </style>
 

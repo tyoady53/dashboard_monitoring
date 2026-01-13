@@ -50,7 +50,7 @@ class CustomerController extends Controller
         Customer::create([
             // 'id'            => $id,
             'customer_id'   => strtoupper($request->customer_id),
-            'customer_name' => strtoupper($request->customer_name),
+            'customer_name' => $request->customer_name,
             'is_show'       => '1',
         ]);
 

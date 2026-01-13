@@ -1,6 +1,6 @@
 <template>
     <Head>
-        <title v-if="permissions.original.includes('dash_monitoring.regno')">Patient Monitoring - {{ auth.user.has_branch.branch_name }}</title>
+        <title v-if="permissions.original.includes('dash_monitoring.regno') || permissions.original.includes('dash_monitoring.process_sample')">Patient Monitoring - {{ auth.user.has_branch.branch_name }}</title>
         <title v-else>MONITORING OPERASIONAL {{ auth.user.has_branch.branch_name }}</title>
     </Head>
     <main class="c-main">
@@ -9,7 +9,7 @@
             <!-- <div class="container-fluid"> -->
             <div class="fade-in" style="margin-top: -25px;">
                 <div class="text-center">
-                    <h4 v-if="permissions.original.includes('dash_monitoring.regno')">Patient Monitoring {{ auth.user.has_branch.branch_name }}</h4>
+                    <h4 v-if="permissions.original.includes('dash_monitoring.regno') || permissions.original.includes('dash_monitoring.process_sample')">Patient Monitoring {{ auth.user.has_branch.branch_name }}</h4>
                     <!-- <h4 v-else>MONITORING OPERASIONAL LAB</h4> -->
                 </div>
                 <template v-if="permissions.original.includes('dash_monitoring.regno')">
