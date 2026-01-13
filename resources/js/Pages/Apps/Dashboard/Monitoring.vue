@@ -20,6 +20,10 @@
                     <MonitoringCharts :refreshInterval="(refreshRate > 0 ? refreshRate : 5)"
                         :link="`api/dashboard/get_data/${this.auth.user.email}`" :title="auth.user.has_branch.branch_name" />
                 </template>
+                <template v-else-if="permissions.original.includes('dash_monitoring.process_sample')">
+                    <MonitoringProcessSample :refreshInterval="(refreshRate > 0 ? refreshRate : 5)"
+                        :link="`api/dashboard/get_data/${this.auth.user.email}`" :title="auth.user.has_branch.branch_name" />
+                </template>
             </div>
         </div>
         <!-- The Modal Refresh Rate -->
@@ -74,6 +78,7 @@ import { globalConfig } from '../../../globalConfig.js';
 
 import MonitoringRegno from '../../../Components/MonitoringRegno.vue';
 import MonitoringCharts from '../../../Components/MonitoringCharts.vue';
+import MonitoringProcessSample from "../../../Components/MonitoringProcessSample.vue";
 
 export default {
     //layout
@@ -84,6 +89,7 @@ export default {
         Head,
         MonitoringRegno,
         MonitoringCharts,
+        MonitoringProcessSample,
         globalConfig,
     },
 

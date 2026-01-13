@@ -147,6 +147,9 @@ class MonitoringController extends Controller
             $data[4] = $this->pasienJanjiHasil($user->has_company->customer_id, $user->has_branch->outlet_id);
             $data[5] = $this->rekapPasienMingguSebelumnya($user->has_company->customer_id, $user->has_branch->outlet_id);
             $data[6] = $this->jumlahRegistrasidanPemeriksaan($user->has_company->customer_id, $user->has_branch->outlet_id);
+        } else if (in_array("dash_monitoring.process_sample", $array_permission)) {
+            $data = $this->monitoring_process_sample($user);
+            ($data ? $last_update = $data['last_update'] : $last_update = null);
         }
 
         response()->json([
@@ -323,6 +326,25 @@ class MonitoringController extends Controller
             $data[] = $group;
         }
 
+        return $data;
+    }
+
+    function monitoring_process_sample($user)
+    {
+        // dd($user);
+        $data['cust_name'] = $user->has_company->customer_name;
+        $current['cust_branch'] = $user->has_branch->outlet_id;
+        $data['cust_branch'] = $user->has_branch->branch_name;
+        $data['table'] = DB::table('dash_patient_process_sample')
+            ->where('cust_name', $data['cust_name'])
+            ->where('cust_branch', $current['cust_branch'])
+            ->get()->toArray();
+        $data['info'] = DB::table('dash_patient_sample_summary')
+            ->where('cust_name', $data['cust_name'])
+            ->where('cust_branch', $current['cust_branch'])
+            ->first();
+        $data['last_update'] = $data['info']->dttm;
+        // dd($data['info']->dttm);
         return $data;
     }
 
