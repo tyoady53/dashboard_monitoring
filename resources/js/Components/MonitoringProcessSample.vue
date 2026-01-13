@@ -18,16 +18,28 @@
                     <table class="table table-bordered solid display">
                         <thead>
                             <tr class="text-center">
-                                <th>No</th>
                                 <th>
-                                    Nama Pasien<br>
-                                    <span class="sub">Regno</span>
+                                    <h6><strong>NO.</strong></h6>
                                 </th>
-                                <th>Ruangan</th>
-                                <th>Sample Datang</th>
-                                <th>Proses Sample</th>
-                                <th>Selesai</th>
-                                <th>Durasi</th>
+                                <th>
+                                    <strong>NAMA PASIEN</strong><br>
+                                    <span class="sub">REGNO</span>
+                                </th>
+                                <th>
+                                    <h6><strong>RUANGAN</strong></h6>
+                                </th>
+                                <th>
+                                    <h6><strong>SAMPLE DATANG</strong></h6>
+                                </th>
+                                <th>
+                                    <h6><strong>PROSES SAMPLE</strong></h6>
+                                </th>
+                                <th>
+                                    <h6><strong>SELESAI</strong></h6>
+                                </th>
+                                <th>
+                                    <h6><strong>DURASI</strong></h6>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -62,28 +74,38 @@
             </template>
         </div>
     </div>
-    <div class="card border-0 rounded-3 shadow-border-top-purple sticky-bottom-card">
-        <!-- {{ table_data?.info?.total }} -->
-        <div class="card-body py-2">
-            <div class="row g-2 align-items-stretch">
-                <div class="col-4  d-flex justify-content-center align-items-center">
-                    <div class="w-50 inner-card text-center">
-                        PASIEN BELUM SELESAI<br>{{ table_data?.info?.total }}
+    <template v-if="!isLoading">
+        <div class="card border-0 rounded-3 shadow-border-top-purple sticky-bottom-card">
+            <!-- {{ table_data?.info?.total }} -->
+            <div class="card-body py-2">
+                <div class="row g-2 align-items-stretch">
+
+                    <div class="col-4  d-flex justify-content-center align-items-center">
+                        <div class="inner-card text-center d-flex flex-column justify-content-center">
+                            <span class="fs-6 fw-bold">PASIEN BELUM SELESAI</span>
+                            <span>
+                                {{ table_data?.info?.total }}
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div class="col-4  d-flex justify-content-center align-items-center">
-                    <div class="w-50 inner-card text-center">
-                        PASIEN SELESAI<br>{{ table_data?.info?.total_not_finish }}
+
+                    <div class="col-4  d-flex justify-content-center align-items-center">
+                        <div class="inner-card text-center d-flex flex-column justify-content-center">
+                            <span class="fs-6 fw-bold">PASIEN SELESAI</span>
+                            <span>{{ table_data?.info?.total_not_finish }}</span>
+                        </div>
                     </div>
-                </div>
-                <div class="col-4  d-flex justify-content-center align-items-center">
-                    <div class="w-50 inner-card text-center">
-                        TOTAL PASIEN<br>{{ table_data?.info?.total_patient }}
+
+                    <div class="col-4  d-flex justify-content-center align-items-center">
+                        <div class="inner-card text-center d-flex flex-column justify-content-center">
+                            <span class="fs-6 fw-bold">TOTAL PASIEN</span>
+                            <span>{{ table_data?.info?.total_patient }}</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </template>
 
 </template>
 
@@ -198,6 +220,12 @@ const get_monitoring_data = () => {
 
 thead {
     background: #0F67B4;
+}
+
+.inner-card {
+    min-width: 250px;   /* adjust as needed */
+    /* padding: 10px 16px;
+    border-radius: 12px; */
 }
 </style>
 
