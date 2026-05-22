@@ -1,0 +1,59 @@
+.scroll-container {
+    height: calc(100% - 32px);
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+/* Modifies display to safely allow transformations without breaking row grids */
+.scroll-content {
+    display: table-row-group;
+    animation: vertical-marquee 25s linear infinite;
+}
+
+.scroll-content-toast {
+    animation: vertical-marquee 25s linear infinite;
+}
+
+/* Clear pause logic targeting the layout content correctly */
+.scroll-container:hover .scroll-content {
+    animation-play-state: paused;
+}
+
+@keyframes vertical-marquee {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+.custom-marquee-table {
+    table-layout: fixed;
+    width: 100%;
+    /* Changing collapse to separate stops the browser from leaving behind border lines during shifts */
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/* Keeps headers clean, sticky, and masks everything underneath seamlessly */
+.sticky-thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.custom-marquee-table th {
+    /* background-color: #f8f9fa !important; */
+    border-bottom: 2px solid #dee2e6 !important;
+    position: sticky;
+    top: 0;
+    z-index: 11;
+}
+
+/* Explicitly handles cell borders safely instead of relying on broken collapsed layouts */
+.custom-marquee-table td {
+    border-bottom: 1px solid #dee2e6;
+    padding: 8px;
+}

@@ -22606,6 +22606,531 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ChartBarHorizontal.vue?vue&type=script&setup=true&lang=js":
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ChartBarHorizontal.vue?vue&type=script&setup=true&lang=js ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _LoadingComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../LoadingComponent.vue */ "./resources/js/Components/LoadingComponent.vue");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  __name: 'ChartBarHorizontal',
+  props: {
+    series: Array,
+    categories: Array,
+    cust: Number,
+    height: Number,
+    datas: Array,
+    summary: String
+  },
+  setup: function setup(__props, _ref) {
+    var __expose = _ref.expose;
+    __expose();
+    var props = __props;
+    var isLoading = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
+    var chart_title = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      var _props$datas;
+      return ((_props$datas = props.datas) === null || _props$datas === void 0 ? void 0 : _props$datas.title) || 'Untitled';
+    });
+    var chart_labels = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      var _props$datas2;
+      return ((_props$datas2 = props.datas) === null || _props$datas2 === void 0 ? void 0 : _props$datas2.labels) || [];
+    });
+    var chart_data = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      var _props$datas3;
+      return ((_props$datas3 = props.datas) === null || _props$datas3 === void 0 ? void 0 : _props$datas3.data) || [];
+    });
+
+    // DYNAMIC COLOR BY SERIES NAME
+    var chartColors = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      return chart_labels.value.map(function (label) {
+        var name = (label || '').toUpperCase();
+        switch (name) {
+          case 'CITO':
+            return '#ff0000';
+          // RED
+
+          case 'CITO-IGD':
+            return '#28a745';
+          // GREEN
+
+          case 'PRIORITAS':
+            return '#007bff';
+          // BLUE
+
+          case 'REGULAR':
+            return '#6c757d';
+          // GRAY
+
+          default:
+            return '#FFF';
+        }
+      });
+    });
+    var chartOptions = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      return {
+        chart: {
+          type: 'bar',
+          toolbar: {
+            show: false
+          }
+        },
+        plotOptions: {
+          bar: {
+            distributed: true,
+            // IMPORTANT
+            columnWidth: '50%',
+            borderRadius: 4
+          }
+        },
+        dataLabels: {
+          enabled: true
+        },
+        xaxis: {
+          categories: chart_labels.value
+        },
+        legend: {
+          show: false
+        },
+        colors: chartColors.value
+      };
+    });
+    var __returned__ = {
+      props: props,
+      isLoading: isLoading,
+      chart_title: chart_title,
+      chart_labels: chart_labels,
+      chart_data: chart_data,
+      chartColors: chartColors,
+      chartOptions: chartOptions,
+      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
+      computed: vue__WEBPACK_IMPORTED_MODULE_0__.computed,
+      LoadingComponent: _LoadingComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    };
+    Object.defineProperty(__returned__, '__isScriptSetup', {
+      enumerable: false,
+      value: true
+    });
+    return __returned__;
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ChartLine.vue?vue&type=script&setup=true&lang=js":
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ChartLine.vue?vue&type=script&setup=true&lang=js ***!
+  \************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _LoadingComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../LoadingComponent.vue */ "./resources/js/Components/LoadingComponent.vue");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  __name: 'ChartLine',
+  props: {
+    series: Array,
+    categories: Array,
+    cust: Number,
+    height: Number,
+    datas: Array,
+    summary: String
+  },
+  setup: function setup(__props, _ref) {
+    var __expose = _ref.expose;
+    __expose();
+    var props = __props;
+    var isLoading = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
+    var chart_title = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      var _props$datas;
+      return ((_props$datas = props.datas) === null || _props$datas === void 0 ? void 0 : _props$datas.title) || 'Untitled';
+    });
+    var chart_labels = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      var _props$datas2;
+      return ((_props$datas2 = props.datas) === null || _props$datas2 === void 0 ? void 0 : _props$datas2.labels) || [];
+    });
+    var chart_data = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      var _props$datas3;
+      return ((_props$datas3 = props.datas) === null || _props$datas3 === void 0 ? void 0 : _props$datas3.data) || [];
+    });
+    var chartOptions = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      return {
+        chart: {
+          type: 'area',
+          // 💡 Kunci utama untuk membuat chart area seperti di gambar
+          zoom: {
+            enabled: false
+          },
+          toolbar: {
+            show: false
+          }
+        },
+        dataLabels: {
+          enabled: false // 💡 Di-disable agar bersih tanpa angka melayang di atas garis, mirip gambar
+        },
+        stroke: {
+          curve: 'smooth',
+          // 💡 Membuat garis melengkung halus (Spline)
+          width: 3
+        },
+        fill: {
+          type: 'gradient' // 💡 Memberikan efek gradasi warna transparan di bawah garis
+          // gradient: {
+          //     shadeIntensity: 1,
+          //     opacityFrom: 0.4,
+          //     opacityTo: 0.1,
+          //     stops: [0, 90, 100]
+          // }
+        },
+        xaxis: {
+          categories: chart_labels.value.map(function (label) {
+            return label.slice(0, 3);
+          })
+        },
+        colors: ['#3b82f6'],
+        // 💡 Menggunakan warna biru cerah menyesuaikan mockup terbaru
+        markers: {
+          size: 4,
+          // Tanda titik lingkaran kecil pada sudut grafik
+          colors: ['#3b82f6'],
+          strokeColors: '#3b82f6',
+          strokeWidth: 2
+        },
+        legend: {
+          show: false
+        }
+      };
+    });
+    var __returned__ = {
+      props: props,
+      isLoading: isLoading,
+      chart_title: chart_title,
+      chart_labels: chart_labels,
+      chart_data: chart_data,
+      chartOptions: chartOptions,
+      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
+      computed: vue__WEBPACK_IMPORTED_MODULE_0__.computed,
+      LoadingComponent: _LoadingComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    };
+    Object.defineProperty(__returned__, '__isScriptSetup', {
+      enumerable: false,
+      value: true
+    });
+    return __returned__;
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ListMonitoringTable.vue?vue&type=script&setup=true&lang=js":
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ListMonitoringTable.vue?vue&type=script&setup=true&lang=js ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _LoadingComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../LoadingComponent.vue */ "./resources/js/Components/LoadingComponent.vue");
+/* harmony import */ var _ProgressBarComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProgressBarComponent.vue */ "./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue");
+/* harmony import */ var _AutoScroll_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AutoScroll.css */ "./resources/js/Components/Charts/RSSA-BloodBank/AutoScroll.css");
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  __name: 'ListMonitoringTable',
+  props: {
+    label: String,
+    value: Number,
+    datas: Array
+  },
+  setup: function setup(__props, _ref) {
+    var __expose = _ref.expose;
+    __expose();
+    var props = __props;
+    var isLoading = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
+    var chart_title = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      var _props$datas;
+      return ((_props$datas = props.datas) === null || _props$datas === void 0 ? void 0 : _props$datas.title) || 'Untitled';
+    });
+    var chart_data = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      var _props$datas2;
+      return ((_props$datas2 = props.datas) === null || _props$datas2 === void 0 ? void 0 : _props$datas2.data) || [];
+    });
+    var isFullyComplete = function isFullyComplete(patient) {
+      var finishCount = 0;
+      var total = Number(patient.total_test) || 0;
+      finishCount += Number(patient.test_finish) == total ? 1 : 0;
+      finishCount += Number(patient.test_result) == total ? 1 : 0;
+      finishCount += Number(patient.test_proses) == total ? 1 : 0;
+      return total > 0 && finishCount === 3;
+    };
+    var __returned__ = {
+      props: props,
+      isLoading: isLoading,
+      chart_title: chart_title,
+      chart_data: chart_data,
+      isFullyComplete: isFullyComplete,
+      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
+      computed: vue__WEBPACK_IMPORTED_MODULE_0__.computed,
+      LoadingComponent: _LoadingComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+      ProgressBarComponent: _ProgressBarComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    };
+    Object.defineProperty(__returned__, '__isScriptSetup', {
+      enumerable: false,
+      value: true
+    });
+    return __returned__;
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=script&setup=true&lang=js":
+/*!***********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=script&setup=true&lang=js ***!
+  \***********************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  __name: 'ProgressBarComponent',
+  props: {
+    current: {
+      type: [Number, String],
+      "default": 0
+    },
+    total: {
+      type: [Number, String],
+      "default": 0
+    },
+    color: {
+      type: String,
+      "default": 'bg-info'
+    }
+  },
+  setup: function setup(__props, _ref) {
+    var __expose = _ref.expose;
+    __expose();
+    var props = __props;
+
+    // Calculate percentage safely
+    var percentage = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      var currentVal = Number(props.current) || 0;
+      var totalVal = Number(props.total) || 0;
+      if (totalVal <= 0) return 0;
+      return Math.min(Math.round(currentVal / totalVal * 100), 100);
+    });
+
+    // Dynamic Bootstrap background color switching
+    var progressColor = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      if (percentage.value === 100) return 'bg-success';
+      if (percentage.value >= 50) return 'bg-info';
+      return 'bg-warning text-dark';
+    });
+    var __returned__ = {
+      props: props,
+      percentage: percentage,
+      progressColor: progressColor,
+      computed: vue__WEBPACK_IMPORTED_MODULE_0__.computed
+    };
+    Object.defineProperty(__returned__, '__isScriptSetup', {
+      enumerable: false,
+      value: true
+    });
+    return __returned__;
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=script&setup=true&lang=js":
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=script&setup=true&lang=js ***!
+  \************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _LoadingComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../LoadingComponent.vue */ "./resources/js/Components/LoadingComponent.vue");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  __name: 'StatBoxBB',
+  props: {
+    label: String,
+    datas: Array
+  },
+  setup: function setup(__props, _ref) {
+    var __expose = _ref.expose;
+    __expose();
+    var props = __props;
+    var isLoading = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
+    function formatNumber(num) {
+      return Number(num).toLocaleString('id-ID', {
+        minimumFractionDigits: 0
+      });
+    }
+    var chart_data = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      return props.datas || [];
+    });
+    var __returned__ = {
+      props: props,
+      isLoading: isLoading,
+      formatNumber: formatNumber,
+      chart_data: chart_data,
+      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
+      computed: vue__WEBPACK_IMPORTED_MODULE_0__.computed,
+      LoadingComponent: _LoadingComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    };
+    Object.defineProperty(__returned__, '__isScriptSetup', {
+      enumerable: false,
+      value: true
+    });
+    return __returned__;
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/StockRealTimeTable.vue?vue&type=script&setup=true&lang=js":
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/StockRealTimeTable.vue?vue&type=script&setup=true&lang=js ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _LoadingComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../LoadingComponent.vue */ "./resources/js/Components/LoadingComponent.vue");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  __name: 'StockRealTimeTable',
+  props: {
+    label: String,
+    value: Number,
+    datas: Array
+  },
+  setup: function setup(__props, _ref) {
+    var __expose = _ref.expose;
+    __expose();
+    var props = __props;
+    var isLoading = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
+    var chart_title = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      var _props$datas;
+      return ((_props$datas = props.datas) === null || _props$datas === void 0 ? void 0 : _props$datas.title) || 'Untitled';
+    });
+    var chart_data = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      var _props$datas2;
+      return ((_props$datas2 = props.datas) === null || _props$datas2 === void 0 ? void 0 : _props$datas2.data) || [];
+    });
+    var __returned__ = {
+      props: props,
+      isLoading: isLoading,
+      chart_title: chart_title,
+      chart_data: chart_data,
+      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
+      computed: vue__WEBPACK_IMPORTED_MODULE_0__.computed,
+      LoadingComponent: _LoadingComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    };
+    Object.defineProperty(__returned__, '__isScriptSetup', {
+      enumerable: false,
+      value: true
+    });
+    return __returned__;
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=script&setup=true&lang=js":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=script&setup=true&lang=js ***!
+  \*************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _LoadingComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../LoadingComponent.vue */ "./resources/js/Components/LoadingComponent.vue");
+/* harmony import */ var _AutoScroll_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AutoScroll.css */ "./resources/js/Components/Charts/RSSA-BloodBank/AutoScroll.css");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  __name: 'ToastLists',
+  props: {
+    label: String,
+    value: Number,
+    datas: Object
+  },
+  setup: function setup(__props, _ref) {
+    var __expose = _ref.expose;
+    __expose();
+    var props = __props;
+    var isLoading = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
+    var chart_title = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      var _props$datas;
+      return ((_props$datas = props.datas) === null || _props$datas === void 0 ? void 0 : _props$datas.title) || 'LIST BAG DARAH HAMPIR EXPIRED';
+    });
+    var chart_data = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
+      var _props$datas2;
+      return ((_props$datas2 = props.datas) === null || _props$datas2 === void 0 ? void 0 : _props$datas2.data) || [];
+    });
+    var __returned__ = {
+      props: props,
+      isLoading: isLoading,
+      chart_title: chart_title,
+      chart_data: chart_data,
+      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
+      computed: vue__WEBPACK_IMPORTED_MODULE_0__.computed,
+      LoadingComponent: _LoadingComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    };
+    Object.defineProperty(__returned__, '__isScriptSetup', {
+      enumerable: false,
+      value: true
+    });
+    return __returned__;
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/StatBox.vue?vue&type=script&setup=true&lang=js":
 /*!*******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/StatBox.vue?vue&type=script&setup=true&lang=js ***!
@@ -22817,6 +23342,199 @@ __webpack_require__.r(__webpack_exports__);
       type: String,
       "default": 'Loading Data' // Default label if none is provided
     }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/MonitoringBloodBank.vue?vue&type=script&setup=true&lang=js":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/MonitoringBloodBank.vue?vue&type=script&setup=true&lang=js ***!
+  \************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _globalConfig_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../globalConfig.js */ "./resources/js/globalConfig.js");
+/* harmony import */ var _Charts_ChartDonut_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Charts/ChartDonut.vue */ "./resources/js/Components/Charts/ChartDonut.vue");
+/* harmony import */ var _Charts_PatientTable_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Charts/PatientTable.vue */ "./resources/js/Components/Charts/PatientTable.vue");
+/* harmony import */ var _Charts_RSSA_BloodBank_StatBoxBB_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Charts/RSSA-BloodBank/StatBoxBB.vue */ "./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue");
+/* harmony import */ var _Charts_RSSA_BloodBank_ChartBarHorizontal_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Charts/RSSA-BloodBank/ChartBarHorizontal.vue */ "./resources/js/Components/Charts/RSSA-BloodBank/ChartBarHorizontal.vue");
+/* harmony import */ var _Charts_RSSA_BloodBank_ChartLine_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Charts/RSSA-BloodBank/ChartLine.vue */ "./resources/js/Components/Charts/RSSA-BloodBank/ChartLine.vue");
+/* harmony import */ var _Charts_RSSA_BloodBank_ListMonitoringTable_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Charts/RSSA-BloodBank/ListMonitoringTable.vue */ "./resources/js/Components/Charts/RSSA-BloodBank/ListMonitoringTable.vue");
+/* harmony import */ var _Charts_RSSA_BloodBank_StockRealTimeTable_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Charts/RSSA-BloodBank/StockRealTimeTable.vue */ "./resources/js/Components/Charts/RSSA-BloodBank/StockRealTimeTable.vue");
+/* harmony import */ var _Charts_RSSA_BloodBank_ToastLists_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Charts/RSSA-BloodBank/ToastLists.vue */ "./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue");
+
+
+
+
+
+
+
+
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  __name: 'MonitoringBloodBank',
+  props: {
+    series: Array,
+    link: String,
+    title: String,
+    refreshInterval: Number
+  },
+  setup: function setup(__props, _ref) {
+    var __expose = _ref.expose;
+    __expose();
+    var props = __props;
+    var isLoading = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
+    var refreshRate = 1;
+    var timeCount = props.refreshInterval;
+    var chart_data = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)('');
+    var last_update = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)('');
+    var intervalId = null;
+    var time = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)('');
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
+      get_monitoring_data();
+      intervalId = setInterval(function () {
+        checkTime();
+        time.value = Intl.DateTimeFormat(navigator.language, {
+          hour: "numeric",
+          minute: "numeric",
+          second: "numeric",
+          hourCycle: "h23" // 24-hour format
+        }).format();
+      }, 1000);
+    });
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.onBeforeUnmount)(function () {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+    });
+    var checkTime = function checkTime() {
+      refreshRate = _globalConfig_js__WEBPACK_IMPORTED_MODULE_2__.globalConfig.get('refreshRate');
+      if (refreshRate > 0) {
+        if (Math.floor(Date.now() / 1000) % 60 == 0) {
+          timeCount += 1;
+        }
+        if (timeCount == refreshRate) {
+          get_monitoring_data();
+        }
+      }
+      console.log('Checking time for refresh... Refresh Rate:', refreshRate, 'Minute(s), Time Count:', timeCount);
+    };
+    var get_monitoring_data = function get_monitoring_data() {
+      console.log(props.link);
+      isLoading.value = true;
+      timeCount = 0;
+      axios__WEBPACK_IMPORTED_MODULE_11__["default"].get("/".concat(props.link), {
+        params: {}
+      }).then(function (res) {
+        var data = res.data;
+        chart_data.value = data.data;
+        last_update.value = data.last_update;
+        isLoading.value = false;
+      })["catch"](function () {
+        isLoading.value = false;
+        sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
+          icon: 'error',
+          title: 'Fetch Failed',
+          text: 'Unable to get data.',
+          timer: 2000
+        });
+      });
+    };
+    var formatDate = function formatDate(date) {
+      return date.toLocaleDateString('en-GB', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric'
+      }).toUpperCase();
+    };
+    function formatDateDash(date) {
+      var d = date.getDate().toString().padStart(2, '0');
+      var m = (date.getMonth() + 1).toString().padStart(2, '0');
+      var y = date.getFullYear();
+      return "".concat(d, "-").concat(m, "-").concat(y);
+    }
+    var getWeekRange = function getWeekRange() {
+      var today = new Date();
+      //   const today = new Date('2025-12-31');
+      var day = today.getDay(); // 0 = Sun, 1 = Mon, ...
+      var mondayOffset = day === 0 ? -6 : 1 - day;
+      var start = new Date(today);
+      start.setDate(today.getDate() + mondayOffset);
+      var end = new Date(start);
+      end.setDate(start.getDate() + 6);
+      return "PERIODE : ".concat(formatDateDash(start), " s/d ").concat(formatDateDash(end));
+    };
+    var weekRange = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(getWeekRange());
+    var __returned__ = {
+      props: props,
+      isLoading: isLoading,
+      get refreshRate() {
+        return refreshRate;
+      },
+      set refreshRate(v) {
+        refreshRate = v;
+      },
+      get timeCount() {
+        return timeCount;
+      },
+      set timeCount(v) {
+        timeCount = v;
+      },
+      chart_data: chart_data,
+      last_update: last_update,
+      get intervalId() {
+        return intervalId;
+      },
+      set intervalId(v) {
+        intervalId = v;
+      },
+      time: time,
+      checkTime: checkTime,
+      get_monitoring_data: get_monitoring_data,
+      formatDate: formatDate,
+      formatDateDash: formatDateDash,
+      getWeekRange: getWeekRange,
+      weekRange: weekRange,
+      onMounted: vue__WEBPACK_IMPORTED_MODULE_0__.onMounted,
+      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
+      computed: vue__WEBPACK_IMPORTED_MODULE_0__.computed,
+      reactive: vue__WEBPACK_IMPORTED_MODULE_0__.reactive,
+      onBeforeUnmount: vue__WEBPACK_IMPORTED_MODULE_0__.onBeforeUnmount,
+      get axios() {
+        return axios__WEBPACK_IMPORTED_MODULE_11__["default"];
+      },
+      get Swal() {
+        return (sweetalert2__WEBPACK_IMPORTED_MODULE_1___default());
+      },
+      get globalConfig() {
+        return _globalConfig_js__WEBPACK_IMPORTED_MODULE_2__.globalConfig;
+      },
+      ChartDonut: _Charts_ChartDonut_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+      PatientTable: _Charts_PatientTable_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+      StatBoxBB: _Charts_RSSA_BloodBank_StatBoxBB_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+      ChartBarHorizontal: _Charts_RSSA_BloodBank_ChartBarHorizontal_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+      ChartLine: _Charts_RSSA_BloodBank_ChartLine_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
+      ListMonitoringTable: _Charts_RSSA_BloodBank_ListMonitoringTable_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
+      StockRealTimeTable: _Charts_RSSA_BloodBank_StockRealTimeTable_vue__WEBPACK_IMPORTED_MODULE_9__["default"],
+      ToastLists: _Charts_RSSA_BloodBank_ToastLists_vue__WEBPACK_IMPORTED_MODULE_10__["default"]
+    };
+    Object.defineProperty(__returned__, '__isScriptSetup', {
+      enumerable: false,
+      value: true
+    });
+    return __returned__;
   }
 });
 
@@ -23597,12 +24315,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_MonitoringRegno_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../Components/MonitoringRegno.vue */ "./resources/js/Components/MonitoringRegno.vue");
 /* harmony import */ var _Components_MonitoringCharts_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Components/MonitoringCharts.vue */ "./resources/js/Components/MonitoringCharts.vue");
 /* harmony import */ var _Components_MonitoringProcessSample_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../Components/MonitoringProcessSample.vue */ "./resources/js/Components/MonitoringProcessSample.vue");
+/* harmony import */ var _Components_MonitoringBloodBank_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../Components/MonitoringBloodBank.vue */ "./resources/js/Components/MonitoringBloodBank.vue");
 //import layout
 
 
 
 
 //import Heade and useForm from Inertia
+
 
 
 
@@ -23619,6 +24339,7 @@ __webpack_require__.r(__webpack_exports__);
     MonitoringRegno: _Components_MonitoringRegno_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
     MonitoringCharts: _Components_MonitoringCharts_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
     MonitoringProcessSample: _Components_MonitoringProcessSample_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
+    MonitoringBloodBank: _Components_MonitoringBloodBank_vue__WEBPACK_IMPORTED_MODULE_9__["default"],
     globalConfig: _globalConfig_js__WEBPACK_IMPORTED_MODULE_5__.globalConfig
   },
   props: {
@@ -24896,6 +25617,476 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ChartBarHorizontal.vue?vue&type=template&id=a5eee67e":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ChartBarHorizontal.vue?vue&type=template&id=a5eee67e ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  key: 1
+};
+var _hoisted_2 = {
+  "class": "text-lg font-semibold mb-1"
+};
+var _hoisted_3 = {
+  key: 1,
+  "class": "row m-2 justify-content-center text-center"
+};
+var _hoisted_4 = {
+  "class": "col-12"
+};
+var _hoisted_5 = {
+  "class": "col-4"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_apexchart = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("apexchart");
+  return $setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["LoadingComponent"], {
+    key: 0,
+    "class": "col-12 text-center"
+  })) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "card shadow-sm p-2 chart",
+    style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)("height: ".concat($props.height, "PX;"))
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.chart_title), 1 /* TEXT */)]), $setup.chart_data.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_apexchart, {
+    key: 0,
+    type: "bar",
+    height: "250",
+    options: $setup.chartOptions,
+    series: $setup.chart_data
+  }, null, 8 /* PROPS */, ["options", "series"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.props.summary ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.props.summary.toUpperCase()), 1 /* TEXT */)])]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.chart_labels, function (label, idx) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(label), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(": " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.chart_data[0].data[idx] + $setup.chart_data[1].data[idx]), 1 /* TEXT */)]);
+  }), 256 /* UNKEYED_FRAGMENT */))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 4 /* STYLE */)]));
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ChartLine.vue?vue&type=template&id=7e7c173a":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ChartLine.vue?vue&type=template&id=7e7c173a ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  key: 1
+};
+var _hoisted_2 = {
+  "class": "text-lg font-semibold mb-1"
+};
+var _hoisted_3 = {
+  key: 1,
+  "class": "row m-2 justify-content-center text-center"
+};
+var _hoisted_4 = {
+  "class": "col-12"
+};
+var _hoisted_5 = {
+  "class": "col-4"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_apexchart = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("apexchart");
+  return $setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["LoadingComponent"], {
+    key: 0,
+    "class": "col-12 text-center"
+  })) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "card shadow-sm p-2 chart",
+    style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)("height: ".concat($props.height, "PX;"))
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.chart_title), 1 /* TEXT */)]), $setup.chart_data.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_apexchart, {
+    key: 0,
+    height: "250",
+    options: $setup.chartOptions,
+    series: $setup.chart_data
+  }, null, 8 /* PROPS */, ["options", "series"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.props.summary ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.props.summary.toUpperCase()), 1 /* TEXT */)])]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.chart_labels, function (label, idx) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(label), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(": " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.chart_data[0].data[idx] + $setup.chart_data[1].data[idx]), 1 /* TEXT */)]);
+  }), 256 /* UNKEYED_FRAGMENT */))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 4 /* STYLE */)]));
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ListMonitoringTable.vue?vue&type=template&id=7356bf30":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ListMonitoringTable.vue?vue&type=template&id=7356bf30 ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  key: 1
+};
+var _hoisted_2 = {
+  "class": "card shadow p-2 chart",
+  style: {
+    "height": "280px",
+    "overflow": "hidden"
+  }
+};
+var _hoisted_3 = {
+  "class": "text-lg font-semibold mb-1"
+};
+var _hoisted_4 = {
+  "class": "scroll-container"
+};
+var _hoisted_5 = {
+  "class": "table table-striped custom-marquee-table align-middle"
+};
+var _hoisted_6 = {
+  "class": "scroll-content"
+};
+var _hoisted_7 = {
+  "class": "text-center"
+};
+var _hoisted_8 = {
+  "class": "text-center"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return $setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["LoadingComponent"], {
+    key: 0,
+    "class": "col-12 text-center"
+  })) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.chart_title), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_5, [_cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", {
+    "class": "sticky-thead"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "No Lab"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Nama Pasien"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+    "class": "text-center"
+  }, "No RM"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+    style: {
+      "width": "20%"
+    }
+  }, "Proses"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+    style: {
+      "width": "20%"
+    }
+  }, "Result"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+    style: {
+      "width": "20%"
+    }
+  }, "Selesai")])], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", _hoisted_6, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.chart_data, function (patient, i) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
+      key: 'orig-' + i
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(patient.reg_no), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(patient.patient_name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(patient.rm_no), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ProgressBarComponent"], {
+      current: patient.test_proses,
+      total: patient.total_test,
+      color: $setup.isFullyComplete(patient) ? 'bg-primary' : 'bg-danger'
+    }, null, 8 /* PROPS */, ["current", "total", "color"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ProgressBarComponent"], {
+      current: patient.test_result,
+      total: patient.total_test,
+      color: $setup.isFullyComplete(patient) ? 'bg-primary' : 'bg-warning text-dark'
+    }, null, 8 /* PROPS */, ["current", "total", "color"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ProgressBarComponent"], {
+      current: patient.test_finish,
+      total: patient.total_test,
+      color: $setup.isFullyComplete(patient) ? 'bg-primary' : 'bg-success'
+    }, null, 8 /* PROPS */, ["current", "total", "color"])])]);
+  }), 128 /* KEYED_FRAGMENT */)), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.chart_data, function (patient, i) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
+      key: 'clone-' + i
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(patient.reg_no), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(patient.patient_name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(patient.rm_no), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ProgressBarComponent"], {
+      current: patient.test_proses,
+      total: patient.total_test,
+      color: $setup.isFullyComplete(patient) ? 'bg-primary' : 'bg-danger'
+    }, null, 8 /* PROPS */, ["current", "total", "color"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ProgressBarComponent"], {
+      current: patient.test_result,
+      total: patient.total_test,
+      color: $setup.isFullyComplete(patient) ? 'bg-primary' : 'bg-warning text-dark'
+    }, null, 8 /* PROPS */, ["current", "total", "color"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ProgressBarComponent"], {
+      current: patient.test_finish,
+      total: patient.total_test,
+      color: $setup.isFullyComplete(patient) ? 'bg-primary' : 'bg-success'
+    }, null, 8 /* PROPS */, ["current", "total", "color"])])]);
+  }), 128 /* KEYED_FRAGMENT */))])])])])]));
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=template&id=a642bd42&scoped=true":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=template&id=a642bd42&scoped=true ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "d-flex align-items-center w-100"
+};
+var _hoisted_2 = {
+  "class": "progress flex-grow-1",
+  style: {
+    "height": "16px",
+    "border-radius": "8px",
+    "background-color": "#e9ecef"
+  }
+};
+var _hoisted_3 = ["aria-valuenow"];
+var _hoisted_4 = {
+  "class": "fw-bold text-white"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["progress-bar progress-bar-striped progress-bar-animated transition-all", $props.color]),
+    role: "progressbar",
+    style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)({
+      width: $setup.percentage + '%'
+    }),
+    "aria-valuenow": $setup.percentage,
+    "aria-valuemin": "0",
+    "aria-valuemax": "100"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.current) + " / " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.total), 1 /* TEXT */)], 14 /* CLASS, STYLE, PROPS */, _hoisted_3)])]);
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=template&id=930cc5c2&scoped=true":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=template&id=930cc5c2&scoped=true ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  key: 1
+};
+var _hoisted_2 = {
+  "class": "stat-container"
+};
+var _hoisted_3 = {
+  "class": "stat-label"
+};
+var _hoisted_4 = {
+  "class": "stat-value"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return $setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["LoadingComponent"], {
+    key: 0,
+    "class": "col-12 text-center"
+  })) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.chart_data, function (data, index) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+      key: index,
+      "class": "stat-item"
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+      "class": "stat-box",
+      style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)({
+        borderLeft: "5px solid ".concat(data.color || '#6b7280')
+      })
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(data.label), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.formatNumber(data.total)), 1 /* TEXT */)], 4 /* STYLE */)]);
+  }), 128 /* KEYED_FRAGMENT */))])]));
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/StockRealTimeTable.vue?vue&type=template&id=0ad7eef5":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/StockRealTimeTable.vue?vue&type=template&id=0ad7eef5 ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  key: 1
+};
+var _hoisted_2 = {
+  "class": "card shadow p-2 chart",
+  style: {
+    "height": "280PX"
+  }
+};
+var _hoisted_3 = {
+  "class": "text-lg font-semibold mb-1"
+};
+var _hoisted_4 = {
+  style: {
+    "height": "99%",
+    "overflow-y": "auto"
+  }
+};
+var _hoisted_5 = {
+  "class": "table table-bordered table-striped"
+};
+var _hoisted_6 = {
+  "class": "text-start"
+};
+var _hoisted_7 = {
+  "class": "text-center"
+};
+var _hoisted_8 = {
+  "class": "text-center"
+};
+var _hoisted_9 = {
+  "class": "text-center"
+};
+var _hoisted_10 = {
+  "class": "text-center"
+};
+var _hoisted_11 = {
+  "class": "text-center"
+};
+var _hoisted_12 = {
+  "class": "text-center"
+};
+var _hoisted_13 = {
+  "class": "text-center"
+};
+var _hoisted_14 = {
+  "class": "text-center"
+};
+var _hoisted_15 = {
+  "class": "text-center fw-bold"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return $setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["LoadingComponent"], {
+    key: 0,
+    "class": "col-12 text-center"
+  })) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.chart_title), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_5, [_cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+    rowspan: "2",
+    "class": "align-middle"
+  }, "Komponen"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+    colspan: "2",
+    "class": "align-middle"
+  }, "A"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+    colspan: "2",
+    "class": "align-middle"
+  }, "B"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+    colspan: "2",
+    "class": "align-middle"
+  }, "O"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+    colspan: "2",
+    "class": "align-middle"
+  }, "AB"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+    rowspan: "2",
+    "class": "align-middle"
+  }, "Total")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+    "class": "align-middle"
+  }, "+"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+    "class": "align-middle"
+  }, "-"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+    "class": "align-middle"
+  }, "+"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+    "class": "align-middle"
+  }, "-"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+    "class": "align-middle"
+  }, "+"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+    "class": "align-middle"
+  }, "-"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+    "class": "align-middle"
+  }, "+"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+    "class": "align-middle"
+  }, "-")])], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.chart_data, function (patient, i) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
+      key: i
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(patient.component), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(patient.blood_apos), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(patient.blood_aneg), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(patient.blood_bpos), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(patient.blood_bneg), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(patient.blood_opos), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(patient.blood_oneg), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(patient.blood_abpos), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(patient.blood_abneg), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)([patient.blood_apos, patient.blood_aneg, patient.blood_bpos, patient.blood_bneg, patient.blood_opos, patient.blood_oneg, patient.blood_abpos, patient.blood_abneg].reduce(function (a, b) {
+      return Number(a) + Number(b || 0);
+    }, 0)), 1 /* TEXT */)]);
+  }), 128 /* KEYED_FRAGMENT */))])])])])]));
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=template&id=de02e2d4&scoped=true":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=template&id=de02e2d4&scoped=true ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  key: 1
+};
+var _hoisted_2 = {
+  "class": "card border-0 shadow-sm p-3 bg-white",
+  style: {
+    "height": "300px",
+    "border-radius": "12px"
+  }
+};
+var _hoisted_3 = {
+  "class": "text-secondary font-semibold mb-3 d-flex align-items-center flex-wrap",
+  style: {
+    "font-size": "0.95rem",
+    "gap": "4px"
+  }
+};
+var _hoisted_4 = {
+  "class": "text-uppercase fw-bold"
+};
+var _hoisted_5 = {
+  key: 0,
+  "class": "text-muted fw-normal"
+};
+var _hoisted_6 = {
+  "class": "scroll-container"
+};
+var _hoisted_7 = {
+  "class": "scroll-content-toast"
+};
+var _hoisted_8 = {
+  style: {
+    "height": "calc(100% - 40px)",
+    "overflow-y": "auto",
+    "padding-right": "4px"
+  }
+};
+var _hoisted_9 = {
+  "class": "card-body p-3"
+};
+var _hoisted_10 = {
+  "class": "fw-bold blood-title mb-1"
+};
+var _hoisted_11 = {
+  "class": "text-muted blood-status"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return $setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["LoadingComponent"], {
+    key: 0,
+    "class": "col-12 text-center"
+  })) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.chart_title.split('>')[0]), 1 /* TEXT */), $setup.chart_title.includes('>') ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_5, "> " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.chart_title.split('>')[1]), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.chart_data, function (item, i) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+      "class": "card mb-2 border-0 custom-blood-card",
+      key: i
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.title), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.status), 1 /* TEXT */)])]);
+  }), 128 /* KEYED_FRAGMENT */))])])])])]));
+}
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/StatBox.vue?vue&type=template&id=702150f0&scoped=true":
 /*!************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/StatBox.vue?vue&type=template&id=702150f0&scoped=true ***!
@@ -25330,6 +26521,108 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "spinner-border"
   })], -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Dynamic loading label "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.loadingLabel), 1 /* TEXT */)])]);
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/MonitoringBloodBank.vue?vue&type=template&id=1997b2f3":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/MonitoringBloodBank.vue?vue&type=template&id=1997b2f3 ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "card border-0 rounded-3 shadow-border-top-purple mt-2"
+};
+var _hoisted_2 = {
+  "class": "card-body",
+  style: {
+    "background": "#EDF2F7"
+  }
+};
+var _hoisted_3 = {
+  "class": "text-center mb-2"
+};
+var _hoisted_4 = {
+  key: 0,
+  "class": "page-loader"
+};
+var _hoisted_5 = {
+  key: 1,
+  "class": "row g-3 align-items-stretch mb-1"
+};
+var _hoisted_6 = {
+  "class": "col-md-3"
+};
+var _hoisted_7 = {
+  "class": "col-md-3"
+};
+var _hoisted_8 = {
+  "class": "col-md-3"
+};
+var _hoisted_9 = {
+  "class": "col-md-3"
+};
+var _hoisted_10 = {
+  "class": "row mt-4"
+};
+var _hoisted_11 = {
+  "class": "col-md-7"
+};
+var _hoisted_12 = {
+  "class": "col-md-5"
+};
+var _hoisted_13 = {
+  "class": "col-md-4"
+};
+var _hoisted_14 = {
+  "class": "col-md-4"
+};
+var _hoisted_15 = {
+  "class": "col-md-4"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.name), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1 /* TEXT */), _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Last Update : " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.globalConfig.formatCompat($setup.last_update)) + " ", 1 /* TEXT */), _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Time : {{ time }} ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <br> "), $setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, _cache[2] || (_cache[2] = [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "loading-spinner"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "spinner-border"
+  })], -1 /* HOISTED */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Loading Data", -1 /* HOISTED */)]))) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [$setup.chart_data[0] && $setup.chart_data[0][0] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["StatBoxBB"], {
+    key: 0,
+    datas: $setup.chart_data[0][0]
+  }, null, 8 /* PROPS */, ["datas"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [$setup.chart_data[0] && $setup.chart_data[0][1] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["StatBoxBB"], {
+    key: 0,
+    datas: $setup.chart_data[0][1]
+  }, null, 8 /* PROPS */, ["datas"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [$setup.chart_data[0] && $setup.chart_data[0][2] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["StatBoxBB"], {
+    key: 0,
+    datas: $setup.chart_data[0][2]
+  }, null, 8 /* PROPS */, ["datas"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [$setup.chart_data[0] && $setup.chart_data[0][3] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["StatBoxBB"], {
+    key: 0,
+    datas: $setup.chart_data[0][3]
+  }, null, 8 /* PROPS */, ["datas"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ListMonitoringTable"], {
+    datas: $setup.chart_data[1],
+    summary: "Total pemeriksaan per layanan",
+    height: "400"
+  }, null, 8 /* PROPS */, ["datas"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["StockRealTimeTable"], {
+    datas: $setup.chart_data[2],
+    summary: "Total pemeriksaan per janji hasil",
+    height: "400"
+  }, null, 8 /* PROPS */, ["datas"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ChartBarHorizontal"], {
+    datas: $setup.chart_data[3],
+    height: "300"
+  }, null, 8 /* PROPS */, ["datas"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" {{ chart_data[4] }} "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ChartLine"], {
+    datas: $setup.chart_data[4],
+    height: "300"
+  }, null, 8 /* PROPS */, ["datas"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ToastLists"], {
+    datas: $setup.chart_data[5],
+    height: "300"
+  }, null, 8 /* PROPS */, ["datas"])])])]))])]);
 }
 
 /***/ }),
@@ -27034,6 +28327,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_MonitoringRegno = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MonitoringRegno");
   var _component_MonitoringCharts = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MonitoringCharts");
   var _component_MonitoringProcessSample = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MonitoringProcessSample");
+  var _component_MonitoringBloodBank = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("MonitoringBloodBank");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Head, null, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [$props.permissions.original.includes('dash_monitoring.regno') || $props.permissions.original.includes('dash_monitoring.process_sample') ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("title", _hoisted_1, "Patient Monitoring - " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.auth.user.has_branch.branch_name), 1 /* TEXT */)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("title", _hoisted_2, "MONITORING OPERASIONAL " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.auth.user.has_branch.branch_name), 1 /* TEXT */))];
@@ -27050,6 +28344,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     title: $props.auth.user.has_branch.branch_name
   }, null, 8 /* PROPS */, ["refreshInterval", "link", "title"])) : $props.permissions.original.includes('dash_monitoring.process_sample') ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_MonitoringProcessSample, {
     key: 2,
+    refreshInterval: _ctx.refreshRate > 0 ? _ctx.refreshRate : 5,
+    link: "api/dashboard/get_data/".concat(this.auth.user.email),
+    title: $props.auth.user.has_branch.branch_name
+  }, null, 8 /* PROPS */, ["refreshInterval", "link", "title"])) : $props.permissions.original.includes('dash_monitoring.bloodbank') ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_MonitoringBloodBank, {
+    key: 3,
     refreshInterval: _ctx.refreshRate > 0 ? _ctx.refreshRate : 5,
     link: "api/dashboard/get_data/".concat(this.auth.user.email),
     title: $props.auth.user.has_branch.branch_name
@@ -31132,6 +32431,30 @@ if ($defineProperty) {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./resources/js/Components/Charts/RSSA-BloodBank/AutoScroll.css":
+/*!******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./resources/js/Components/Charts/RSSA-BloodBank/AutoScroll.css ***!
+  \******************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".scroll-container {\n    height: calc(100% - 32px);\n    overflow: hidden;\n    position: relative;\n    width: 100%;\n}\n\n/* Modifies display to safely allow transformations without breaking row grids */\n.scroll-content {\n    display: table-row-group;\n    animation: vertical-marquee 25s linear infinite;\n}\n\n.scroll-content-toast {\n    animation: vertical-marquee 25s linear infinite;\n}\n\n/* Clear pause logic targeting the layout content correctly */\n.scroll-container:hover .scroll-content {\n    animation-play-state: paused;\n}\n\n@keyframes vertical-marquee {\n    0% {\n        transform: translateY(0);\n    }\n    100% {\n        transform: translateY(-50%);\n    }\n}\n\n.custom-marquee-table {\n    table-layout: fixed;\n    width: 100%;\n    /* Changing collapse to separate stops the browser from leaving behind border lines during shifts */\n    border-collapse: separate;\n    border-spacing: 0;\n}\n\n/* Keeps headers clean, sticky, and masks everything underneath seamlessly */\n.sticky-thead {\n    position: sticky;\n    top: 0;\n    z-index: 10;\n}\n\n.custom-marquee-table th {\n    /* background-color: #f8f9fa !important; */\n    border-bottom: 2px solid #dee2e6 !important;\n    position: sticky;\n    top: 0;\n    z-index: 11;\n}\n\n/* Explicitly handles cell borders safely instead of relying on broken collapsed layouts */\n.custom-marquee-table td {\n    border-bottom: 1px solid #dee2e6;\n    padding: 8px;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/ChartDonut.vue?vue&type=style&index=0&id=e157537a&lang=css":
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/ChartDonut.vue?vue&type=style&index=0&id=e157537a&lang=css ***!
@@ -31174,6 +32497,78 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "\nthead {\n    position: sticky;\n    top: 0;\n    background: black;\n    z-index: 5;\n    text-align: center;\n    color: white;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=style&index=0&id=a642bd42&scoped=true&lang=css":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=style&index=0&id=a642bd42&scoped=true&lang=css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.transition-all[data-v-a642bd42] {\n    transition: width 0.4s ease;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=style&index=0&id=930cc5c2&scoped=true&lang=css":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=style&index=0&id=930cc5c2&scoped=true&lang=css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n/* Container untuk membuat layout berjejer ke samping */\n.stat-container[data-v-930cc5c2] {\n    display: flex;\n    gap: 15px; /* Jarak antar kartu */\n    width: 100%;\n    flex-wrap: wrap; /* Agar responsif jika layar terlalu kecil */\n}\n\n/* Item pembungkus agar membagi space sama rata */\n.stat-item[data-v-930cc5c2] {\n    flex: 1;\n    min-width: 200px; /* Batas minimum lebar per kartu */\n}\n.stat-box[data-v-930cc5c2] {\n    border-radius: 12px;\n    height: 100px; /* Ditinggikan sedikit agar teks panjang tidak menabrak angka */\n    padding: 12px 15px;\n    background: #ffffff; /* Menggunakan background putih seperti di gambar */\n    text-align: left;\n    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between; /* Menjaga label di atas dan angka di bawah */\n    transition: transform 0.2s ease;\n}\n.stat-label[data-v-930cc5c2] {\n    font-size: 13px;\n    font-weight: 600;\n    color: #4b5563; /* Warna abu-abu teks sedikit gelap */\n    line-height: 1.4;\n    display: -webkit-box;\n    -webkit-line-clamp: 2; /* Membatasi teks label jika terlalu panjang */\n    -webkit-box-orient: vertical;\n    overflow: hidden;\n}\n.stat-value[data-v-930cc5c2] {\n    font-size: 28px; /* Diperbesar agar sesuai dengan mockup */\n    font-weight: 800;\n    color: #111827;\n    line-height: 1;\n    margin-top: 0px;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=style&index=0&id=de02e2d4&scoped=true&lang=css":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=style&index=0&id=de02e2d4&scoped=true&lang=css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.custom-blood-card[data-v-de02e2d4] {\n    background-color: #FFFDF5; /* Soft warm background */\n\n    /* 1. Add the heavy left border\n      2. Set a general border radius, but keep top-left/bottom-left slightly\n         sharper or tailored so the left border curves beautifully.\n    */\n    border-left: 6px solid #E86315 !important;\n    border-radius: 16px 16px 16px 16px !important;\n\n    /* Fallback/Correction to ensure the border respects the rounded corners */\n    background-clip: padding-box;\n}\n.blood-title[data-v-de02e2d4] {\n    color: #A34213; /* Darker brick orange text color */\n    /* font-size: 1.05rem; */\n}\n.blood-status[data-v-de02e2d4] {\n    color: #6C5549 !important; /* Muted text color */\n    /* font-size: 0.9rem; */\n}\n\n/* Custom minimal scrollbar styling */\n[data-v-de02e2d4]::-webkit-scrollbar {\n    width: 5px;\n}\n[data-v-de02e2d4]::-webkit-scrollbar-track {\n    background: transparent;\n}\n[data-v-de02e2d4]::-webkit-scrollbar-thumb {\n    background: #E0E0E0;\n    border-radius: 10px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -38583,6 +39978,36 @@ module.exports = function getSideChannel() {
 
 /***/ }),
 
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/AutoScroll.css":
+/*!**********************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/AutoScroll.css ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_AutoScroll_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./AutoScroll.css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./resources/js/Components/Charts/RSSA-BloodBank/AutoScroll.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_AutoScroll_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_AutoScroll_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/ChartDonut.vue?vue&type=style&index=0&id=e157537a&lang=css":
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/ChartDonut.vue?vue&type=style&index=0&id=e157537a&lang=css ***!
@@ -38640,6 +40065,96 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_PatientTable_vue_vue_type_style_index_0_id_a12e8030_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=style&index=0&id=a642bd42&scoped=true&lang=css":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=style&index=0&id=a642bd42&scoped=true&lang=css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ProgressBarComponent_vue_vue_type_style_index_0_id_a642bd42_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ProgressBarComponent.vue?vue&type=style&index=0&id=a642bd42&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=style&index=0&id=a642bd42&scoped=true&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ProgressBarComponent_vue_vue_type_style_index_0_id_a642bd42_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ProgressBarComponent_vue_vue_type_style_index_0_id_a642bd42_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=style&index=0&id=930cc5c2&scoped=true&lang=css":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=style&index=0&id=930cc5c2&scoped=true&lang=css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_StatBoxBB_vue_vue_type_style_index_0_id_930cc5c2_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./StatBoxBB.vue?vue&type=style&index=0&id=930cc5c2&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=style&index=0&id=930cc5c2&scoped=true&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_StatBoxBB_vue_vue_type_style_index_0_id_930cc5c2_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_StatBoxBB_vue_vue_type_style_index_0_id_930cc5c2_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=style&index=0&id=de02e2d4&scoped=true&lang=css":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=style&index=0&id=de02e2d4&scoped=true&lang=css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ToastLists_vue_vue_type_style_index_0_id_de02e2d4_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ToastLists.vue?vue&type=style&index=0&id=de02e2d4&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=style&index=0&id=de02e2d4&scoped=true&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ToastLists_vue_vue_type_style_index_0_id_de02e2d4_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ToastLists_vue_vue_type_style_index_0_id_de02e2d4_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -44166,6 +45681,211 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/ChartBarHorizontal.vue":
+/*!******************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/ChartBarHorizontal.vue ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ChartBarHorizontal_vue_vue_type_template_id_a5eee67e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ChartBarHorizontal.vue?vue&type=template&id=a5eee67e */ "./resources/js/Components/Charts/RSSA-BloodBank/ChartBarHorizontal.vue?vue&type=template&id=a5eee67e");
+/* harmony import */ var _ChartBarHorizontal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ChartBarHorizontal.vue?vue&type=script&setup=true&lang=js */ "./resources/js/Components/Charts/RSSA-BloodBank/ChartBarHorizontal.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var C_Users_adpy_Documents_Work_dashboard_monitoring_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,C_Users_adpy_Documents_Work_dashboard_monitoring_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ChartBarHorizontal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ChartBarHorizontal_vue_vue_type_template_id_a5eee67e__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Components/Charts/RSSA-BloodBank/ChartBarHorizontal.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/ChartLine.vue":
+/*!*********************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/ChartLine.vue ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ChartLine_vue_vue_type_template_id_7e7c173a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ChartLine.vue?vue&type=template&id=7e7c173a */ "./resources/js/Components/Charts/RSSA-BloodBank/ChartLine.vue?vue&type=template&id=7e7c173a");
+/* harmony import */ var _ChartLine_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ChartLine.vue?vue&type=script&setup=true&lang=js */ "./resources/js/Components/Charts/RSSA-BloodBank/ChartLine.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var C_Users_adpy_Documents_Work_dashboard_monitoring_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,C_Users_adpy_Documents_Work_dashboard_monitoring_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ChartLine_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ChartLine_vue_vue_type_template_id_7e7c173a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Components/Charts/RSSA-BloodBank/ChartLine.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/ListMonitoringTable.vue":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/ListMonitoringTable.vue ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ListMonitoringTable_vue_vue_type_template_id_7356bf30__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ListMonitoringTable.vue?vue&type=template&id=7356bf30 */ "./resources/js/Components/Charts/RSSA-BloodBank/ListMonitoringTable.vue?vue&type=template&id=7356bf30");
+/* harmony import */ var _ListMonitoringTable_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ListMonitoringTable.vue?vue&type=script&setup=true&lang=js */ "./resources/js/Components/Charts/RSSA-BloodBank/ListMonitoringTable.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var C_Users_adpy_Documents_Work_dashboard_monitoring_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,C_Users_adpy_Documents_Work_dashboard_monitoring_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ListMonitoringTable_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ListMonitoringTable_vue_vue_type_template_id_7356bf30__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Components/Charts/RSSA-BloodBank/ListMonitoringTable.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue":
+/*!********************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ProgressBarComponent_vue_vue_type_template_id_a642bd42_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProgressBarComponent.vue?vue&type=template&id=a642bd42&scoped=true */ "./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=template&id=a642bd42&scoped=true");
+/* harmony import */ var _ProgressBarComponent_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProgressBarComponent.vue?vue&type=script&setup=true&lang=js */ "./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _ProgressBarComponent_vue_vue_type_style_index_0_id_a642bd42_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProgressBarComponent.vue?vue&type=style&index=0&id=a642bd42&scoped=true&lang=css */ "./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=style&index=0&id=a642bd42&scoped=true&lang=css");
+/* harmony import */ var C_Users_adpy_Documents_Work_dashboard_monitoring_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+
+
+const __exports__ = /*#__PURE__*/(0,C_Users_adpy_Documents_Work_dashboard_monitoring_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_ProgressBarComponent_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ProgressBarComponent_vue_vue_type_template_id_a642bd42_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-a642bd42"],['__file',"resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue":
+/*!*********************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _StatBoxBB_vue_vue_type_template_id_930cc5c2_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StatBoxBB.vue?vue&type=template&id=930cc5c2&scoped=true */ "./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=template&id=930cc5c2&scoped=true");
+/* harmony import */ var _StatBoxBB_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./StatBoxBB.vue?vue&type=script&setup=true&lang=js */ "./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _StatBoxBB_vue_vue_type_style_index_0_id_930cc5c2_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./StatBoxBB.vue?vue&type=style&index=0&id=930cc5c2&scoped=true&lang=css */ "./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=style&index=0&id=930cc5c2&scoped=true&lang=css");
+/* harmony import */ var C_Users_adpy_Documents_Work_dashboard_monitoring_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+
+
+const __exports__ = /*#__PURE__*/(0,C_Users_adpy_Documents_Work_dashboard_monitoring_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_StatBoxBB_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_StatBoxBB_vue_vue_type_template_id_930cc5c2_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-930cc5c2"],['__file',"resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/StockRealTimeTable.vue":
+/*!******************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/StockRealTimeTable.vue ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _StockRealTimeTable_vue_vue_type_template_id_0ad7eef5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StockRealTimeTable.vue?vue&type=template&id=0ad7eef5 */ "./resources/js/Components/Charts/RSSA-BloodBank/StockRealTimeTable.vue?vue&type=template&id=0ad7eef5");
+/* harmony import */ var _StockRealTimeTable_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./StockRealTimeTable.vue?vue&type=script&setup=true&lang=js */ "./resources/js/Components/Charts/RSSA-BloodBank/StockRealTimeTable.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var C_Users_adpy_Documents_Work_dashboard_monitoring_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,C_Users_adpy_Documents_Work_dashboard_monitoring_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_StockRealTimeTable_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_StockRealTimeTable_vue_vue_type_template_id_0ad7eef5__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Components/Charts/RSSA-BloodBank/StockRealTimeTable.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue":
+/*!**********************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ToastLists_vue_vue_type_template_id_de02e2d4_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ToastLists.vue?vue&type=template&id=de02e2d4&scoped=true */ "./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=template&id=de02e2d4&scoped=true");
+/* harmony import */ var _ToastLists_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ToastLists.vue?vue&type=script&setup=true&lang=js */ "./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _ToastLists_vue_vue_type_style_index_0_id_de02e2d4_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ToastLists.vue?vue&type=style&index=0&id=de02e2d4&scoped=true&lang=css */ "./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=style&index=0&id=de02e2d4&scoped=true&lang=css");
+/* harmony import */ var C_Users_adpy_Documents_Work_dashboard_monitoring_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+
+
+const __exports__ = /*#__PURE__*/(0,C_Users_adpy_Documents_Work_dashboard_monitoring_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_ToastLists_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ToastLists_vue_vue_type_template_id_de02e2d4_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-de02e2d4"],['__file',"resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/Components/Charts/StatBox.vue":
 /*!****************************************************!*\
   !*** ./resources/js/Components/Charts/StatBox.vue ***!
@@ -44279,6 +45999,34 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const __exports__ = /*#__PURE__*/(0,C_Users_adpy_Documents_Work_dashboard_monitoring_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_LoadingComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_LoadingComponent_vue_vue_type_template_id_1d7110ec_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-1d7110ec"],['__file',"resources/js/Components/LoadingComponent.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/Components/MonitoringBloodBank.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/Components/MonitoringBloodBank.vue ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _MonitoringBloodBank_vue_vue_type_template_id_1997b2f3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MonitoringBloodBank.vue?vue&type=template&id=1997b2f3 */ "./resources/js/Components/MonitoringBloodBank.vue?vue&type=template&id=1997b2f3");
+/* harmony import */ var _MonitoringBloodBank_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MonitoringBloodBank.vue?vue&type=script&setup=true&lang=js */ "./resources/js/Components/MonitoringBloodBank.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var C_Users_adpy_Documents_Work_dashboard_monitoring_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,C_Users_adpy_Documents_Work_dashboard_monitoring_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_MonitoringBloodBank_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_MonitoringBloodBank_vue_vue_type_template_id_1997b2f3__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Components/MonitoringBloodBank.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -44967,6 +46715,118 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/ChartBarHorizontal.vue?vue&type=script&setup=true&lang=js":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/ChartBarHorizontal.vue?vue&type=script&setup=true&lang=js ***!
+  \*****************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ChartBarHorizontal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ChartBarHorizontal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ChartBarHorizontal.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ChartBarHorizontal.vue?vue&type=script&setup=true&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/ChartLine.vue?vue&type=script&setup=true&lang=js":
+/*!********************************************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/ChartLine.vue?vue&type=script&setup=true&lang=js ***!
+  \********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ChartLine_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ChartLine_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ChartLine.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ChartLine.vue?vue&type=script&setup=true&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/ListMonitoringTable.vue?vue&type=script&setup=true&lang=js":
+/*!******************************************************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/ListMonitoringTable.vue?vue&type=script&setup=true&lang=js ***!
+  \******************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ListMonitoringTable_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ListMonitoringTable_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ListMonitoringTable.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ListMonitoringTable.vue?vue&type=script&setup=true&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=script&setup=true&lang=js":
+/*!*******************************************************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=script&setup=true&lang=js ***!
+  \*******************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ProgressBarComponent_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ProgressBarComponent_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ProgressBarComponent.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=script&setup=true&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=script&setup=true&lang=js":
+/*!********************************************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=script&setup=true&lang=js ***!
+  \********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_StatBoxBB_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_StatBoxBB_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./StatBoxBB.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=script&setup=true&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/StockRealTimeTable.vue?vue&type=script&setup=true&lang=js":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/StockRealTimeTable.vue?vue&type=script&setup=true&lang=js ***!
+  \*****************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_StockRealTimeTable_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_StockRealTimeTable_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./StockRealTimeTable.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/StockRealTimeTable.vue?vue&type=script&setup=true&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=script&setup=true&lang=js":
+/*!*********************************************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=script&setup=true&lang=js ***!
+  \*********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ToastLists_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ToastLists_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ToastLists.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=script&setup=true&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/Components/Charts/StatBox.vue?vue&type=script&setup=true&lang=js":
 /*!***************************************************************************************!*\
   !*** ./resources/js/Components/Charts/StatBox.vue?vue&type=script&setup=true&lang=js ***!
@@ -45027,6 +46887,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_LoadingComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_LoadingComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./LoadingComponent.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/LoadingComponent.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/Components/MonitoringBloodBank.vue?vue&type=script&setup=true&lang=js":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/Components/MonitoringBloodBank.vue?vue&type=script&setup=true&lang=js ***!
+  \********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MonitoringBloodBank_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MonitoringBloodBank_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./MonitoringBloodBank.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/MonitoringBloodBank.vue?vue&type=script&setup=true&lang=js");
  
 
 /***/ }),
@@ -45447,6 +47323,118 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/ChartBarHorizontal.vue?vue&type=template&id=a5eee67e":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/ChartBarHorizontal.vue?vue&type=template&id=a5eee67e ***!
+  \************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ChartBarHorizontal_vue_vue_type_template_id_a5eee67e__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ChartBarHorizontal_vue_vue_type_template_id_a5eee67e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ChartBarHorizontal.vue?vue&type=template&id=a5eee67e */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ChartBarHorizontal.vue?vue&type=template&id=a5eee67e");
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/ChartLine.vue?vue&type=template&id=7e7c173a":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/ChartLine.vue?vue&type=template&id=7e7c173a ***!
+  \***************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ChartLine_vue_vue_type_template_id_7e7c173a__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ChartLine_vue_vue_type_template_id_7e7c173a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ChartLine.vue?vue&type=template&id=7e7c173a */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ChartLine.vue?vue&type=template&id=7e7c173a");
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/ListMonitoringTable.vue?vue&type=template&id=7356bf30":
+/*!*************************************************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/ListMonitoringTable.vue?vue&type=template&id=7356bf30 ***!
+  \*************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ListMonitoringTable_vue_vue_type_template_id_7356bf30__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ListMonitoringTable_vue_vue_type_template_id_7356bf30__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ListMonitoringTable.vue?vue&type=template&id=7356bf30 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ListMonitoringTable.vue?vue&type=template&id=7356bf30");
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=template&id=a642bd42&scoped=true":
+/*!**************************************************************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=template&id=a642bd42&scoped=true ***!
+  \**************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ProgressBarComponent_vue_vue_type_template_id_a642bd42_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ProgressBarComponent_vue_vue_type_template_id_a642bd42_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ProgressBarComponent.vue?vue&type=template&id=a642bd42&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=template&id=a642bd42&scoped=true");
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=template&id=930cc5c2&scoped=true":
+/*!***************************************************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=template&id=930cc5c2&scoped=true ***!
+  \***************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_StatBoxBB_vue_vue_type_template_id_930cc5c2_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_StatBoxBB_vue_vue_type_template_id_930cc5c2_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./StatBoxBB.vue?vue&type=template&id=930cc5c2&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=template&id=930cc5c2&scoped=true");
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/StockRealTimeTable.vue?vue&type=template&id=0ad7eef5":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/StockRealTimeTable.vue?vue&type=template&id=0ad7eef5 ***!
+  \************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_StockRealTimeTable_vue_vue_type_template_id_0ad7eef5__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_StockRealTimeTable_vue_vue_type_template_id_0ad7eef5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./StockRealTimeTable.vue?vue&type=template&id=0ad7eef5 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/StockRealTimeTable.vue?vue&type=template&id=0ad7eef5");
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=template&id=de02e2d4&scoped=true":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=template&id=de02e2d4&scoped=true ***!
+  \****************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ToastLists_vue_vue_type_template_id_de02e2d4_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ToastLists_vue_vue_type_template_id_de02e2d4_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ToastLists.vue?vue&type=template&id=de02e2d4&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=template&id=de02e2d4&scoped=true");
+
+
+/***/ }),
+
 /***/ "./resources/js/Components/Charts/StatBox.vue?vue&type=template&id=702150f0&scoped=true":
 /*!**********************************************************************************************!*\
   !*** ./resources/js/Components/Charts/StatBox.vue?vue&type=template&id=702150f0&scoped=true ***!
@@ -45507,6 +47495,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_LoadingComponent_vue_vue_type_template_id_1d7110ec_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_LoadingComponent_vue_vue_type_template_id_1d7110ec_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./LoadingComponent.vue?vue&type=template&id=1d7110ec&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/LoadingComponent.vue?vue&type=template&id=1d7110ec&scoped=true");
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/MonitoringBloodBank.vue?vue&type=template&id=1997b2f3":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/Components/MonitoringBloodBank.vue?vue&type=template&id=1997b2f3 ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MonitoringBloodBank_vue_vue_type_template_id_1997b2f3__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_MonitoringBloodBank_vue_vue_type_template_id_1997b2f3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./MonitoringBloodBank.vue?vue&type=template&id=1997b2f3 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/MonitoringBloodBank.vue?vue&type=template&id=1997b2f3");
 
 
 /***/ }),
@@ -45869,6 +47873,45 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_PatientTable_vue_vue_type_style_index_0_id_a12e8030_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./PatientTable.vue?vue&type=style&index=0&id=a12e8030&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/PatientTable.vue?vue&type=style&index=0&id=a12e8030&lang=css");
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=style&index=0&id=a642bd42&scoped=true&lang=css":
+/*!****************************************************************************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=style&index=0&id=a642bd42&scoped=true&lang=css ***!
+  \****************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ProgressBarComponent_vue_vue_type_style_index_0_id_a642bd42_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader/dist/cjs.js!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ProgressBarComponent.vue?vue&type=style&index=0&id=a642bd42&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ProgressBarComponent.vue?vue&type=style&index=0&id=a642bd42&scoped=true&lang=css");
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=style&index=0&id=930cc5c2&scoped=true&lang=css":
+/*!*****************************************************************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=style&index=0&id=930cc5c2&scoped=true&lang=css ***!
+  \*****************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_StatBoxBB_vue_vue_type_style_index_0_id_930cc5c2_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader/dist/cjs.js!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./StatBoxBB.vue?vue&type=style&index=0&id=930cc5c2&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/StatBoxBB.vue?vue&type=style&index=0&id=930cc5c2&scoped=true&lang=css");
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=style&index=0&id=de02e2d4&scoped=true&lang=css":
+/*!******************************************************************************************************************************!*\
+  !*** ./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=style&index=0&id=de02e2d4&scoped=true&lang=css ***!
+  \******************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ToastLists_vue_vue_type_style_index_0_id_de02e2d4_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader/dist/cjs.js!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ToastLists.vue?vue&type=style&index=0&id=de02e2d4&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Charts/RSSA-BloodBank/ToastLists.vue?vue&type=style&index=0&id=de02e2d4&scoped=true&lang=css");
 
 
 /***/ }),

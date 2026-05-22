@@ -135,7 +135,7 @@ class MonitoringController extends Controller
         if (in_array("dash_monitoring.regno", $array_permission)) {
             $data = $this->monitoring_regno($user);
         } else if (in_array("dash_monitoring.charts", $array_permission)) {
-            $last_ = $qry_data = DB::table('dash_patient_monitoring')
+            $last_ = DB::table('dash_patient_monitoring')
                 ->where('cust_name', $user->has_company->customer_id)
                 ->where('cust_branch', $user->has_branch->outlet_id)
                 ->first();
@@ -150,6 +150,18 @@ class MonitoringController extends Controller
         } else if (in_array("dash_monitoring.process_sample", $array_permission)) {
             $data = $this->monitoring_process_sample($user);
             ($data ? $last_update = $data['last_update'] : $last_update = null);
+        } else if (in_array("dash_monitoring.bloodbank", $array_permission)) {
+            $last_ = DB::table('dash_visitation')
+                ->where('cust_name', $user->has_company->customer_id)
+                ->where('cust_branch', $user->has_branch->outlet_id)
+                ->first();
+            $last_update = $last_->dttm ?? Carbon::now()->format("Y-m-d H:i:s");
+            $data[0] = $this->dash_visitation($user->has_company->customer_id, $user->has_branch->outlet_id);
+            $data[1] = $this->dash_patient_result($user->has_company->customer_id, $user->has_branch->outlet_id);
+            $data[2] = $this->dash_blood_stock($user->has_company->customer_id, $user->has_branch->outlet_id);
+            $data[3] = $this->dash_visit_classification($user->has_company->customer_id, $user->has_branch->outlet_id);
+            $data[4] = $this->dash_patient_visit($user->has_company->customer_id, $user->has_branch->outlet_id);
+            $data[5] = $this->dash_blood_stock_expiring($user->has_company->customer_id, $user->has_branch->outlet_id);
         }
 
         response()->json([
@@ -535,6 +547,187 @@ class MonitoringController extends Controller
 
         return $data;
     }
+
+    // =========================================================== BLOOD BANK ===========================================================
+    function dash_visitation($cust_id, $branch_id)
+    {
+        $qry_data = DB::table('dash_visitation')
+            ->where('cust_name', $cust_id)
+            ->where('cust_branch', $branch_id)
+            ->first();
+
+        $fields = [
+            'visitation' => [
+                'label' => 'JUMLAH KUNJUNGAN',
+                'color' => '#3B82F6' // Biru
+            ],
+            'test_not_finish' => [
+                'label' => 'BELUM SELESAI',
+                'color' => '#F59E0B' // Oranye
+            ],
+            'test_finish' => [
+                'label' => 'SUDAH SELESAI',
+                'color' => '#10B981' // Hijau
+            ],
+            'total' => [
+                'label' => 'TOTAL PASIEN',
+                'color' => '#EC4798' // Pink
+            ],
+        ];
+
+        $chunked = array_chunk($fields, 1, true);
+
+        $data = [];
+
+        foreach ($chunked as $chunk) {
+            $group = [];
+
+            foreach ($chunk as $field => $label) {
+
+                // khusus field total
+                if ($field === 'total') {
+                    $total = ($qry_data->test_not_finish ?? 0) + ($qry_data->test_finish ?? 0);
+                } else {
+                    $total = $qry_data->$field ?? 0;
+                }
+
+                $group[$field] = [
+                    'label' => $label['label'],
+                    'color' => $label['color'],
+                    'total' => $total,
+                ];
+            }
+
+            $data[] = $group;
+        }
+
+        return $data;
+    }
+
+    // $data[1] = $this->dash_patient_result($user->has_company->customer_id, $user->has_branch->outlet_id);
+    function dash_patient_result($cust_id, $branch_id)
+    {
+        $qry_data = DB::table('dash_patient_result')
+            ->where('cust_name', $cust_id)
+            ->where('cust_branch', $branch_id)
+            ->get();
+
+        $data['title'] = strtoupper("LISTING MONITORING HASIL PASIEN");
+
+        $data['data'] = $qry_data->map(function ($item) {
+            return [
+                'reg_no'       => $item->reg_no,
+                'patient_name' => $item->patient_name,
+                'rm_no'        => $item->rm_no,
+                'total_test'   => $item->total_test,
+                'test_proses'  => $item->test_proses,
+                'test_result'  => $item->test_result,
+                'test_finish'  => $item->test_finish,
+            ];
+        })->toArray();
+
+        return $data;
+    }
+
+    // $data[2] = $this->dash_blood_stock($user->has_company->customer_id, $user->has_branch->outlet_id);
+    function dash_blood_stock($cust_id, $branch_id)
+    {
+        $qry_data = DB::table('dash_blood_stock')
+            ->where('cust_name', $cust_id)
+            ->where('cust_branch', $branch_id)
+            ->get();
+
+        $data['title'] = strtoupper('STOCK REAL TIME KOMPONEN DARAH');
+
+        $data['data'] = $qry_data->map(function ($item) {
+            return collect($item)->only([
+                'component',
+                'blood_apos',
+                'blood_aneg',
+                'blood_bpos',
+                'blood_bneg',
+                'blood_opos',
+                'blood_oneg',
+                'blood_abpos',
+                'blood_abneg',
+            ]);
+        })->toArray();
+
+        return $data;
+    }
+
+    // $data[3] = $this->dash_visit_classification($user->has_company->customer_id, $user->has_branch->outlet_id);
+    function dash_visit_classification($cust_id, $branch_id)
+    {
+        $qry_data = DB::table('dash_visit_classification')
+            ->where('cust_name', $cust_id)
+            ->where('cust_branch', $branch_id)
+            ->orderBy('patient_type')
+            ->get();
+        $data['title'] = strtoupper('prioritas pasien');
+        $data['labels'] = $qry_data->pluck('patient_type')
+            ->toArray();
+
+        $data['data'][] = [
+            'data' => $qry_data->pluck('total')->toArray()
+        ];
+
+        return $data;
+    }
+
+    // $data[4] = $this->dash_patient_visit($user->has_company->customer_id, $user->has_branch->outlet_id);
+    function dash_patient_visit($cust_id, $branch_id)
+    {
+        $qry_data = DB::table('dash_patient_visit')
+            ->where('cust_name', $cust_id)
+            ->where('cust_branch', $branch_id)
+            ->orderBy('date_visit')
+            ->get();
+        $data['title'] = strtoupper('TREND KUNJUNGAN');
+        $data['labels'] = $qry_data->pluck('day_name')
+            ->toArray();
+
+        $data['data'][] = [
+            'data' => $qry_data->pluck('total')->toArray()
+        ];
+
+        return $data;
+    }
+
+    // $data[5] = $this->dash_blood_stock_expiring($user->has_company->customer_id, $user->has_branch->outlet_id);
+    function dash_blood_stock_expiring($cust_id, $branch_id)
+    {
+        $qry_data = DB::table('dash_blood_stock_expiring')
+            ->where('cust_name', $cust_id)
+            ->where('cust_branch', $branch_id)
+            ->orderByRaw("
+                CASE
+                    WHEN exp_status ILIKE '%BESOK%' THEN 0
+                    ELSE COALESCE(
+                        NULLIF(
+                            regexp_replace(exp_status, '[^0-9]', '', 'g'),
+                            ''
+                        )::INTEGER,
+                        0
+                    )
+                END
+            ")
+            ->get();
+
+        $return_array = array();
+        $return_array['title'] = strtoupper('Blood Stock Expiring');
+
+        foreach ($qry_data as $data) {
+            $return_array['data'][] = [
+                'title'     => $data->component . ' ' . $data->blood_type . $data->blood_rhesus . ' / ' . $data->blood_bag,
+                'status'    => $data->exp_status,
+            ];
+        }
+
+        return $return_array;
+    }
+
+    //========================================================== END BLOOD BANK ===========================================================
 
     public function get_permissions()
     {
