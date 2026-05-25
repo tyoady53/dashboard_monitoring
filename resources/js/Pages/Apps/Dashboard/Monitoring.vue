@@ -1,6 +1,7 @@
 <template>
     <Head>
         <title v-if="permissions.original.includes('dash_monitoring.regno') || permissions.original.includes('dash_monitoring.process_sample')">Patient Monitoring - {{ auth.user.has_branch.branch_name }}</title>
+        <title v-else-if="permissions.original.includes('dash_monitoring.bloodbank')">Monitoring Dashboard - Instalasi Transfusi Darah</title>
         <title v-else>MONITORING OPERASIONAL {{ auth.user.has_branch.branch_name }}</title>
     </Head>
     <main class="c-main">
@@ -10,6 +11,7 @@
             <div class="fade-in" style="margin-top: -25px;">
                 <div class="text-center">
                     <h4 v-if="permissions.original.includes('dash_monitoring.regno') || permissions.original.includes('dash_monitoring.process_sample')">Patient Monitoring {{ auth.user.has_branch.branch_name }}</h4>
+                    <!-- <h4 v-else-if="permissions.original.includes('dash_monitoring.bloodbank')">Monitoring Dashboard - Instalasi Transfusi Darah</h4> -->
                     <!-- <h4 v-else>MONITORING OPERASIONAL LAB</h4> -->
                 </div>
                 <template v-if="permissions.original.includes('dash_monitoring.regno')">
@@ -26,7 +28,7 @@
                 </template>
                 <template v-else-if="permissions.original.includes('dash_monitoring.bloodbank')">
                     <MonitoringBloodBank :refreshInterval="(refreshRate > 0 ? refreshRate : 5)"
-                        :link="`api/dashboard/get_data/${this.auth.user.email}`" :title="auth.user.has_branch.branch_name" />
+                        :link="`api/dashboard/get_data/${this.auth.user.email}`" :name="auth.user.has_company.customer_name" title="Instalasi Transfusi Darah - Realtime Monitoring Dashboard" />
                 </template>
             </div>
         </div>

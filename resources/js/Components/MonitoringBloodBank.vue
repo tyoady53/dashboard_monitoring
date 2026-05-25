@@ -74,6 +74,7 @@ import ToastLists from './Charts/RSSA-BloodBank/ToastLists.vue';
 const props = defineProps({
     series: Array,
     link: String,
+    name: String,
     title: String,
     refreshInterval: Number,
 });

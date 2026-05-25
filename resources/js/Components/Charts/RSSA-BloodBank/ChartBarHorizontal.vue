@@ -62,6 +62,13 @@ const chartOptions = computed(() => ({
             show: false
         }
     },
+    tooltip: {
+        y: {
+            title: {
+                formatter: () => 'Jumlah Pasien : '
+            }
+        }
+    },
 
     plotOptions: {
         bar: {

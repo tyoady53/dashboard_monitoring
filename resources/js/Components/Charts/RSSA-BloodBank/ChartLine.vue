@@ -41,6 +41,34 @@ const chartOptions = computed(() => ({
             show: false
         }
     },
+    tooltip: {
+        x: {
+            formatter: function(value, opts) {
+
+                const categories = chart_labels.value.map(label => label.slice(0, 3))
+
+                const label = categories[opts.dataPointIndex]
+
+                const days = {
+                    MIN: 'Minggu',
+                    SEN: 'Senin',
+                    SEL: 'Selasa',
+                    RAB: 'Rabu',
+                    KAM: 'Kamis',
+                    JUM: 'Jumat',
+                    SAB: 'Sabtu'
+                }
+
+                return days[label] || label
+            }
+        },
+
+        y: {
+            title: {
+                formatter: () => 'Jumlah Pasien : '
+            }
+        }
+    },
     dataLabels: {
         enabled: false // 💡 Di-disable agar bersih tanpa angka melayang di atas garis, mirip gambar
     },
